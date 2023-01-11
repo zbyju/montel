@@ -11,14 +11,14 @@ const links = [
 ];
 ---
 
-<nav class="w-screen pt-10">
+<nav class="w-screen pt-14 mb-24">
   <div class="container w-11/12 m-auto flex h-100 justify-between items-center">
-    <h1 class="font-black text-5xl ml-5">MONTEL</h1>
-    <div class="flex gap-x-5 items-center mr-5">
+    <h1 class="font-bold text-6xl">MONTEL</h1>
+    <div class="flex gap-x-5 items-center">
       {
         links.map((l) => (
           <a
-            class="px-4 py-2 hover:text-white rounded-full hover:bg-blue-900 text-sm transition-all duration-500 ease-in-out"
+            class="px-4 py-2 hover:text-white rounded-full hover:bg-blue-900 transition-all duration-500 ease-in-out"
             href={l.link}
           >
             <span>{l.name}</span>
