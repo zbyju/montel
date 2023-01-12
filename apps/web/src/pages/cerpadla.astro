@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const bg = "teal";
+const text = "teal";
+---
+
+<Layout title="MONTEL" bg={bg} text={text}>
+  <div slot="header" class="w-11/12 m-auto">
+    <p class="text-7xl font-black w-9/12 tracking-wider word-wider">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+  </div>
+</Layout>
+
+<style>
+  .word-wider {
+    word-spacing: 5px;
+  }
+</style>
