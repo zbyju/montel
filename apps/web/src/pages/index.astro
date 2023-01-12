@@ -1,5 +1,7 @@
 ---
-import { renderJSX } from "astro/dist/runtime/server";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBaby, faVideo, faTruck } from "@fortawesome/free-solid-svg-icons";
+import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
 
 const bg = "bg-cyan-100";
@@ -9,8 +11,46 @@ const color = "text-blue-900";
 <Layout title="MONTEL" bg={bg} color={color}>
   <div slot="header" class="w-11/12 m-auto">
     <p class="text-7xl font-black w-9/12 tracking-wider word-wider">
-      Jsme firma vyrabejici babyboxy a jeste dalsi text
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>
+  </div>
+  <div class="w-screen m-auto -mt-16 flex gap-7 justify-around flex-wrap">
+    <Card
+      header="Babybox"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
+    >
+      <FontAwesomeIcon icon={faBaby} slot="icon" />
+    </Card>
+    <Card
+      header="Kamery"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
+    >
+      <FontAwesomeIcon icon={faVideo} slot="icon" />
+    </Card>
+    <Card
+      header="Doprava"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
+    >
+      <FontAwesomeIcon icon={faTruck} slot="icon" />
+    </Card>
+    <Card
+      header="Doprava"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
+    >
+      <FontAwesomeIcon icon={faTruck} slot="icon" />
+    </Card>
+    <Card
+      header="Doprava"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
+    >
+      <FontAwesomeIcon icon={faTruck} slot="icon" />
+    </Card>
+    <Card
+      header="Doprava"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
+    >
+      <FontAwesomeIcon icon={faTruck} slot="icon" />
+    </Card>
   </div>
 </Layout>
 
