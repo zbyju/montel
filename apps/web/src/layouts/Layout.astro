@@ -4,10 +4,10 @@ import TheNav from "../components/sections/TheNav.astro";
 export interface Props {
   title: string;
   bg: string;
-  color: string;
+  text: string;
 }
 
-const { title, bg, color } = Astro.props;
+const { title, bg, text } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -20,8 +20,8 @@ const { title, bg, color } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <header class={`${bg} ${color} h-screen w-screen`}>
-      <TheNav />
+    <header class={`bg-${bg}-100 text-${text}-900 h-screen w-screen`}>
+      <TheNav bg={text} />
       <slot name="header" />
     </header>
     <main class="w-screen">

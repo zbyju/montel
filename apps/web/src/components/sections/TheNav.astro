@@ -1,6 +1,12 @@
 ---
 import Link from "../Link.astro";
 
+interface Props {
+  bg: string;
+}
+
+const { bg } = Astro.props;
+
 const links = [
   {
     name: "Domů",
@@ -35,7 +41,7 @@ const links = [
     <div class="flex gap-x-5 items-center">
       {
         links.map((l) => (
-          <Link href={l.link} type="ghost">
+          <Link href={l.link} type="ghost" bg={bg}>
             {l.name}
           </Link>
         ))
