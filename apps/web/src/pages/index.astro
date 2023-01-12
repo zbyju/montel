@@ -12,6 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
+import Link from "../components/Link.astro";
 
 const bg = "blue";
 const text = "blue";
@@ -24,8 +25,12 @@ const iconClass = "max-w-[40px] max-h-[40px]";
     <p class="text-7xl font-black w-9/12 tracking-wider word-wider">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>
+    <Link href="#offering" bg={bg} className="mt-7">Co nabizime?</Link>
   </div>
-  <div class="w-screen m-auto -mt-16 flex gap-7 justify-around flex-wrap">
+  <div
+    class="w-screen m-auto -mt-16 flex gap-7 justify-around flex-wrap"
+    id="offering"
+  >
     <Card
       header="Babybox"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
