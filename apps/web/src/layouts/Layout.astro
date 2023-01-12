@@ -1,4 +1,5 @@
 ---
+import TheFooter from "../components/sections/TheFooter.astro";
 import TheNav from "../components/sections/TheNav.astro";
 
 export interface Props {
@@ -27,6 +28,7 @@ const { title, bg, text } = Astro.props;
     <main class="w-screen">
       <slot />
     </main>
+    <TheFooter bg={bg} text={text} />
   </body>
 </html>
 
