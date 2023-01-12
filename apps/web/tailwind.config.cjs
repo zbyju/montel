@@ -1,6 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 
-const generatedSafelist = ["blue", "pink", "cyan"].reduce((safelist, color) => {
+const generatedSafelist = [
+  "blue",
+  "pink",
+  "cyan",
+  "amber",
+  "yellow",
+  "lime",
+  "green",
+  "emerald",
+  "teal",
+  "sky",
+  "indigo",
+  "violet",
+  "rose",
+].reduce((safelist, color) => {
   const weights = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
   const bgs = weights.map((w) => `bg-${color}-${w}`);
   const hoverBgs = weights.map((w) => `hover:bg-${color}-${w}`);
