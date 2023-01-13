@@ -1,0 +1,13 @@
+version: "3.4"
+
+services:
+  ui:
+    build: apps/web
+    image: ui
+    restart: "always"
+    volumes:
+      - ./apps/web/:/app
+      - /app/node_modules
+    ports:
+      - 3000:3000
+
