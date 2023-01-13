@@ -11,6 +11,6 @@ COPY tsconfig.json /app/tsconfig.json
 # install node dependencies
 RUN echo "npm install in progress..." && yarn install --frozen-lockfilenpm ci
 
-EXPOSE 3000
+EXPOSE 6000
 
 CMD [ "yarn", "dev", "--host"]
