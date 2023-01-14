@@ -8,6 +8,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  server: { port: 6000 },
+  server: { port: 8080 },
   integrations: [react(), tailwind()],
 });
