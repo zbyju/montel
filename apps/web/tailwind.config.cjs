@@ -2,6 +2,7 @@
 
 const generatedSafelist = [
   "white",
+  "slate",
   "blue",
   "pink",
   "cyan",
