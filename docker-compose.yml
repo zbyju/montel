@@ -9,5 +9,5 @@ services:
       - ./apps/web/:/app
       - /app/node_modules
     ports:
-      - 6000:6000
+      - 8080:8080
 
