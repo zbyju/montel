@@ -16,6 +16,8 @@ import Link from "../components/Link.astro";
 import Gradient from "../components/Gradient.astro";
 import Image from "../components/Image.astro";
 import SectionStripe from "../components/SectionStripe.astro";
+import BigSection from "../components/BigSection.astro";
+import HoverImage from "../components/HoverImage.astro";
 
 const bg = "blue";
 const text = "blue";
@@ -126,6 +128,72 @@ const iconClass = "max-w-[40px] max-h-[40px]";
     excepturi provident ab explicabo quo, harum voluptatibus soluta voluptate
     nulla aperiam?
   </SectionStripe>
+
+  <BigSection heading="Projekty na kterych jsme pracovali" color="blue">
+    <div class="flex justify-center flex-wrap gap-10">
+      <HoverImage
+        src="https://placehold.co/640x360"
+        alt=""
+        className="w-1/4"
+        bg="bg-slate-800"
+        text="text-slate-50"
+        heading="Test"
+        href="/babybox"
+      >
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id temporibus
+        nobis tempore obcaecati nihil.
+      </HoverImage>
+      <HoverImage
+        src="https://placehold.co/640x360"
+        alt=""
+        className="w-1/4"
+        bg="bg-slate-800"
+        text="text-slate-50"
+        heading="Test"
+        href="/babybox"
+      >
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id temporibus
+        nobis tempore obcaecati nihil.
+      </HoverImage>
+      <HoverImage
+        src="https://placehold.co/640x360"
+        alt=""
+        className="w-1/4"
+        bg="bg-slate-800"
+        text="text-slate-50"
+        heading="Test"
+        href="/babybox"
+      >
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id temporibus
+        nobis tempore obcaecati nihil.
+      </HoverImage>
+      <HoverImage
+        src="https://placehold.co/640x360"
+        alt=""
+        className="w-1/4"
+        bg="bg-slate-800"
+        text="text-slate-50"
+        heading="Test"
+        href="/babybox"
+      >
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id temporibus
+        nobis tempore obcaecati nihil.
+      </HoverImage>
+      <HoverImage
+        src="https://placehold.co/640x360"
+        alt=""
+        className="w-1/4"
+        bg="bg-slate-800"
+        text="text-slate-50"
+        heading="Test"
+        href="/babybox"
+      >
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id temporibus
+        nobis tempore obcaecati nihil.
+      </HoverImage>
+    </div>
+  </BigSection>
+  <BigSection heading="Kontakt" color="slate" />
 </Layout>
 
 <style>
