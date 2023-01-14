@@ -1,0 +1,38 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  className?: string;
+  imageClassName?: string;
+  bg: string;
+  text: string;
+  heading: string;
+  href?: string;
+}
+const { src, alt, className, imageClassName, heading, bg, text, href } =
+  Astro.props;
+---
+
+<div class={className + " relative hoverContainer"}>
+  <img
+    src={src}
+    alt={alt}
+    class={`${imageClassName} w-full rounded-lg shadow-md hover:shadow-lg transition-all duration-500`}
+  />
+  <a href={href}>
+    <div
+      class={`absolute w-full h-full inset-0 rounded-lg opacity-0 ${bg} transition-all duration-500 ease-in-out hoverOverlay`}
+    >
+      <div class={`${text} py-8 px-10`}>
+        <h4 class="text-center font-bold text-xl">{heading}</h4>
+        <slot />
+      </div>
+    </div>
+  </a>
+</div>
+
+<style>
+  .hoverContainer:hover .hoverOverlay {
+    opacity: 0.9;
+  }
+</style>
