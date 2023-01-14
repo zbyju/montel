@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 const generatedSafelist = [
+  "white",
   "blue",
   "pink",
   "cyan",
@@ -19,12 +20,24 @@ const generatedSafelist = [
   const bgs = weights.map((w) => `bg-${color}-${w}`);
   const hoverBgs = weights.map((w) => `hover:bg-${color}-${w}`);
   const texts = weights.map((w) => `text-${color}-${w}`);
-  return safelist.concat(bgs, hoverBgs, texts);
+  const froms = weights.map((w) => `from-${color}-${w}`);
+  const tos = weights.map((w) => `to-${color}-${w}`);
+  return safelist.concat(bgs, hoverBgs, texts, froms, tos);
+}, []);
+
+const generateBasicSafelist = ["white"].reduce((safelist, color) => {
+  return safelist.concat(
+    "bg-" + color,
+    "hover:bg-" + color,
+    "text-" + color,
+    "from-" + color,
+    "to-" + color
+  );
 }, []);
 
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  safelist: generatedSafelist,
+  safelist: [].concat(generatedSafelist, generateBasicSafelist),
   theme: {
     extend: {},
   },
