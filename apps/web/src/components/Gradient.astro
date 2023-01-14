@@ -1,0 +1,17 @@
+---
+interface Props {
+  height: number;
+  from: string;
+  to: string;
+  gradient: string;
+  className?: string;
+}
+
+const { height, from, to, gradient, className } = Astro.props;
+---
+
+<div
+  class={`${gradient} from-${from} to-${to} ${className}`}
+  style={{ height: `${height}px` }}
+>
+</div>
