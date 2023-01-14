@@ -15,6 +15,7 @@ import Layout from "../layouts/Layout.astro";
 import Link from "../components/Link.astro";
 import Gradient from "../components/Gradient.astro";
 import Image from "../components/Image.astro";
+import SectionStripe from "../components/SectionStripe.astro";
 
 const bg = "blue";
 const text = "blue";
@@ -102,37 +103,29 @@ const iconClass = "max-w-[40px] max-h-[40px]";
     </Card>
   </div>
 
-  <div class="w-screen bg-pink-100 pb-7 mt-7">
-    <div class="p-10 text-pink-900 flex gap-10">
-      <div class="flex-grow">
-        <h3 class="text-5xl font-bold mb-3">Babybox</h3>
-        <p class="mb-3">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-          ullamcorper commodo lectus ac finibus. Morbi tristique quis purus sit
-          amet tincidunt.
-        </p>
-        <Link bg="pink" href="/babybox">Vice</Link>
-      </div>
-      <Image src="https://placehold.co/320x180" alt="" />
-    </div>
-  </div>
+  <SectionStripe
+    align="left"
+    color="pink"
+    heading="Babybox"
+    className="mt-10 shadow-lg rounded-xl"
+  >
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda
+    distinctio iste quia dolore. Animi magni nisi similique enim repellendus,
+    excepturi provident ab explicabo quo, harum voluptatibus soluta voluptate
+    nulla aperiam?
+  </SectionStripe>
 
-  <div class="w-screen bg-yellow-100 pb-7">
-    <div class="p-10 text-yellow-900 flex gap-10">
-      <Image src="https://placehold.co/320x180" alt="" />
-      <div class="flex-grow flex flex-col items-end">
-        <h3 class="text-5xl text-right font-bold mb-3">
-          Zabezpecovaci systemy
-        </h3>
-        <p class="mb-3 text-right">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-          ullamcorper commodo lectus ac finibus. Morbi tristique quis purus sit
-          amet tincidunt.
-        </p>
-        <Link bg="yellow" href="/babybox" className="self-end">Vice</Link>
-      </div>
-    </div>
-  </div>
+  <SectionStripe
+    align="right"
+    color="yellow"
+    heading="Zabezpecovaci systemy"
+    className="shadow-lg rounded-xl"
+  >
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda
+    distinctio iste quia dolore. Animi magni nisi similique enim repellendus,
+    excepturi provident ab explicabo quo, harum voluptatibus soluta voluptate
+    nulla aperiam?
+  </SectionStripe>
 </Layout>
 
 <style>
