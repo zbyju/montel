@@ -6,9 +6,13 @@ interface Props {
   align: "left" | "right";
   heading: string;
   color: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
   className?: string;
 }
-const { align, heading, color, className } = Astro.props;
+const { align, heading, color, className, image } = Astro.props;
 
 const bg = `bg-${color}-100`;
 const text = `text-${color}-900`;
@@ -29,6 +33,6 @@ const textAlign = align === "right" ? "text-right" : "text-left";
       </div>
       <Link bg={color} href="/babybox" className={self}>Vice</Link>
     </div>
-    <Image src="https://placehold.co/640x360" alt="" className="self-center" />
+    {image && <Image src={image.src} alt={image.alt} className="self-center" />}
   </div>
 </div>
