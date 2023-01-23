@@ -1,4 +1,8 @@
 ---
+import BigSection from "../components/BigSection.astro";
+import CenterSection from "../components/CenterSection.astro";
+import SectionStripe from "../components/SectionStripe.astro";
+import SmallCard from "../components/SmallCard.astro";
 import Layout from "../layouts/Layout.astro";
 
 const bg = "pink";
@@ -13,15 +17,66 @@ const text = "pink";
   </div>
 
   <div>
-    <h2>Technicke parametry</h2>
-    <div>Babybox</div>
-    <div>Monitorovaci panel</div>
-    <div></div>
+    <CenterSection color="white" heading="Funkce">
+      <div class="flex flex-wrap gap-5 justify-around mt-5 px-10">
+        <SmallCard heading="Automaticke dvere" color="white">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </SmallCard>
+        <SmallCard heading="Vytapeni" color="white">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </SmallCard>
+        <SmallCard heading="Email" color="white">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </SmallCard>
+        <SmallCard heading="SMS" color="white">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </SmallCard>
+        <SmallCard heading="Automaticke dvere" color="white">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </SmallCard>
+      </div>
+    </CenterSection>
+
+    <SectionStripe
+      align="left"
+      color="indigo"
+      heading="Babybox"
+      image={{ src: "http://placehold.co/640x360", alt: "" }}
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, a? Odit
+      blanditiis repellendus sequi omnis in magnam eligendi ullam laboriosam
+      eveniet, doloremque et, a iusto saepe voluptates provident ut! Eligendi?
+    </SectionStripe>
+
+    <SectionStripe
+      align="right"
+      color="pink"
+      heading="Rozvadec"
+      image={{ src: "http://placehold.co/640x360", alt: "" }}
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, a? Odit
+      blanditiis repellendus sequi omnis in magnam eligendi ullam laboriosam
+      eveniet, doloremque et, a iusto saepe voluptates provident ut! Eligendi?
+    </SectionStripe>
+
+    <SectionStripe
+      align="left"
+      color="indigo"
+      heading="Monitorovaci panel"
+      image={{ src: "http://placehold.co/640x360", alt: "" }}
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, a? Odit
+      blanditiis repellendus sequi omnis in magnam eligendi ullam laboriosam
+      eveniet, doloremque et, a iusto saepe voluptates provident ut! Eligendi?
+    </SectionStripe>
+
+    <CenterSection heading="Statistiky" color="pink">
+      <li>Pocet deti</li>
+      <li>Odlozene deti v case</li>
+      <li>Odlozeni v jednotlivych castech dne</li>
+      <li>Odlozeni v podle mesice</li>
+      <li>Odlozeni v podle dne v tydnu</li>
+      <li>Pocet deti v jednotlivych babyboxech</li>
+    </CenterSection>
   </div>
 </Layout>
-
-<style>
-  .word-wider {
-    word-spacing: 5px;
-  }
-</style>
