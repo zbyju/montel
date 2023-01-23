@@ -1,0 +1,29 @@
+---
+interface Props {
+  heading: string;
+  color: string;
+}
+
+const { heading, color } = Astro.props;
+---
+
+<div
+  class={`bg-${color}-900}
+  bg-${color}-100
+  shadow-md
+  hover:shadow-lg
+  w-44
+  h-44
+  rounded-lg
+  transition-all
+  duration-500
+  overflow-hidden
+  text-ellipsis`}
+>
+  <div class="p-3">
+    <h5 class="font-bold text-xl">{heading}</h5>
+    <p class="font-light text-sm text-ellipsis">
+      <slot />
+    </p>
+  </div>
+</div>
