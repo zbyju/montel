@@ -1,21 +1,46 @@
 ---
+import Link from "./Link.astro";
+import Image from "./Image.astro";
+
 interface Props {
   heading: string;
   color: string;
+  className?: string;
 }
 
-const { heading, color } = Astro.props;
+const { heading, color, className } = Astro.props;
 const bg = `bg-${color}-100`;
 const text = `text-${color}-900`;
 ---
 
 <div class={`${bg}`}>
-  <div class="py-16 px-10">
-    <h2
-      class={`${text} w-1/2 mx-auto text-center text-7xl font-bold mt-16 mb-32`}
-    >
-      {heading}
-    </h2>
-    <slot />
+  <div class="w-11/12 m-auto">
+    <div class="md:flex md:gap-10">
+      <div class="flex flex-col flex-grow">
+        <h2
+          class={`${text} lg:text-7xl md:text-5xl sm:text-6xl text-5xl font-black tracking-wider word-wider`}
+        >
+          {heading}
+        </h2>
+        <Link
+          href="#offering"
+          bg={color}
+          className="mt-10 self-center md:self-start px-7 py-4 text-xl"
+        >
+          Co nabizime?
+        </Link>
+      </div>
+      <Image
+        src="https://placehold.co/1280x720"
+        alt=""
+        className="self-center hidden md:block"
+      />
+    </div>
   </div>
 </div>
+
+<style>
+  .word-wider {
+    word-spacing: 5px;
+  }
+</style>
