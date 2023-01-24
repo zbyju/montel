@@ -26,23 +26,11 @@ const iconClass = "max-w-[40px] max-h-[40px]";
 ---
 
 <Layout title="MONTEL" bg={bg} text={text}>
-  <div slot="header" class="w-11/12 m-auto">
-    <div class="flex">
-      <div class="flex-grow">
-        <p class="text-7xl font-black w-9/12 tracking-wider word-wider">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <Link href="#offering" bg={bg} className="mt-10 text-xl px-6 py-3">
-          Co nabizime?
-        </Link>
-      </div>
-      <Image
-        src="https://placehold.co/1280x720"
-        alt=""
-        className="self-center"
-      />
-    </div>
-  </div>
+  <BigSection
+    slot="header"
+    color="blue"
+    heading="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  />
   <div
     class="w-screen m-auto -mt-16 flex gap-7 justify-around flex-wrap"
     id="offering"
