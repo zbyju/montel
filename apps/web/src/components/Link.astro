@@ -7,12 +7,12 @@ interface Props {
   type?: "ghost" | "solid";
   className?: string;
 }
-const { href, type, bg, className } = Astro.props;
+const { href, type, bg, className, classInner } = Astro.props;
 
 const style =
   type === "ghost"
-    ? `inline-flex self-start w-auto px-4 py-2 hover:text-white rounded-full hover:bg-${bg}-900 transition-all duration-500 ease-in-out`
-    : `inline-flex self-start w-auto px-4 py-2 text-white rounded-full bg-${bg}-900 hover:bg-rose-600 transition-all duration-500 ease-in-out`;
+    ? `inline-flex w-auto px-4 py-2 hover:text-white rounded-full hover:bg-${bg}-900 transition-all duration-500 ease-in-out`
+    : `inline-flex w-auto px-4 py-2 text-white rounded-full bg-${bg}-900 hover:bg-rose-600 transition-all duration-500 ease-in-out`;
 ---
 
 <a class:list={[style, className]} href={href}><slot /></a>
