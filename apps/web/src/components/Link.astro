@@ -1,9 +1,10 @@
 ---
+import type { ColorName } from "../types/colors.types";
 import Button from "./Button.astro";
 
 interface Props {
   href: string;
-  bg: string;
+  bg: ColorName;
   type?: "ghost" | "solid";
   className?: string;
 }

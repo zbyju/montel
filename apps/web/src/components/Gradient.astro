@@ -1,8 +1,10 @@
 ---
+import type { ColorWeighted } from "../types/colors.types";
+
 interface Props {
   height: number;
-  from: string;
-  to: string;
+  from: ColorWeighted;
+  to: ColorWeighted;
   gradient: string;
   className?: string;
 }

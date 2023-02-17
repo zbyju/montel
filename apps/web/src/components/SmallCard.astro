@@ -1,7 +1,9 @@
 ---
+import type { ColorName } from "../types/colors.types";
+
 interface Props {
   heading: string;
-  color: string;
+  color: ColorName;
 }
 
 const { heading, color } = Astro.props;

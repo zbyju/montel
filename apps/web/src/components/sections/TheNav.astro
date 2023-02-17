@@ -1,13 +1,12 @@
 ---
 import Link from "../Link.astro";
 import MONTEL from "../MONTEL.astro";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { HamburgerNavbar } from "./HamburgerNavbar";
 import type { Link as LinkType } from "../../types/menu.types";
+import type { ColorName } from "../../types/colors.types";
 
 interface Props {
-  bg: string;
+  bg: ColorName;
 }
 
 const { bg } = Astro.props;

@@ -1,10 +1,11 @@
 ---
 import Link from "./Link.astro";
 import Image from "./Image.astro";
+import type { ColorName } from "../types/colors.types";
 
 interface Props {
   heading: string;
-  color: string;
+  color: ColorName;
   className?: string;
 }
 

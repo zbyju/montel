@@ -1,10 +1,10 @@
 ---
-import type { Color } from "../types/colors.types";
-import { darkColorBg, darkColorText, lightColorBg } from "../utils/colors";
+import type { ColorName } from "../types/colors.types";
+import { darkColorText, lightColorBg } from "../utils/colors";
 
 interface Props {
   heading: string;
-  color: Color;
+  color: ColorName;
 }
 const { heading, color } = Astro.props;
 const bg = lightColorBg(color);

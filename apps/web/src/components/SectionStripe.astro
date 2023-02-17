@@ -1,11 +1,12 @@
 ---
+import type { ColorName } from "../types/colors.types";
 import Image from "./Image.astro";
 import Link from "./Link.astro";
 
 interface Props {
   align: "left" | "right";
   heading: string;
-  color: string;
+  color: ColorName;
   image?: {
     src: string;
     alt: string;

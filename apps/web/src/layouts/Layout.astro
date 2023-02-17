@@ -1,11 +1,12 @@
 ---
 import TheFooter from "../components/sections/TheFooter.astro";
 import TheNav from "../components/sections/TheNav.astro";
+import type { ColorName } from "../types/colors.types";
 
 export interface Props {
   title: string;
-  bg: string;
-  text: string;
+  bg: ColorName;
+  text: ColorName;
 }
 
 const { title, bg, text } = Astro.props;

@@ -1,11 +1,13 @@
 ---
+import type { ColorBg, ColorText } from "../types/colors.types";
+
 interface Props {
   src: string;
   alt: string;
   className?: string;
   imageClassName?: string;
-  bg: string;
-  text: string;
+  bg: ColorBg;
+  text: ColorText;
   heading: string;
   href?: string;
 }

@@ -1,9 +1,10 @@
 ---
+import type { ColorName } from "../../types/colors.types";
 import MONTEL from "../MONTEL.astro";
 
 interface Props {
-  bg: string;
-  text: string;
+  bg: ColorName;
+  text: ColorName;
 }
 
 const { bg, text } = Astro.props;

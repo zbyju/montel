@@ -1,10 +1,11 @@
 ---
+import type { ColorName } from "../types/colors.types";
 import Link from "./Link.astro";
 
 interface Props {
   header: string;
   description: string;
-  bg: string;
+  bg: ColorName;
 }
 
 const { header, description, bg } = Astro.props;

@@ -1,4 +1,4 @@
-export type ComplexColor =
+export type ComplexColorName =
   | "slate"
   | "blue"
   | "pink"
@@ -14,9 +14,9 @@ export type ComplexColor =
   | "violet"
   | "rose";
 
-export type SimpleColor = "black" | "white";
+export type SimpleColorName = "black" | "white";
 
-export type Color = ComplexColor | SimpleColor;
+export type ColorName = ComplexColorName | SimpleColorName;
 
 export type ColorWeight =
   | 50
@@ -30,7 +30,9 @@ export type ColorWeight =
   | 800
   | 900;
 
-export type ColorBg = `bg-${Color}-${ColorWeight}` | `bg-${OneColor}`;
-export type ColorText = `text-${Color}-${ColorWeight}` | `text-${OneColor}`;
+export type ColorWeighted = `${ComplexColorName}-${ColorWeight}` | SimpleColorName
+
+export type ColorBg = `bg-${ColorWeighted}`;
+export type ColorText = `text-${ColorWeighted}`
 export type ColorBgHover = `hover:${ColorBg}`;
 export type ColorTextHover = `hover:${ColorText}`;
