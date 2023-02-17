@@ -1,6 +1,10 @@
 ---
 import Link from "../Link.astro";
 import MONTEL from "../MONTEL.astro";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { HamburgerNavbar } from "./HamburgerNavbar";
+import type { Link as LinkType } from "../../types/menu.types";
 
 interface Props {
   bg: string;
@@ -8,49 +12,105 @@ interface Props {
 
 const { bg } = Astro.props;
 
-const links = [
+const links: LinkType[] = [
   {
-    name: "Domů",
-    link: "/",
+    text: "Domů",
+    href: "/",
   },
   {
-    name: "Babybox",
-    link: "/babybox",
+    text: "Babybox",
+    href: "/babybox",
   },
   {
-    name: "Tepelná čerpadla",
-    link: "/cerpadla",
+    text: "Tepelná čerpadla",
+    href: "/cerpadla",
   },
   {
-    name: "Kamerový systém",
-    link: "/kamery",
+    text: "Elektro",
+    href: "/elektro",
   },
   {
-    name: "Elektro",
-    link: "/elektro",
+    text: "Auto",
+    href: "/auto",
   },
   {
-    name: "O nás",
-    link: "/onas",
-  },
-  {
-    name: "Kontakt",
-    link: "/kontakt",
+    text: "Kontakt",
+    href: "/kontakt",
   },
 ];
 ---
 
-<nav class="w-screen pt-14 mb-24">
+<nav class="w-screen pt-14 mb-24 hidden lg:block">
   <div class="container w-11/12 m-auto flex h-100 justify-between items-center">
     <MONTEL color={`text-${bg}-900`} />
     <div class="flex gap-x-5 items-center">
       {
         links.map((l) => (
-          <Link href={l.link} type="ghost" bg={bg}>
-            {l.name}
+          <Link href={l.href} type="ghost" bg={bg}>
+            {l.text}
           </Link>
         ))
       }
     </div>
   </div>
 </nav>
+
+<nav class={`h-40 lg:hidden`}>
+  <HamburgerNavbar client:load links={links} bg={bg} />
+</nav>
+
+<style is:global>
+  /* Position and sizing of burger button */
+  .bm-burger-button {
+    position: absolute;
+    width: 36px;
+    height: 30px;
+    left: 36px;
+    top: 36px;
+  }
+
+  /* Color/shape of burger icon bars */
+  .bm-burger-bars {
+    transition: 0.3s all;
+  }
+
+  /* Color/shape of burger icon bars on hover*/
+  .bm-burger-bars-hover {
+    opacity: 1 !important;
+    filter: brightness(2);
+  }
+
+  /*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+  .bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+  }
+
+  /* General sidebar styles */
+  .bm-menu {
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+    width: auto !important;
+  }
+
+  /* Wrapper for item list */
+  .bm-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0.8em;
+  }
+
+  /* Individual item */
+  .bm-item {
+    display: inline-block;
+  }
+
+  /* Styling of overlay */
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.4);
+  }
+</style>

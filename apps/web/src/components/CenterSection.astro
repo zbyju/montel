@@ -13,7 +13,11 @@ const text = darkColorText(color);
 
 <div class={`${bg} ${text}`}>
   <div class="p-10">
-    <h4 class="font-bold text-6xl text-center mb-3">{heading}</h4>
+    <h4
+      class="font-bold text-6xl text-center mb-3 w-5/6 md:w-3/5 xl:w-1/2 m-auto"
+    >
+      {heading}
+    </h4>
     <slot />
   </div>
 </div>
