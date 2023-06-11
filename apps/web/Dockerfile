@@ -1,17 +1,12 @@
-FROM node:lts-alpine3.16
-
+FROM node:lts AS runtime
 WORKDIR /app
 
-ENV PATH /node_modules/.bin:$PATH
+COPY . .
 
-COPY package.json /app/package.json
-COPY tsconfig.json /app/tsconfig.json
+RUN npm install --legacy-peer-deps
+RUN npm run build
 
-
-RUN npm install -g pnpm
-# install node dependencies
-RUN echo "npm install in progress..." && pnpm install
-
+ENV HOST=0.0.0.0
+ENV PORT=8080
 EXPOSE 8080
-
-CMD [ "pnpm", "dev"]
+CMD node ./dist/server/entry.mjs

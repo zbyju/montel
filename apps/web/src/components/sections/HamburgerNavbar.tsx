@@ -1,6 +1,9 @@
-import { elastic as Menu } from "react-burger-menu";
+import rbm from 'react-burger-menu';
 import type { ColorName } from "../../types/colors.types";
 import type { Link } from "../../types/menu.types";
+
+
+const { elastic: Menu } = rbm;
 
 interface Props {
   bg: ColorName;
