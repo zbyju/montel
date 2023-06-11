@@ -2,6 +2,11 @@
 import CenterSection from "../components/CenterSection.astro";
 import SectionStripe from "../components/SectionStripe.astro";
 import SmallCard from "../components/SmallCard.astro";
+import ChildrenByHour from "../components/babybox/charts/ChildrenByHour";
+import ChildrenByDay from "../components/babybox/charts/ChildrenByDay";
+import ChildrenByMonth from "../components/babybox/charts/ChildrenByMonth";
+import ChildrenByYear from "../components/babybox/charts/ChildrenByYear";
+import ChildrenTotal from "../components/babybox/charts/ChildrenTotal";
 import Layout from "../layouts/Layout.astro";
 
 const bg = "pink";
@@ -70,12 +75,28 @@ const text = "pink";
     </SectionStripe>
 
     <CenterSection heading="Statistiky" color="pink">
-      <li>Pocet deti</li>
-      <li>Odlozene deti v case</li>
-      <li>Odlozeni v jednotlivych castech dne</li>
-      <li>Odlozeni v podle mesice</li>
-      <li>Odlozeni v podle dne v tydnu</li>
-      <li>Pocet deti v jednotlivych babyboxech</li>
+      <h3 class="text-xl text-center font-bold mt-5">Počet dětí</h3>
+      <ChildrenTotal client:load />
+
+      <h3 class="text-xl text-center font-bold mt-10">
+        Počet dětí v jednotlivých letech
+      </h3>
+      <ChildrenByYear client:load />
+
+      <h3 class="text-xl text-center font-bold mt-10">
+        Počet dětí podle měsíce
+        <ChildrenByMonth client:load />
+      </h3>
+
+      <h3 class="text-xl text-center font-bold mt-10">
+        Počet dětí podle dne v týdnu
+      </h3>
+      <ChildrenByDay client:load />
+
+      <h3 class="text-xl text-center font-bold mt-10">
+        Počet dětí podle času odložení
+      </h3>
+      <ChildrenByHour client:load />
     </CenterSection>
   </div>
 </Layout>
