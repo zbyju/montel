@@ -20,18 +20,23 @@ const generatedSafelist = [
   const weights = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
   const importantWeights = [50, 100, 900]
   const bgs = weights.map((w) => `bg-${color}-${w}`);
+  const borders = weights.map((w) => `border-${color}-${w}`);
   const fills = importantWeights.map(w => `fill-${color}-${w}`)
   const hoverBgs = weights.map((w) => `hover:bg-${color}-${w}`);
+  const hoverBorder = weights.map((w) => `hover:border-${color}-${w}`);
+  const hoverText = weights.map((w) => `hover:text-${color}-${w}`);
   const texts = weights.map((w) => `text-${color}-${w}`);
   const froms = weights.map((w) => `from-${color}-${w}`);
   const tos = weights.map((w) => `to-${color}-${w}`);
-  return safelist.concat(bgs, hoverBgs, texts, fills, froms, tos);
+  return safelist.concat(bgs, borders, hoverBgs, hoverBorder, hoverText, texts, fills, froms, tos);
 }, []);
 
 const generateBasicSafelist = ["white"].reduce((safelist, color) => {
   return safelist.concat(
     "bg-" + color,
+    "border-" + color,
     "hover:bg-" + color,
+    "hover:border-" + color,
     "text-" + color,
     "from-" + color,
     "to-" + color
@@ -53,7 +58,7 @@ const generateResponsiveSafelist = [
 }, []);
 
 module.exports = {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}", "./node_modules/flowbite/**/*.js"],
   safelist: [].concat(
     generatedSafelist,
     generateBasicSafelist,
@@ -68,7 +73,13 @@ module.exports = {
       xl: "1280px",
       "2xl": "1536px",
     },
-    extend: {},
+    extend: {
+      height: {
+        "750px": "750px"
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    require("flowbite/plugin")
+  ],
 };
