@@ -1,20 +1,23 @@
 ---
 import type { ColorName } from "../../types/colors.types";
-import MONTEL from "../MONTEL.astro";
+import { colorBg, colorText } from "../../utils/colors";
+import MONTEL from "../elements/MONTEL.astro";
 
 interface Props {
   bg: ColorName;
   text: ColorName;
 }
 
-const { bg, text } = Astro.props;
+const { text } = Astro.props;
 
+const bgColor = colorBg(text, 900);
+const textColor = colorText(text, 100);
 const alsoLookAtClass = "ml-4 underline hover:brightness-200";
 ---
 
-<footer class={`bg-${text}-900 text-${text}-100 shadow-md`}>
+<footer class={`${bgColor} ${textColor} shadow-md`}>
   <div class="px-20 pb-10 w-full flex flex-wrap justify-start">
-    <MONTEL color={`text-${text}-100`} className="self-center mt-12 mr-40" />
+    <MONTEL color={textColor} className="self-center mt-12 mr-40" />
     <div class="flex flex-wrap flex-grow">
       <div class="mt-12 mr-20 flex-grow">
         <p>Kontakt:</p>

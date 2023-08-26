@@ -4,11 +4,18 @@ interface Props {
   alt: string;
   className?: string;
   imageClassName?: string;
+  style?: string;
 }
-const { src, alt, className, imageClassName } = Astro.props;
+const {
+  src,
+  alt,
+  className = "",
+  imageClassName = "",
+  style = "",
+} = Astro.props;
 ---
 
-<div class={className}>
+<div class={className} style={style}>
   <img
     src={src}
     alt={alt}

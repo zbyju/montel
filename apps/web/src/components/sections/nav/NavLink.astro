@@ -1,0 +1,53 @@
+---
+import type { ColorName } from "../../../types/colors.types";
+import type { Link as LinkType } from "../../../types/menu.types";
+import Link from "../../elements/Link.astro";
+
+interface Props {
+  link: LinkType;
+  bg: ColorName;
+}
+
+const { link: l, bg } = Astro.props;
+---
+
+{
+  "href" in l ? (
+    <Link link={{ href: l.href, text: l.text }} type="ghost" bg={bg} />
+  ) : (
+    <>
+      <button
+        id={`navdropdown-${l.text}-button`}
+        data-dropdown-toggle={`navdropdown-${l.text}`}
+        data-dropdown-delay="100"
+        data-dropdown-trigger="hover"
+        data-dropdown-offset-distance="5"
+        class="cursor-default"
+      >
+        <Link
+          bg={bg}
+          type={"ghost"}
+          link={{ href: null, text: l.text, className: "cursor-default" }}
+        />
+      </button>
+      <div
+        id={`navdropdown-${l.text}`}
+        class={`z-10 hidden bg-${bg}-50 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}
+      >
+        <ul
+          class="py-2 text-sm text-gray-700 dark:text-gray-200"
+          aria-labelledby={`navdropdown-${l.text}`}
+        >
+          {l.links.map((s) => (
+            <a
+              href={s.href}
+              class={`block px-4 py-2 hover:bg-${bg}-900 hover:text-white transition`}
+            >
+              {s.text}
+            </a>
+          ))}
+        </ul>
+      </div>
+    </>
+  )
+}

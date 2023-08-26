@@ -11,7 +11,6 @@ export default function ChildrenByHour() {
       Kluci: Math.floor(Math.random() * 15)
     }
   })
-  console.log(data)
   return (
     <div className="lg:w-3/5 w-full aspect-video pa-5 m-auto">
       <ResponsiveBar

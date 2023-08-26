@@ -1,0 +1,23 @@
+---
+import NavLink from "./NavLink.astro";
+import MONTEL from "../../elements/MONTEL.astro";
+import type { Link as LinkType } from "../../../types/menu.types";
+import type { ColorName } from "../../../types/colors.types";
+import { colorText } from "../../../utils/colors";
+
+interface Props {
+  links: LinkType[];
+  bg: ColorName;
+}
+
+const { links, bg } = Astro.props;
+
+const textColor = colorText(bg, 900);
+---
+
+<div class="container w-11/12 m-auto flex h-100 justify-between items-center">
+  <MONTEL color={textColor} />
+  <div class="flex gap-x-5 items-center">
+    {links.map((l) => <NavLink link={l} bg={bg} />)}
+  </div>
+</div>

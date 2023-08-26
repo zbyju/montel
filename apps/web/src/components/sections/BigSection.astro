@@ -1,0 +1,65 @@
+---
+import Link from "../elements/Link.astro";
+import Image from "../elements/Image.astro";
+import type { ColorName } from "../../types/colors.types";
+import type { ImageElInfo, LinkElInfo } from "../../types/element.types";
+
+interface Props {
+  heading: string;
+  color: ColorName;
+  className?: string;
+  image?: ImageElInfo;
+  links?: LinkElInfo[];
+}
+
+const { heading, color, className, image, links } = Astro.props;
+const bg = `bg-${color}-100`;
+const text = `text-${color}-900`;
+---
+
+<div class={`${bg} ${className}`}>
+  <div class="w-11/12 m-auto">
+    <div class="flex flex-wrap items-center gap-x-10">
+      <div class="md:flex-1 md:flex-col">
+        <h2
+          class={`${text} lg:text-7xl md:text-5xl sm:text-6xl text-5xl md:text-left text-center font-black tracking-wider word-wide`}
+        >
+          {heading}
+        </h2>
+        <div
+          class="my-10 flex flex-row gap-4 flex-wrap lg:justify-start justify-center"
+        >
+          {
+            links &&
+              links.map((l) => (
+                <Link
+                  link={{
+                    href: l.href,
+                    text: l.text,
+                    className: "p-4 py-2 text-xl " + l.className,
+                  }}
+                  bg={color}
+                />
+              ))
+          }
+        </div>
+      </div>
+      {
+        image ? (
+          <Image
+            src={image.href}
+            alt={image.alt}
+            className={"lg:w-1/2 md:w-full w-0 " + image.className}
+            imageClassName="hidden md:block w-full"
+          />
+        ) : null
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .word-wider {
+    word-spacing: 5px;
+  }
+</style>

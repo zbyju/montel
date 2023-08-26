@@ -8,7 +8,6 @@ export default function ChildrenTotal() {
     id: "Holky",
     value: Math.floor(Math.random() * 200)
   }]
-  console.log(data)
   return (
     <div className="lg:w-3/5 w-full aspect-video pa-5 m-auto">
       <ResponsivePie

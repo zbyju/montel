@@ -1,0 +1,39 @@
+---
+import type {
+  ColorBg,
+  ColorBgHover,
+  ColorName,
+  ColorText,
+  ColorTextHover,
+  ColorWeighted,
+} from "../../types/colors.types";
+import type { LinkElInfo } from "../../types/element.types";
+import { hoverColor, colorWeighted, oppositeColor } from "../../utils/colors";
+
+interface Props {
+  link: LinkElInfo;
+  bg: ColorName;
+  type?: "ghost" | "solid";
+}
+const { link, type, bg: bgName } = Astro.props;
+
+const color: ColorWeighted = colorWeighted(bgName, 900);
+const colorHover = hoverColor(color);
+const secondary = oppositeColor(color);
+const secondaryHover = hoverColor(secondary);
+
+const style =
+  type === "ghost"
+    ? `text-${color} hover:bg-${color} hover:text-${secondaryHover}`
+    : `bg-${color} hover:bg-${colorHover} text-${secondary} hover:text-${secondaryHover}`;
+---
+
+<a
+  class:list={[
+    "inline-flex w-auto px-4 py-2 rounded-full transition-all duration-500 ease-in-out",
+    style,
+    link?.className,
+  ]}
+  style={link?.style}
+  href={link.href ?? null}>{link.text}</a
+>

@@ -1,6 +1,7 @@
 import rbm from 'react-burger-menu';
-import type { ColorName } from "../../types/colors.types";
-import type { Link } from "../../types/menu.types";
+import type { ColorName } from "../../../types/colors.types";
+import type { Link } from "../../../types/menu.types";
+import HamburgerLink from './HamburgerLink';
 
 
 const { elastic: Menu } = rbm;
@@ -26,9 +27,7 @@ export function HamburgerNavbar({ links, bg }: Props) {
       overlayClassName={bgColor}
     >
       {links.map((link) => (
-        <a className={link.className} href={link.href} key={link.href}>
-          {link.text}
-        </a>
+        <HamburgerLink link={link} bg={bg} />
       ))}
     </Menu>
   );

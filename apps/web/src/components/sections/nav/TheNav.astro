@@ -1,9 +1,8 @@
 ---
-import Link from "../Link.astro";
-import MONTEL from "../MONTEL.astro";
-import { HamburgerNavbar } from "./HamburgerNavbar";
-import type { Link as LinkType } from "../../types/menu.types";
-import type { ColorName } from "../../types/colors.types";
+import MainNav from "./MainNav.astro";
+import { HamburgerNavbar } from "./HamburgerNav";
+import type { Link as LinkType } from "../../../types/menu.types";
+import type { ColorName } from "../../../types/colors.types";
 
 interface Props {
   bg: ColorName;
@@ -21,37 +20,32 @@ const links: LinkType[] = [
     href: "/babybox",
   },
   {
-    text: "Tepelná čerpadla",
-    href: "/cerpadla",
-  },
-  {
     text: "Elektro",
-    href: "/elektro",
+    links: [
+      { text: "Tepelná čerpadla", href: "/cerpadla" },
+      { text: "Fotovoltaika", href: "/fotovoltaika" },
+      { text: "Zabezpečovací systémy", href: "/zabezpeceni" },
+      { text: "Kamerové systémy", href: "/kamery" },
+    ],
   },
   {
     text: "Auto",
-    href: "/auto",
+    links: [
+      { text: "Autoservis, Pneuservis", href: "/autoservis" },
+      { text: "Opravy zdvihacích plošin", href: "/plosiny" },
+      { text: "Opravy alternátorů, startéru", href: "/alternator" },
+      { text: "Nákladní doprava", href: "/doprava" },
+    ],
   },
   {
-    text: "Kontakt",
+    text: "Kontakty",
     href: "/kontakt",
   },
 ];
 ---
 
 <nav class="w-screen pt-14 mb-24 hidden lg:block">
-  <div class="container w-11/12 m-auto flex h-100 justify-between items-center">
-    <MONTEL color={`text-${bg}-900`} />
-    <div class="flex gap-x-5 items-center">
-      {
-        links.map((l) => (
-          <Link href={l.href} type="ghost" bg={bg}>
-            {l.text}
-          </Link>
-        ))
-      }
-    </div>
-  </div>
+  <MainNav links={links} bg={bg} />
 </nav>
 
 <nav class={`h-40 lg:hidden`}>
@@ -90,9 +84,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
   /* General sidebar styles */
   .bm-menu {
-    padding: 2.5em 1.5em 0;
+    padding: 1.5em 1.5em 1.5em 0;
     font-size: 1.15em;
     width: auto !important;
+    height: 100%;
+    overflow-y: auto !important;
+    overflow-x: hidden;
   }
 
   /* Wrapper for item list */
@@ -101,6 +98,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
     flex-direction: column;
     gap: 20px;
     padding: 0.8em;
+    height: auto !important;
   }
 
   /* Individual item */
@@ -111,5 +109,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   /* Styling of overlay */
   .bm-overlay {
     background: rgba(0, 0, 0, 0.4);
+  }
+
+  .bm-cross-button {
+    right: 16px !important;
+    top: 16px !important;
   }
 </style>

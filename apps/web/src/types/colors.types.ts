@@ -18,17 +18,11 @@ export type SimpleColorName = "black" | "white";
 
 export type ColorName = ComplexColorName | SimpleColorName;
 
-export type ColorWeight =
-  | 50
-  | 100
-  | 200
-  | 300
-  | 400
-  | 500
-  | 600
-  | 700
-  | 800
-  | 900;
+export type LightColor = 50 | 100 | 200 | 300 | 400;
+export type MediumColor = 500;
+export type DarkColor = 600 | 700 | 800 | 900;
+
+export type ColorWeight = LightColor | MediumColor | DarkColor;
 
 export type ColorWeighted = `${ComplexColorName}-${ColorWeight}` | SimpleColorName
 

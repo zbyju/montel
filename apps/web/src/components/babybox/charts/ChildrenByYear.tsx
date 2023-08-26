@@ -16,7 +16,6 @@ export default function ChildrenByYear() {
     }))
   }]
 
-  console.log(data)
   return (
     <div className="lg:w-3/5 w-full aspect-video pa-5 m-auto">
       <ResponsiveLine

@@ -1,6 +1,6 @@
 ---
 import TheFooter from "../components/sections/TheFooter.astro";
-import TheNav from "../components/sections/TheNav.astro";
+import TheNav from "../components/sections/nav/TheNav.astro";
 import type { ColorName } from "../types/colors.types";
 
 export interface Props {
@@ -22,7 +22,9 @@ const { title, bg, text } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <header class={`bg-${bg}-100 text-${text}-900 h-screen w-screen`}>
+    <header
+      class={`bg-${bg}-100 text-${text}-900 sm:h-screen h-750px w-screen flex flex-col`}
+    >
       <TheNav bg={text} />
       <slot name="header" />
     </header>
@@ -30,12 +32,14 @@ const { title, bg, text } = Astro.props;
       <slot />
     </main>
     <TheFooter bg={bg} text={text} />
+    <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
   </body>
 </html>
 
 <style is:global>
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   body {
     padding: 0;

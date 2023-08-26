@@ -1,7 +1,7 @@
 ---
-import type { ColorName } from "../types/colors.types";
-import Image from "./Image.astro";
-import Link from "./Link.astro";
+import type { ColorName } from "../../types/colors.types";
+import Image from "../elements/Image.astro";
+import Link from "../elements/Link.astro";
 
 interface Props {
   align: "left" | "right";
@@ -26,7 +26,7 @@ const textAlign = align === "right" ? "text-right" : "text-left";
 <div class={`w-screen ${bg} pb-7 ${className}`}>
   <div class={`py-16 px-3 md:px-10 ${text} flex ${sort} gap-10`}>
     <div
-      class={`flex-grow flex flex-col items-center md:${items} text-center md:${textAlign}`}
+      class={`flex-grow flex flex-col items-center lg:w-3/4 w-full md:${items} text-center md:${textAlign}`}
     >
       <h3 class="text-5xl md:text-6xl font-bold mb-3">
         {heading}
@@ -43,9 +43,14 @@ const textAlign = align === "right" ? "text-right" : "text-left";
       <div class="mb-3 text-md">
         <slot />
       </div>
-      <Link bg={color} href="/babybox" className={`self-center md:${self}`}>
-        Vice
-      </Link>
+      <!-- <Link -->
+      <!--   bg={color} -->
+      <!--   link={{ -->
+      <!--     href: "/babybox", -->
+      <!--     text: "Více", -->
+      <!--     className: `self-center md:${self}`, -->
+      <!--   }} -->
+      <!-- /> -->
     </div>
     {
       image && (
