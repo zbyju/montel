@@ -1,0 +1,17 @@
+---
+import type { ElementInfo } from "../../types/element.types";
+import type { PillInfo } from "../../types/pill.types";
+import Pill from "../elements/Pill";
+
+interface Props extends ElementInfo {
+  pills: PillInfo[];
+}
+const { pills, className, style } = Astro.props;
+---
+
+<div
+  class={`flex flex-row flex-wrap justify-center gap-x-6 gap-y-4 my-5 mx-auto ${className}`}
+  style={style || ""}
+>
+  {pills.map((pill) => <Pill pill={pill} client:load />)}
+</div>
