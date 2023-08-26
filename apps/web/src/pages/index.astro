@@ -10,12 +10,12 @@ import {
   faCar,
   faFan,
 } from "@fortawesome/free-solid-svg-icons";
-import Card from "../components/Card.astro";
+import Card from "../components/elements/Card.astro";
 import Layout from "../layouts/Layout.astro";
-import SectionStripe from "../components/SectionStripe.astro";
-import BigSection from "../components/BigSection.astro";
-import HoverImage from "../components/HoverImage.astro";
-import CenterSection from "../components/CenterSection.astro";
+import SectionStripe from "../components/sections/SectionStripe.astro";
+import BigSection from "../components/sections/BigSection.astro";
+import HoverImage from "../components/elements/HoverImage.astro";
+import CenterSection from "../components/sections/CenterSection.astro";
 
 const bg = "blue";
 const text = "blue";
@@ -28,6 +28,8 @@ const iconClass = "max-w-[40px] max-h-[40px]";
     slot="header"
     color="blue"
     heading="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    image={{ href: "https://placehold.co/1280x720", alt: "placeholder" }}
+    links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
   <div
     class="w-screen m-auto px-10 -mt-16 flex gap-7 justify-around flex-wrap"

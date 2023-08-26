@@ -1,44 +1,86 @@
 ---
-import CenterSection from "../components/CenterSection.astro";
-import SectionStripe from "../components/SectionStripe.astro";
-import SmallCard from "../components/SmallCard.astro";
+import CenterSection from "../components/sections/CenterSection.astro";
+import SectionStripe from "../components/sections/SectionStripe.astro";
+import SmallCard from "../components/elements/SmallCard.astro";
 import ChildrenByHour from "../components/babybox/charts/ChildrenByHour";
 import ChildrenByDay from "../components/babybox/charts/ChildrenByDay";
 import ChildrenByMonth from "../components/babybox/charts/ChildrenByMonth";
 import ChildrenByYear from "../components/babybox/charts/ChildrenByYear";
 import ChildrenTotal from "../components/babybox/charts/ChildrenTotal";
 import Layout from "../layouts/Layout.astro";
+import BigSection from "../components/sections/BigSection.astro";
+import PillsSection from "../components/sections/PillsSection.astro";
 
 const bg = "pink";
 const text = "pink";
 ---
 
 <Layout title="MONTEL" bg={bg} text={text}>
-  <div slot="header" class="w-11/12 m-auto">
-    <p class="text-7xl font-black w-9/12 tracking-wider word-wider">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </p>
-  </div>
+  <BigSection
+    slot="header"
+    color={bg}
+    heading="Pro ty nejmenší v nouzi ostrůvek bezpečí vždy čeká, nesouc naději v těžkých chvílích."
+    links={[
+      { href: "#offering", text: "O Babyboxu" },
+      { href: "#stats", text: "Statistiky" },
+    ]}
+  />
 
   <div>
     <CenterSection color="white" heading="Funkce">
-      <div class="flex flex-wrap gap-5 justify-around mt-5 px-10">
-        <SmallCard heading="Automaticke dvere" color="white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </SmallCard>
-        <SmallCard heading="Vytapeni" color="white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </SmallCard>
-        <SmallCard heading="Email" color="white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </SmallCard>
-        <SmallCard heading="SMS" color="white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </SmallCard>
-        <SmallCard heading="Automaticke dvere" color="white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </SmallCard>
-      </div>
+      <PillsSection
+        className={"lg:w-3/4 mt-8"}
+        pills={[
+          {
+            title: "Automatické dvířka",
+            color: "blue-900",
+          },
+          {
+            title: "Detekce zábrany dvířek",
+            color: "blue-900",
+          },
+          {
+            title: "Automatická regulace teploty",
+            color: "blue-900",
+          },
+          {
+            title: "Klimatizace",
+            color: "blue-900",
+          },
+          {
+            title: "Vytápění",
+            color: "blue-900",
+          },
+          {
+            title: "Nerezový materiál",
+            color: "blue-900",
+          },
+          {
+            title: "24/7 Monitoring",
+            color: "rose-900",
+          },
+          {
+            title: "Kamera uvnitř Babyboxu",
+            color: "rose-900",
+          },
+          {
+            title: "SMS Upozornění",
+            color: "rose-900",
+          },
+          {
+            title: "Emailová notifikace",
+            color: "rose-900",
+          },
+          {
+            title: "Vzdálená analýza dat",
+            color: "green-900",
+          },
+          {
+            title: "Vzdálená správa babyboxu",
+            color: "green-900",
+          },
+        ]}
+      />
     </CenterSection>
 
     <SectionStripe
@@ -47,9 +89,14 @@ const text = "pink";
       heading="Babybox"
       image={{ src: "http://placehold.co/640x360", alt: "" }}
     >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, a? Odit
-      blanditiis repellendus sequi omnis in magnam eligendi ullam laboriosam
-      eveniet, doloremque et, a iusto saepe voluptates provident ut! Eligendi?
+      Babyboxy, umístěné v nemocnicích daného regionu, představují záchranný bod
+      pro ty, kteří se ocitnou v hluboké životní nouzi. Toto diskrétní řešení
+      nabízí rodičům ve špatné životní situaci možnost zanechat své novorozence
+      v bezpečném a regulovaném prostředí, když cítí, že nemohou poskytnout
+      dítěti odpovídající péči. Díky moderním technologiím babyboxy zajišťují
+      nepřetržitý dohled, pohodlí a teplotní regulaci pro miminka. Tímto
+      způsobem nemocnice ukazuje svůj hluboký závazek k ochraně a podpoře těch
+      nejzranitelnějších členů regionu v kritických chvílích jejich života.
     </SectionStripe>
 
     <SectionStripe
@@ -58,9 +105,12 @@ const text = "pink";
       heading="Rozvadec"
       image={{ src: "http://placehold.co/640x360", alt: "" }}
     >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, a? Odit
-      blanditiis repellendus sequi omnis in magnam eligendi ullam laboriosam
-      eveniet, doloremque et, a iusto saepe voluptates provident ut! Eligendi?
+      Rozváděč v nemocnici je klíčový pro optimální fungování babyboxu. Obsahuje
+      akumulátor, který přebírá napájení při výpadku elektrické energie. Router
+      zajišťuje stálé připojení k internetu a komunikaci s monitorovacím
+      panelem. GSM komunikátor, který v případě potřeby rozesílá SMS zprávy jako
+      upozornění, poskytuje další vrstvu zabezpečení. Vše je napájeno z 12V
+      zdroje.
     </SectionStripe>
 
     <SectionStripe
@@ -69,9 +119,18 @@ const text = "pink";
       heading="Monitorovaci panel"
       image={{ src: "http://placehold.co/640x360", alt: "" }}
     >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, a? Odit
-      blanditiis repellendus sequi omnis in magnam eligendi ullam laboriosam
-      eveniet, doloremque et, a iusto saepe voluptates provident ut! Eligendi?
+      <p>
+        V nemocnici je umístěn monitorovací panel, primárně navržený pro
+        sledování obsahu babyboxu. Jakmile je zatížena vanička babyboxu, obsluha
+        je okamžitě upozorněna. Díky integrované kameře může obsluha v reálném
+        čase vidět, zda je v babyboxu dítě, a okamžitě zasáhnout.
+      </p>
+      <p class="mt-3">
+        Panel také zobrazuje další důležité informace, jako je teplota uvnitř
+        boxu, napětí systému a stav dvířek. Jakékoli odchylky nebo neobvyklé
+        události generují upozornění, což zajišťuje, že dítě v babyboxu má
+        neustálou péči a dohled.
+      </p>
     </SectionStripe>
 
     <CenterSection heading="Statistiky" color="pink">
