@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BigSection from "../components/sections/BigSection.astro";
+import CenterSection from "../components/sections/CenterSection.astro";
+import PillsSection from "../components/sections/PillsSection.astro";
+
+const bg = "yellow";
+const text = "yellow";
+---
+
+<Layout title="MONTEL" bg={bg} text={text}>
+  <BigSection
+    slot="header"
+    color={bg}
+    heading="Hledáte zabezpečení či automatizaci pro domov či obchod? Nabízíme vše v jednom."
+    image={{ href: "https://placehold.co/1280x720", alt: "placeholder" }}
+    links={[{ href: "#offering", text: "Co nabízíme?" }]}
+  />
+
+  <CenterSection heading="Nabízíme" color="white">
+    <PillsSection
+      pills={[
+        { title: "Vnitřní zabezpečení", color: "blue-600" },
+        { title: "Venkovní zabezpečení", color: "blue-600" },
+        { title: "Požární zabezpečení", color: "orange-700" },
+        { title: "Zabezpečení bazénu", color: "sky-300" },
+        { title: "Hlídaní vniknutí vody", color: "sky-500" },
+        { title: "Ovládání rozsvěcení světel", color: "green-600" },
+        { title: "Ovládání zámků", color: "green-600" },
+        { title: "Zvonek u vchodu", color: "green-700" },
+        { title: "Propojení s kamerovým systémem", color: "teal-700" },
+        { title: "Měření odběru, výroby elektřiny", color: "yellow-300" },
+        { title: "Snímání teploty", color: "purple-600" },
+        { title: "Zónovou regulaci teploty", color: "purple-600" },
+        { title: "Ovládání přes mobilní aplikaci / PC", color: "purple-700" },
+      ]}
+    />
+  </CenterSection>
+</Layout>
