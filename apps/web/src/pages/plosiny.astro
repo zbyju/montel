@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BigSection from "../components/sections/BigSection.astro";
+import SmallCard from "../components/elements/SmallCard.astro";
+import CenterSection from "../components/sections/CenterSection.astro";
+import PillsSection from "../components/sections/PillsSection.astro";
+
+const bg = "purple";
+const text = "purple";
+---
+
+<Layout title="MONTEL" bg={bg} text={text}>
+  <BigSection
+    slot="header"
+    color="purple"
+    heading="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    image={{ href: "https://placehold.co/1280x720", alt: "placeholder" }}
+    links={[{ href: "#offering", text: "Co nabízíme?" }]}
+  />
+
+  <CenterSection heading="Nabízíme" color="white">
+    <PillsSection
+      pills={[
+        { title: "Montáž nových plošin", color: "green-600" },
+        { title: "Montáž bezdrátového dálkového ovládání", color: "green-600" },
+        { title: "Oprava řídích jednotek", color: "yellow-300" },
+        { title: "Oprava elektroinstalace plošin", color: "yellow-300" },
+        { title: "Opravy mechanických částí", color: "yellow-300" },
+        { title: "Výkup a prodej použitých plošin", color: "purple-600" },
+        { title: "Prodej náhradních dílů", color: "purple-600" },
+        { title: "Vystavení TP pro hydraulickou plošinu", color: "green-400" },
+      ]}
+    />
+  </CenterSection>
+
+  <div class="w-11/12 m-auto">
+    <p class="text-7xl font-black w-9/12 tracking-wider word-wider">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+    <div class="flex flex-wrap gap-5 justify-around mt-5 px-10">
+      <SmallCard heading="Automaticke dvere" color="white">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </SmallCard>
+      <SmallCard heading="Vytapeni" color="white">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </SmallCard>
+      <SmallCard heading="Email" color="white">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </SmallCard>
+      <SmallCard heading="SMS" color="white">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </SmallCard>
+      <SmallCard heading="Automaticke dvere" color="white">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </SmallCard>
+    </div>
+  </div>
+</Layout>
