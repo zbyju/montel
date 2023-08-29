@@ -1,14 +1,18 @@
 ---
-import type { ColorName } from "../../types/colors.types";
+import type { ColorName, ColorWeighted } from "../../types/colors.types";
+import { colorWeighted, hoverColor } from "../../utils/colors";
 import Link from "./Link.astro";
 
 interface Props {
   header: string;
   description: string;
-  bg: ColorName;
+  color: ColorName;
+  iconColor: ColorWeighted;
 }
 
-const { header, description, bg } = Astro.props;
+const { header, description, color, iconColor } = Astro.props;
+
+const primaryColor = colorWeighted(color, 900);
 ---
 
 <div
@@ -16,15 +20,15 @@ const { header, description, bg } = Astro.props;
 >
   <div class="h-full p-5 flex flex-col justify-between">
     <div>
-      <div class={`w-10 h-[50px] text-rose-600 mb-3`}>
+      <div class={`w-10 h-[50px] text-${iconColor} mb-3`}>
         <slot name="icon" />
       </div>
-      <h3 class="text-blue-900 font-bold text-2xl mb-1">{header}</h3>
-      <p class="mb-2 text-blue-900">{description}</p>
+      <h3 class={`text-${primaryColor} font-bold text-2xl mb-1`}>{header}</h3>
+      <p class={`mb-2 text-${primaryColor}`}>{description}</p>
     </div>
     <Link
       link={{ href: "/babybox", text: "Více", className: "self-start" }}
-      bg={bg}
+      bg={color}
     />
   </div>
 </div>
