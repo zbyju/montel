@@ -1,17 +1,25 @@
 export type ComplexColorName =
   | "slate"
-  | "blue"
-  | "pink"
-  | "cyan"
+  | "gray"
+  | "zinc"
+  | "neutral"
+  | "stone"
+  | "red"
+  | "orange"
   | "amber"
   | "yellow"
   | "lime"
   | "green"
   | "emerald"
   | "teal"
+  | "cyan"
   | "sky"
+  | "blue"
   | "indigo"
   | "violet"
+  | "purple"
+  | "fuchsia"
+  | "pink"
   | "rose";
 
 export type SimpleColorName = "black" | "white";
