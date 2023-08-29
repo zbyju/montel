@@ -1,0 +1,51 @@
+---
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBuilding } from "@fortawesome/free-solid-svg-icons"; // Import any other icons you need.
+import type { ColorName } from "../../../types/colors.types";
+import { colorWeighted, hoverColor } from "../../../utils/colors";
+
+interface Props {
+  color: ColorName;
+  color2: ColorName;
+  department: string;
+  phone?: string;
+  email?: string;
+}
+
+const { color, color2, department, phone, email } = Astro.props;
+
+const primaryColor = colorWeighted(color, 900);
+const primaryColorHover = hoverColor(primaryColor);
+const secondaryColor = colorWeighted(color2, 300);
+const secondaryColorHover = hoverColor(secondaryColor);
+
+const primaryColor2 = colorWeighted(color, 700);
+const primaryColor2Hover = colorWeighted(color, 500);
+---
+
+<div class="flex flex-col">
+  <div class="flex flex-col justify-end h-24">
+    <div class={`w-10 mb-3 mx-1 flex items-center`}>
+      <slot name="icon" />
+    </div>
+    <div class={`w-12 h-1 bg-${secondaryColor} mb-4`}></div>
+  </div>
+  <div class="mt-1">
+    <h3 class="text-xl font-semibold">{department}</h3>
+    <slot />
+    {
+      email && (
+        <p>
+          Email:{" "}
+          <a
+            class={`text-${primaryColor2} hover:text-${primaryColor2Hover} transition duration-300 ease-in-out`}
+            href={"mailto:" + email}
+          >
+            {email}
+          </a>
+        </p>
+      )
+    }
+    {phone && <p>Phone: {phone}</p>}
+  </div>
+</div>
