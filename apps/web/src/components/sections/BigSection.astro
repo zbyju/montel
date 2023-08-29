@@ -6,13 +6,14 @@ import type { ImageElInfo, LinkElInfo } from "../../types/element.types";
 
 interface Props {
   heading: string;
+  subheading?: string;
   color: ColorName;
   className?: string;
   image?: ImageElInfo;
   links?: LinkElInfo[];
 }
 
-const { heading, color, className, image, links } = Astro.props;
+const { heading, subheading, color, className, image, links } = Astro.props;
 const bg = `bg-${color}-100`;
 const text = `text-${color}-900`;
 ---
@@ -26,6 +27,11 @@ const text = `text-${color}-900`;
         >
           {heading}
         </h2>
+        <h3
+          class={`${text} lg:text-5xl md:text-3xl sm:text-5xl text-4xl md:text-left text-center font-bold tracking-wider word-wide`}
+        >
+          {subheading}
+        </h3>
         <div
           class="my-10 flex flex-row gap-4 flex-wrap lg:justify-start justify-center"
         >
@@ -49,7 +55,7 @@ const text = `text-${color}-900`;
           <Image
             src={image.href}
             alt={image.alt}
-            className={"lg:w-1/2 md:w-full w-0 " + image.className}
+            className={"lg:w-2/5 md:w-full w-0 " + image.className}
             imageClassName="hidden md:block w-full"
           />
         ) : null
