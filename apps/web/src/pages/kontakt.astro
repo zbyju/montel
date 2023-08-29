@@ -1,13 +1,16 @@
 ---
 import SmallCard from "../components/elements/SmallCard.astro";
+import ContactSection from "../components/sections/contact/ContactSection.astro";
 import Layout from "../layouts/Layout.astro";
 
-const bg = "cyan";
-const text = "cyan";
+const bg = "blue";
+const text = "blue";
 ---
 
 <Layout title="MONTEL" bg={bg} text={text}>
-  <div slot="header" class="w-11/12 m-auto">
+  <ContactSection slot="header" color={text} color2={"yellow"} />
+
+  <div class="w-11/12 m-auto">
     <p class="text-7xl font-black w-9/12 tracking-wider word-wider">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>
@@ -30,9 +33,3 @@ const text = "cyan";
     </div>
   </div>
 </Layout>
-
-<style>
-  .word-wider {
-    word-spacing: 5px;
-  }
-</style>
