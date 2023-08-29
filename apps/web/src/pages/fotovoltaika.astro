@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BigSection from "../components/sections/BigSection.astro";
+
+const bg = "sky";
+const text = "sky";
+---
+
+<Layout title="MONTEL" bg={bg} text={text}>
+  <BigSection
+    slot="header"
+    color="sky"
+    heading="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    image={{ href: "https://placehold.co/1280x720", alt: "placeholder" }}
+    links={[{ href: "#offering", text: "Co nabízíme?" }]}
+  />
+</Layout>
