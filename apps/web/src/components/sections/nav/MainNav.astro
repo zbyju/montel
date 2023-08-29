@@ -15,7 +15,7 @@ const { links, bg } = Astro.props;
 const textColor = colorText(bg, 900);
 ---
 
-<div class="container w-11/12 m-auto flex h-100 justify-between items-center">
+<div class="w-11/12 m-auto flex flex-grow h-100 justify-between items-center">
   <MONTEL color={textColor} />
   <div class="flex gap-x-5 items-center">
     {links.map((l) => <NavLink link={l} bg={bg} />)}
