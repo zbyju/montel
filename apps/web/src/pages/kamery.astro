@@ -1,20 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import BigSection from "../components/sections/BigSection.astro";
 
 const bg = "yellow";
 const text = "yellow";
 ---
 
 <Layout title="MONTEL" bg={bg} text={text}>
-  <div slot="header" class="w-11/12 m-auto">
-    <p class="text-7xl font-black w-9/12 tracking-wider word-wider">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </p>
-  </div>
+  <BigSection
+    slot="header"
+    color="yellow"
+    heading="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    image={{ href: "https://placehold.co/1280x720", alt: "placeholder" }}
+    links={[{ href: "#offering", text: "Co nabízíme?" }]}
+  />
 </Layout>
-
-<style>
-  .word-wider {
-    word-spacing: 5px;
-  }
-</style>
