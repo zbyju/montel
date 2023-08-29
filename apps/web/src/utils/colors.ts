@@ -54,6 +54,7 @@ export const oppositeColor = (color: ColorWeighted, lightWeight: ColorWeight = 5
   const [name, weight] = splitColorWeighted(color)
   if (isDarkColor(weight)) return `${name}-${lightWeight}` as ColorWeighted
   if (isLightColor(weight)) return `${name}${darkWeight}` as ColorWeighted
+  if (isMediumColor(weight)) return `${name}-${lightWeight}` as ColorWeighted
 
   return color
 }
@@ -68,4 +69,4 @@ export const hoverColor = (color: ColorWeighted): ColorWeighted => {
 export const darkColorBg = (color: ColorName): ColorBg => colorBg(color, 900);
 export const lightColorBg = (color: ColorName): ColorBg => colorBg(color, 100);
 export const darkColorText = (color: ColorName): ColorText => colorText(color, 900);
-export const lightColorText = (color: ColorName): ColorText => colorText(color, 900);
+export const lightColorText = (color: ColorName): ColorText => colorText(color, 100);
