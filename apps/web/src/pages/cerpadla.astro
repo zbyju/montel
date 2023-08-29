@@ -1,20 +1,74 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import BigSection from "../components/sections/BigSection.astro";
+import CenterSection from "../components/sections/CenterSection.astro";
+import PillsSection from "../components/sections/PillsSection.astro";
 
-const bg = "teal";
-const text = "teal";
+const bg = "green";
+const text = "green";
 ---
 
 <Layout title="MONTEL" bg={bg} text={text}>
-  <div slot="header" class="w-11/12 m-auto">
-    <p class="text-7xl font-black w-9/12 tracking-wider word-wider">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </p>
-  </div>
-</Layout>
+  <BigSection
+    slot="header"
+    color="green"
+    heading="Efektivní čerpadla pro moderní domy"
+    image={{ href: "https://placehold.co/1280x720", alt: "placeholder" }}
+    links={[{ href: "#offering", text: "Co nabízíme?" }]}
+  />
 
-<style>
-  .word-wider {
-    word-spacing: 5px;
-  }
-</style>
+  <CenterSection heading="Nabízíme" color="white">
+    <p>
+      Tepelná čerpadla vyrábíme a dodáváme v kombinaci vzduch voda. Základem je
+      velice kvalitní venkovní jednotka Fujitsu s vynikající účinností, k níž
+      vyrábíme vnitřní jednotku. Ta umožňuje přímé napojení na podlahové topení,
+      nebo radiátory, ale také může ohřívat TUV, prostřednictvím zásobníku.
+      Nastavení základních parametrů se provádí na barevném dotykovém displeji,
+      případně přes internet vzdáleně na PC, nebo mobilu.
+    </p>
+  </CenterSection>
+
+  <CenterSection heading="Dodávané výkony" color="green">
+    <PillsSection
+      pills={[
+        {
+          title: "8kW",
+          color: "green-300",
+        },
+        {
+          title: "10kW",
+          color: "green-300",
+        },
+        {
+          title: "12kW",
+          color: "green-300",
+        },
+        {
+          title: "15kW",
+          color: "green-300",
+        },
+        {
+          title: "16kW",
+          color: "green-300",
+        },
+        {
+          title: "17kW",
+          color: "green-300",
+        },
+      ]}
+    />
+  </CenterSection>
+
+  <CenterSection heading="Ozvěte se nám!" color="white">
+    <div class="text-center">
+      <p>Zarezervujte si bezplatnou konzultaci a nabídku:</p>
+      <p>+420 561 035 488</p>
+      <p>
+        <a
+          class="text-blue-700 hover:text-blue-800 transition-all duration-300 ease-in-out"
+          href="mailto:recepce@jurica-montel.cz">recepce@jurica-montel.cz</a
+        >
+      </p>
+    </div>
+  </CenterSection>
+</Layout>
