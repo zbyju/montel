@@ -15,11 +15,11 @@ const { src, alt, className, imageClassName, heading, bg, text, href } =
   Astro.props;
 ---
 
-<div class={className + " relative hoverContainer"}>
+<div class={className + " relative hoverContainer overflow-hidden"}>
   <img
     src={src}
     alt={alt}
-    class={`${imageClassName} w-full rounded-lg shadow-md hover:shadow-lg transition-all duration-500`}
+    class={`${imageClassName} w-full rounded-lg shadow-sm transition-all duration-1000 ease-in-out`}
   />
   <a href={href}>
     <div
@@ -36,5 +36,9 @@ const { src, alt, className, imageClassName, heading, bg, text, href } =
 <style>
   .hoverContainer:hover .hoverOverlay {
     opacity: 0.9;
+  }
+
+  .hoverContainer:hover img {
+    transform: scale(1.25);
   }
 </style>
