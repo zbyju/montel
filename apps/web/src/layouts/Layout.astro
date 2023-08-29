@@ -23,7 +23,7 @@ const { title, bg, text } = Astro.props;
   </head>
   <body>
     <header
-      class={`bg-${bg}-100 text-${text}-900 sm:h-screen h-750px w-screen flex flex-col`}
+      class={`bg-${bg}-100 text-${text}-900 sm:h-screen w-screen flex flex-col pb-10`}
     >
       <TheNav bg={text} />
       <slot name="header" />
