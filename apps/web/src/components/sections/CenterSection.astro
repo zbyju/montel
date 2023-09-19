@@ -10,17 +10,34 @@ import {
 interface Props {
   heading: string;
   color: ColorName;
+  space?: "xl" | "lg" | "md" | "sm";
   dark?: boolean;
 }
-const { heading, color, dark = false } = Astro.props;
+const { heading, color, space = "md", dark = false } = Astro.props;
 const bg = dark ? darkColorBg(color) : lightColorBg(color);
 const text = dark ? lightColorText(color) : darkColorText(color);
+const margin =
+  space === "xl"
+    ? "py-48"
+    : space === "lg"
+    ? "py-32"
+    : space === "md"
+    ? "py-16"
+    : "py-8";
+const marginHeading =
+  space === "xl"
+    ? "mb-8"
+    : space === "lg"
+    ? "mb-7"
+    : space === "md"
+    ? "mb-6"
+    : "mb-5";
 ---
 
-<div class={`${bg} ${text} `}>
-  <div class="w-11/12 mx-auto py-8">
+<div class={`${bg} ${text} ${margin}`}>
+  <div class="w-11/12 mx-auto">
     <h4
-      class="font-bold text-6xl text-center mb-3 w-5/6 md:w-3/5 xl:w-1/2 m-auto"
+      class={`font-bold text-6xl text-center ${marginHeading} w-5/6 md:w-3/5 xl:w-1/2 m-auto`}
     >
       {heading}
     </h4>
