@@ -1,0 +1,22 @@
+---
+import type { ColorName } from "../../types/colors.types";
+import type { ElementInfo } from "../../types/element.types";
+import { colorText, colorWeighted, hoverColor } from "../../utils/colors";
+
+interface Props extends ElementInfo {
+  email: string;
+  color: ColorName;
+}
+
+const { email, color, className = "" } = Astro.props;
+
+const textColor = colorWeighted(color, 600);
+const textColorHover = hoverColor(textColor);
+---
+
+<a
+  href={`mailto:${email}`}
+  class={`${className} text-${textColor} hover:text-${textColorHover} transition-all duration-300 ease-in-out`}
+>
+  {email}
+</a>
