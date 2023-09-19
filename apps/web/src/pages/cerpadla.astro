@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import BigSection from "../components/sections/BigSection.astro";
 import CenterSection from "../components/sections/CenterSection.astro";
 import PillsSection from "../components/sections/PillsSection.astro";
+import Email from "../components/elements/Email.astro";
+import SectionStripe from "../components/sections/SectionStripe.astro";
 
 const bg = "green";
 const text = "green";
@@ -17,14 +19,16 @@ const text = "green";
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
 
-  <CenterSection heading="Nabízíme" color="white">
-    <p>
-      Tepelná čerpadla vyrábíme a dodáváme v kombinaci vzduch voda. Základem je
-      velice kvalitní venkovní jednotka Fujitsu s vynikající účinností, k níž
-      vyrábíme vnitřní jednotku. Ta umožňuje přímé napojení na podlahové topení,
-      nebo radiátory, ale také může ohřívat TUV, prostřednictvím zásobníku.
-      Nastavení základních parametrů se provádí na barevném dotykovém displeji,
-      případně přes internet vzdáleně na PC, nebo mobilu.
+  <CenterSection heading="Nabízíme" color="white" space="lg">
+    <p class="w-3/5 mx-auto">
+      Tepelná čerpadla vyrábíme a dodáváme v kombinaci <strong
+        >vzduch-voda</strong
+      >. Základem je velice kvalitní venkovní jednotka Fujitsu s vynikající
+      účinností, k níž vyrábíme vnitřní jednotku. Ta umožňuje přímé napojení na
+      podlahové topení, nebo radiátory, ale také může ohřívat TUV,
+      prostřednictvím zásobníku. Nastavení základních parametrů se provádí na
+      barevném dotykovém displeji, případně přes internet vzdáleně na PC, nebo
+      mobilu.
     </p>
   </CenterSection>
 
@@ -64,10 +68,7 @@ const text = "green";
       <p>Zarezervujte si bezplatnou konzultaci a nabídku:</p>
       <p>+420 561 035 488</p>
       <p>
-        <a
-          class="text-blue-700 hover:text-blue-800 transition-all duration-300 ease-in-out"
-          href="mailto:recepce@jurica-montel.cz">recepce@jurica-montel.cz</a
-        >
+        <Email email="recepce@jurica-montel.cz" color={text} />
       </p>
     </div>
   </CenterSection>
