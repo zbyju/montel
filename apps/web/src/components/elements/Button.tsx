@@ -15,6 +15,6 @@ export default function Button({ text, color, onClick, className }: Props) {
   const textColor = `text-${oppositeColor(color)}`
   const textHover = `hover:text-${oppositeColor(hover)}`
   return (
-    <button className={`${className} inline-flex w-auto px-4 py-2 hover:text-white rounded-full ${bg} ${textColor} ${bgHover} ${textHover} transition-all duration-500 ease-in-out`} onClick={onClick}>{text}</button>
+    <button className={`${className} shadow-lg inline-flex w-auto px-4 py-2 hover:text-white rounded-full ${bg} ${textColor} ${bgHover} ${textHover} transition-all duration-500 ease-in-out`} onClick={onClick}>{text}</button>
   )
 }
