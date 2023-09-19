@@ -1,0 +1,42 @@
+---
+import type { ColorName, ColorWeighted } from "../../types/colors.types";
+import { colorWeighted, oppositeColor } from "../../utils/colors";
+import Link from "./Link.astro";
+
+interface Props {
+  title: string;
+  size?: "sm" | "md" | "lg";
+  type?: "filled" | "ghost";
+  color: ColorName;
+}
+
+const { title, type = "ghost", size = "md", color } = Astro.props;
+
+const primaryColor = colorWeighted(color, 900);
+const secondaryColor = oppositeColor(primaryColor);
+
+const style =
+  type === "filled"
+    ? `bg-${primaryColor} text-${secondaryColor} rounded-xl`
+    : type === "ghost"
+    ? `text-${primaryColor} bg-transparent`
+    : "";
+
+const sizeTitle =
+  size === "sm"
+    ? "text-xl"
+    : size === "md"
+    ? "text-2xl"
+    : size === "lg"
+    ? "text-3xl"
+    : "text-2xl";
+---
+
+<div class={`${style}`}>
+  <div class="h-full p-5 flex flex-col justify-between">
+    <div>
+      <h3 class={`font-bold ${sizeTitle} mb-1`}>{title}</h3>
+      <slot />
+    </div>
+  </div>
+</div>
