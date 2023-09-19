@@ -27,7 +27,7 @@ export function HamburgerNavbar({ links, bg }: Props) {
       overlayClassName={bgColor}
     >
       {links.map((link) => (
-        <HamburgerLink link={link} bg={bg} />
+        <HamburgerLink link={link} bg={bg} key={link.text} />
       ))}
     </Menu>
   );
