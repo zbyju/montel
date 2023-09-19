@@ -13,18 +13,14 @@ export default function Pill({ pill, className }: Props) {
   const text = `text-${oppositeColor(pill.color)}`;
 
   const [isOpen, setIsOpen] = useState(false)
-  console.log(`is open: ${isOpen}`)
 
   const clickClass = pill.description ? "cursor-pointer" : ""
 
   return (
     <>
       <div
-        className={`${bg} ${text} ${className} ${clickClass} inline-flex items-center align-center rounded-full px-6 py-2`}
-        onClick={() => {
-          console.log("test")
-          setIsOpen(true)
-        }}
+        className={`${bg} ${text} ${className} ${clickClass} inline-flex items-center align-center rounded-full px-4 py-2`}
+        onClick={() => setIsOpen(true)}
       >
         {pill.title}
 
