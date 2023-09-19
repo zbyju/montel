@@ -1,0 +1,15 @@
+---
+import type { ColorWeighted } from "../../types/colors.types";
+import type { ElementInfo } from "../../types/element.types";
+
+interface Props extends ElementInfo {
+  list: string[];
+  color?: ColorWeighted;
+}
+
+const { list, color = "", className } = Astro.props;
+---
+
+<ul class={`list-disc pl-4 ${color} ${className}`}>
+  {list.map((l) => <li class="">{l}</li>)}
+</ul>
