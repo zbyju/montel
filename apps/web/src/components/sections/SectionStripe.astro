@@ -1,5 +1,6 @@
 ---
 import type { ColorName } from "../../types/colors.types";
+import { colorWeighted } from "../../utils/colors";
 import Image from "../elements/Image.astro";
 import Link from "../elements/Link.astro";
 
@@ -11,20 +12,25 @@ interface Props {
     src: string;
     alt: string;
   };
+  dark?: boolean;
   className?: string;
 }
-const { align, heading, color, className, image } = Astro.props;
+const { align, heading, color, dark = false, className, image } = Astro.props;
 
-const bg = `bg-${color}-100`;
-const text = `text-${color}-900`;
+const primaryColor = dark
+  ? colorWeighted(color, 900)
+  : colorWeighted(color, 100);
+const secondaryColor = dark
+  ? colorWeighted(color, 100)
+  : colorWeighted(color, 900);
 const items = align === "right" ? "items-end" : "items-start";
 const self = align === "right" ? "self-end" : "self-start";
 const sort = align === "right" ? "flex-row-reverse" : "flex-row";
 const textAlign = align === "right" ? "text-right" : "text-left";
 ---
 
-<div class={`w-screen ${bg} pb-7 ${className}`}>
-  <div class={`py-16 px-3 md:px-10 ${text} flex ${sort} gap-10`}>
+<div class={`w-screen bg-${primaryColor} pb-7 ${className}`}>
+  <div class={`py-16 px-3 md:px-10 text-${secondaryColor} flex ${sort} gap-10`}>
     <div
       class={`flex-grow flex flex-col items-center lg:w-3/4 w-full md:${items} text-center md:${textAlign}`}
     >
