@@ -2,33 +2,30 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ContactCard from "./ContactCard.astro";
 import {
+  faBaby,
   faBoxesStacked,
   faBuilding,
-  faConciergeBell,
-  faDesktop,
   faFileInvoiceDollar,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import type { ColorName } from "../../../types/colors.types";
-import { colorWeighted } from "../../../utils/colors";
+import type { ElementInfo } from "../../../types/element.types";
 
-interface Props {
+interface Props extends ElementInfo {
   color: ColorName;
   color2: ColorName;
 }
 
-const { color, color2 } = Astro.props;
-
-const primaryColor = colorWeighted(color, 900);
+const { color, color2, className } = Astro.props;
 ---
 
-<div class="w-11/12 m-auto">
+<div class={`w-11/12 mx-auto ${className}`}>
   <h2
     class={`lg:text-7xl md:text-5xl sm:text-6xl text-5xl md:text-left text-center font-black tracking-wider word-wide mb-20`}
   >
     Kontaktujte nás
   </h2>
-  <div class="flex flex-wrap justify-between gap-x-40 gap-y-20">
+  <div class="flex flex-wrap justify-between gap-10 lg:gap-x-24 lg:gap-y-20">
     <ContactCard department="Fakturační adresa" color={color} color2={color2}>
       <p>Zdeněk Juřica - MONTEL</p>
       <p>Třebíčská 272</p>
@@ -73,6 +70,15 @@ const primaryColor = colorWeighted(color, 900);
         icon={faFileInvoiceDollar}
         className={color}
       />
+    </ContactCard>
+    <ContactCard
+      department="Servis Babyboxu"
+      color={color}
+      color2={color2}
+      phone="+420 606 043 886"
+      email="babybox@jurica-montel.cz"
+    >
+      <FontAwesomeIcon slot="icon" icon={faBaby} className={color} />
     </ContactCard>
   </div>
 </div>
