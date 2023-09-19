@@ -3,28 +3,35 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBuilding } from "@fortawesome/free-solid-svg-icons"; // Import any other icons you need.
 import type { ColorName } from "../../../types/colors.types";
 import { colorWeighted, hoverColor } from "../../../utils/colors";
+import Email from "../../elements/Email.astro";
+import type { ElementInfo } from "../../../types/element.types";
 
-interface Props {
+interface Props extends ElementInfo {
   color: ColorName;
   color2: ColorName;
   department: string;
   phone?: string;
   email?: string;
+  align?: "left" | "center";
 }
 
-const { color, color2, department, phone, email } = Astro.props;
+const {
+  color,
+  color2,
+  department,
+  phone,
+  email,
+  align = "left",
+  className = "",
+} = Astro.props;
 
-const primaryColor = colorWeighted(color, 900);
-const primaryColorHover = hoverColor(primaryColor);
 const secondaryColor = colorWeighted(color2, 300);
-const secondaryColorHover = hoverColor(secondaryColor);
-
-const primaryColor2 = colorWeighted(color, 700);
-const primaryColor2Hover = colorWeighted(color, 500);
+const alignStyle1 = align === "center" ? "text-center" : "text-left";
+const alignStyle2 = align === "center" ? "items-center" : "items-start";
 ---
 
-<div class="flex flex-col">
-  <div class="flex flex-col justify-end h-24">
+<div class={`${alignStyle1} flex flex-col ${className}`}>
+  <div class={`flex flex-col justify-end h-24 ${alignStyle2}`}>
     <div class={`w-10 mb-3 mx-1 flex items-center`}>
       <slot name="icon" />
     </div>
@@ -36,16 +43,10 @@ const primaryColor2Hover = colorWeighted(color, 500);
     {
       email && (
         <p>
-          Email:{" "}
-          <a
-            class={`text-${primaryColor2} hover:text-${primaryColor2Hover} transition duration-300 ease-in-out`}
-            href={"mailto:" + email}
-          >
-            {email}
-          </a>
+          Email: <Email email={email} color={color} />
         </p>
       )
     }
-    {phone && <p>Phone: {phone}</p>}
+    {phone && <p>Telefon: {phone}</p>}
   </div>
 </div>
