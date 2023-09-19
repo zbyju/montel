@@ -1,7 +1,6 @@
 ---
 import CenterSection from "../components/sections/CenterSection.astro";
 import SectionStripe from "../components/sections/SectionStripe.astro";
-import SmallCard from "../components/elements/SmallCard.astro";
 import ChildrenByHour from "../components/babybox/charts/ChildrenByHour";
 import ChildrenByDay from "../components/babybox/charts/ChildrenByDay";
 import ChildrenByMonth from "../components/babybox/charts/ChildrenByMonth";
@@ -9,7 +8,12 @@ import ChildrenByYear from "../components/babybox/charts/ChildrenByYear";
 import ChildrenTotal from "../components/babybox/charts/ChildrenTotal";
 import Layout from "../layouts/Layout.astro";
 import BigSection from "../components/sections/BigSection.astro";
-import PillsSection from "../components/sections/PillsSection.astro";
+import MiniCard from "../components/elements/MiniCard.astro";
+import { colorWeighted } from "../utils/colors";
+import ContactCard from "../components/sections/contact/ContactCard.astro";
+import List from "../components/elements/List.astro";
+import { faBaby } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const bg = "pink";
 const text = "pink";
@@ -23,64 +27,52 @@ const text = "pink";
     links={[
       { href: "#offering", text: "O Babyboxu" },
       { href: "#stats", text: "Statistiky" },
+      { href: "#contact", text: "Servis" },
     ]}
   />
 
   <div>
     <CenterSection color="white" heading="Funkce">
-      <PillsSection
-        className={"lg:w-3/4 mt-8"}
-        pills={[
-          {
-            title: "Automatická dvířka",
-            color: "blue-900",
-          },
-          {
-            title: "Detekce zábrany dvířek",
-            color: "blue-900",
-          },
-          {
-            title: "Automatická regulace teploty",
-            color: "blue-900",
-          },
-          {
-            title: "Klimatizace",
-            color: "blue-900",
-          },
-          {
-            title: "Vytápění",
-            color: "blue-900",
-          },
-          {
-            title: "Nerezový materiál",
-            color: "blue-900",
-          },
-          {
-            title: "24/7 Monitoring",
-            color: "rose-900",
-          },
-          {
-            title: "Kamera uvnitř Babyboxu",
-            color: "rose-900",
-          },
-          {
-            title: "SMS Upozornění",
-            color: "rose-900",
-          },
-          {
-            title: "Emailová notifikace",
-            color: "rose-900",
-          },
-          {
-            title: "Vzdálená analýza dat",
-            color: "green-900",
-          },
-          {
-            title: "Vzdálená správa babyboxu",
-            color: "green-900",
-          },
-        ]}
-      />
+      <div class="flex flex-wrap flex-row justify-center gap-10 lg:gap-28">
+        <MiniCard title="Komfort" size="lg" type="ghost" color="indigo">
+          <List
+            className="text-black"
+            list={[
+              "Automatické dvířka",
+              "Detekce zábrany dvířek",
+              "Automatická regulace teploty",
+              "Klimatizace",
+              "Vytápění",
+              "Nerezový materiál",
+            ]}
+            color={colorWeighted(bg, 900)}
+          />
+        </MiniCard>
+        <MiniCard
+          title="Několik vrstev zabezpečení"
+          size="lg"
+          type="ghost"
+          color="rose"
+        >
+          <List
+            className="text-black"
+            list={[
+              "24/7 Monitoring",
+              "Kamera uvnitř Babyboxu",
+              "SMS upozornění",
+              "Emailové notifikace",
+            ]}
+            color={colorWeighted(bg, 900)}
+          />
+        </MiniCard>
+        <MiniCard title="Vzdálená správa" size="lg" type="ghost" color="indigo">
+          <List
+            className="text-black"
+            list={["Vzdálená analýza dat", "Vzdálený management Babyboxu"]}
+            color={colorWeighted(bg, 900)}
+          />
+        </MiniCard>
+      </div>
     </CenterSection>
 
     <SectionStripe
@@ -133,11 +125,25 @@ const text = "pink";
         Panel také zobrazuje další důležité informace, jako je <strong
           >teplota</strong
         >, <strong>napětí</strong>, <strong>stav dvířek</strong> a další
-        důležité ukazatele. Jakékoli odchylky nebo neobvyklé události generují <strong
-          >upozornění</strong
-        >, což zajišťuje, že dítě v babyboxu má neustálou péči a dohled.
+        důležité ukazatele. Jakékoli odchylky nebo neobvyklé události generují
+
+        <strong>upozornění</strong>, což zajišťuje, že dítě v babyboxu má
+        neustálou péči a dohled.
       </p>
     </SectionStripe>
+
+    <CenterSection heading="Kontakt Servis" color="white">
+      <ContactCard
+        color="blue"
+        color2="rose"
+        department="Servis"
+        phone="+420 606 043 886"
+        email="babybox@jurica-montel.cz"
+        align="center"
+      >
+        <FontAwesomeIcon slot="icon" icon={faBaby} className="text-blue-900" />
+      </ContactCard>
+    </CenterSection>
 
     <CenterSection heading="Statistiky" color="pink">
       <h3 class="text-xl text-center font-bold mt-5">Počet dětí</h3>
