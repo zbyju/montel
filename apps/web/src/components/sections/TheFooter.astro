@@ -1,14 +1,22 @@
 ---
+import {
+  faLocationDot,
+  faBuilding,
+  faInfo,
+  faCircleInfo,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { ColorName } from "../../types/colors.types";
 import { colorBg, colorText } from "../../utils/colors";
 import MONTEL from "../elements/MONTEL.astro";
+import ContactCard from "./contact/ContactCard.astro";
 
 interface Props {
   bg: ColorName;
   text: ColorName;
 }
 
-const { text } = Astro.props;
+const { bg, text } = Astro.props;
 
 const bgColor = colorBg(text, 900);
 const textColor = colorText(text, 100);
@@ -16,26 +24,56 @@ const alsoLookAtClass = "ml-4 underline hover:brightness-200";
 ---
 
 <footer class={`${bgColor} ${textColor} shadow-md`}>
-  <div class="px-20 pb-10 w-full flex flex-wrap justify-start">
+  <div class="pl-20 pr-24 py-10 w-full flex flex-wrap justify-start gap-y-16">
     <MONTEL color={textColor} className="self-center mt-12 mr-40" />
-    <div class="flex flex-wrap flex-grow">
-      <div class="mt-12 mr-20 flex-grow">
-        <p>Kontakt:</p>
-        <p>email@email.cz</p>
-        <p>+420 123 456 789</p>
-      </div>
-      <div class="mt-12 mr-20 flex-grow">
-        <p>Adresa:</p>
-        <p>Vicenice u nameste nad oslavou</p>
-        <p>Namest nad Oslavou</p>
-        <p>67571</p>
-      </div>
-      <div class="mt-12 flex-grow">
-        <p>Podivejte se take:</p>
+    <div class="flex flex-wrap flex-grow justify-between gap-10 my-auto">
+      <ContactCard
+        department="Fakturační adresa"
+        color={text}
+        color2={text}
+        className="mx-auto flex-grow"
+      >
+        <p>Zdeněk Juřica - MONTEL</p>
+        <p>Třebíčská 272</p>
+        <p>675 71 Náměšť nad Oslavou</p>
+        <p>IČO: 13070819</p>
+
+        <FontAwesomeIcon slot="icon" icon={faLocationDot} className={text} />
+      </ContactCard>
+      <ContactCard
+        department="Adresa provozovny"
+        color={text}
+        color2={text}
+        phone="+420 568 620 066"
+        email="info@jurica-montel.cz"
+        className="mx-auto flex-grow"
+      >
+        <p>
+          <p>Zdeněk Juřica - MONTEL</p>
+          <p>Vícenice u Náměště nad Oslavou 109</p>
+          <p>675 71 Náměšť nad Oslavou</p>
+        </p>
+
+        <FontAwesomeIcon slot="icon" icon={faBuilding} className={text} />
+      </ContactCard>
+      <div class="mx-auto flex-grow">
+        <FontAwesomeIcon
+          slot="icon"
+          icon={faCircleInfo}
+          className={`${text} w-10 mt-2 mb-5 mx-1 flex items-center`}
+        />
+        <div class={`w-12 h-1 ${colorBg(text, 300)} mb-7`}></div>
+        <h5 class="text-xl font-semibold">Podivejte se take:</h5>
         <ul class="list-disc">
           <li class={alsoLookAtClass}><a href="/babybox">Babybox</a></li>
-          <li class={alsoLookAtClass}><a href="/babybox">Kamery</a></li>
-          <li class={alsoLookAtClass}><a href="/babybox">O nas</a></li>
+          <li class={alsoLookAtClass}><a href="/kamery">Kamery</a></li>
+          <li class={alsoLookAtClass}>
+            <a href="/cerpadla">Tepelná čerpadla</a>
+          </li>
+          <li class={alsoLookAtClass}>
+            <a href="/zabezpeceni">Zabezpečení</a>
+          </li>
+          <li class={alsoLookAtClass}><a href="/kontakt">Kontakt</a></li>
         </ul>
       </div>
     </div>
