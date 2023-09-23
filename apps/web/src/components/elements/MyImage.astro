@@ -1,0 +1,19 @@
+---
+import type { ElementInfo, ImageElInfo } from "../../types/element.types";
+
+interface Props extends ElementInfo {
+  image: ImageElInfo;
+}
+
+const { image, className, style } = Astro.props;
+---
+
+<div class={className} style={style}>
+  <img
+    src={image.image.src}
+    width="auto"
+    height="auto"
+    alt={image.alt}
+    class={`${image.className} rounded-lg shadow-md hover:shadow-lg transition-all duration-500`}
+  />
+</div>
