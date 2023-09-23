@@ -1,6 +1,6 @@
 ---
 import Link from "../elements/Link.astro";
-import Image from "../elements/Image.astro";
+import MyImage from "../elements/MyImage.astro";
 import type { ColorName } from "../../types/colors.types";
 import type { ImageElInfo, LinkElInfo } from "../../types/element.types";
 
@@ -8,14 +8,24 @@ interface Props {
   heading: string;
   subheading?: string;
   color: ColorName;
+  text?: ColorName;
   className?: string;
   image?: ImageElInfo;
   links?: LinkElInfo[];
 }
 
-const { heading, subheading, color, className, image, links } = Astro.props;
+const {
+  heading,
+  subheading,
+  color,
+  className,
+  image,
+  links,
+  text = color,
+} = Astro.props;
+
 const bg = `bg-${color}-100`;
-const text = `text-${color}-900`;
+const txt = `text-${text}-900`;
 ---
 
 <div class={`${bg} ${className}`}>
@@ -23,7 +33,7 @@ const text = `text-${color}-900`;
     <div class="flex flex-wrap items-center gap-x-10">
       <div class="md:flex-1 md:flex-col">
         <h2
-          class={`${text} lg:text-7xl md:text-5xl sm:text-6xl text-5xl md:text-left text-center font-black tracking-wider word-wide`}
+          class={`${text} lg:text-6xl md:text-5xl sm:text-5xl text-4xl md:text-left text-center font-black tracking-wider word-wide`}
         >
           {heading}
         </h2>
@@ -42,9 +52,9 @@ const text = `text-${color}-900`;
                   link={{
                     href: l.href,
                     text: l.text,
-                    className: "p-4 py-2 text-xl " + l.className,
+                    className: "p-4 py-2 text-xl " + (l.className || ""),
                   }}
-                  bg={color}
+                  bg={text}
                 />
               ))
           }
@@ -52,11 +62,12 @@ const text = `text-${color}-900`;
       </div>
       {
         image ? (
-          <Image
-            src={image.href}
-            alt={image.alt}
-            className={"lg:w-2/5 md:w-full w-0 " + image.className}
-            imageClassName="hidden md:block w-full"
+          <MyImage
+            image={{
+              ...image,
+              className: "hidden md:block w-full " + (image.className || ""),
+            }}
+            className={"lg:w-2/5 md:w-full w-0 " + (className || "")}
           />
         ) : null
       }

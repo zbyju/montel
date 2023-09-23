@@ -1,17 +1,14 @@
 ---
 import type { ColorName } from "../../types/colors.types";
+import type { ImageElInfo } from "../../types/element.types";
 import { colorWeighted } from "../../utils/colors";
-import Image from "../elements/Image.astro";
-import Link from "../elements/Link.astro";
+import MyImage from "../elements/MyImage.astro";
 
 interface Props {
   align: "left" | "right";
   heading: string;
   color: ColorName;
-  image?: {
-    src: string;
-    alt: string;
-  };
+  image?: ImageElInfo;
   dark?: boolean;
   className?: string;
 }
@@ -29,8 +26,10 @@ const sort = align === "right" ? "flex-row-reverse" : "flex-row";
 const textAlign = align === "right" ? "text-right" : "text-left";
 ---
 
-<div class={`w-screen bg-${primaryColor} pb-7 ${className}`}>
-  <div class={`py-16 px-3 md:px-10 text-${secondaryColor} flex ${sort} gap-10`}>
+<div class={`w-screen bg-${primaryColor} ${className}`}>
+  <div
+    class={`w-11/12 mx-auto py-10 text-${secondaryColor} flex ${sort} gap-10`}
+  >
     <div
       class={`flex-grow flex flex-col items-center lg:w-3/4 w-full md:${items} text-center md:${textAlign}`}
     >
@@ -39,10 +38,12 @@ const textAlign = align === "right" ? "text-right" : "text-left";
       </h3>
       {
         image && (
-          <Image
-            src={image.src}
-            alt={image.alt}
-            className="self-center my-5 md:hidden"
+          <MyImage
+            image={{
+              ...image,
+              className:
+                "self-center my-5 md:hidden " + (image.className || ""),
+            }}
           />
         )
       }
@@ -60,11 +61,17 @@ const textAlign = align === "right" ? "text-right" : "text-left";
     </div>
     {
       image && (
-        <Image
-          src={image.src}
-          alt={image.alt}
-          className="self-center hidden md:block"
-        />
+        <div class="self-center hidden md:block max-w-[40%]">
+          <MyImage
+            image={{
+              ...image,
+              image: {
+                ...image.image,
+              },
+              className: "mx-auto " + (image.className || ""),
+            }}
+          />
+        </div>
       )
     }
   </div>
