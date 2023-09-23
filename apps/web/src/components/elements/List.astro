@@ -1,6 +1,7 @@
 ---
 import type { ColorWeighted } from "../../types/colors.types";
 import type { ElementInfo } from "../../types/element.types";
+import { colorText } from "../../utils/colors";
 
 interface Props extends ElementInfo {
   list: string[];
@@ -10,6 +11,6 @@ interface Props extends ElementInfo {
 const { list, color = "", className } = Astro.props;
 ---
 
-<ul class={`list-disc pl-4 ${color} ${className}`}>
+<ul class={`list-disc pl-4 text-${color} ${className}`}>
   {list.map((l) => <li class="">{l}</li>)}
 </ul>
