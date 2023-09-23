@@ -1,10 +1,12 @@
+import type { ImageMetadata } from "astro";
+
 export type ElementInfo = {
   style?: string;
   className?: string;
 }
 
 export type ImageElInfo = {
-  href: string;
+  image: ImageMetadata;
   alt: string;
 } & ElementInfo
 
