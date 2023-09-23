@@ -4,17 +4,18 @@ import BigSection from "../components/sections/BigSection.astro";
 import SmallCard from "../components/elements/SmallCard.astro";
 import CenterSection from "../components/sections/CenterSection.astro";
 import PillsSection from "../components/sections/PillsSection.astro";
+import babyboxImage from "../images/1280x720.svg";
 
-const bg = "purple";
-const text = "purple";
+const bg = "cyan";
+const text = "cyan";
 ---
 
 <Layout title="MONTEL" bg={bg} text={text}>
   <BigSection
     slot="header"
-    color="purple"
-    heading="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    image={{ href: "https://placehold.co/1280x720", alt: "placeholder" }}
+    color={bg}
+    heading="Ušetřete čas a peníze a využijte naší expertýzy v oblasti zdvihacích plošin."
+    image={{ image: babyboxImage, alt: "placeholder" }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
 

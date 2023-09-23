@@ -1,16 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import babyboxImage from "../images/1280x720.svg";
+import BigSection from "../components/sections/BigSection.astro";
 
-const bg = "slate";
-const text = "slate";
+const bg = "indigo";
+const text = "indigo";
 ---
 
 <Layout title="MONTEL" bg={bg} text={text}>
-  <div slot="header" class="w-11/12 m-auto">
-    <p class="text-7xl font-black w-9/12 tracking-wider word-wider">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </p>
-  </div>
+  <BigSection
+    slot="header"
+    color={bg}
+    heading="Na cestách již léta: Podívejte se na naši dlouhou tradici v nákladní dopravě."
+    image={{ image: babyboxImage, alt: "placeholder" }}
+  />
 </Layout>
 
 <style>

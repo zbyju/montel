@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import babybox from "../images/IMG_2241.jpg";
 import CenterSection from "../components/sections/CenterSection.astro";
 import SectionStripe from "../components/sections/SectionStripe.astro";
 import ChildrenByHour from "../components/babybox/charts/ChildrenByHour";
@@ -14,6 +16,9 @@ import ContactCard from "../components/sections/contact/ContactCard.astro";
 import List from "../components/elements/List.astro";
 import { faBaby } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import placeholderImage from "../images/1280x720.svg";
+import babyboxImage from "../images/IMG_2241.jpg";
+import babyboxImage2 from "../images/IMG_38732.jpg";
 
 const bg = "pink";
 const text = "pink";
@@ -29,12 +34,13 @@ const text = "pink";
       { href: "#stats", text: "Statistiky" },
       { href: "#contact", text: "Servis" },
     ]}
+    image={{ image: babyboxImage, alt: "placeholder" }}
   />
 
   <div>
     <CenterSection color="white" heading="Funkce">
       <div class="flex flex-wrap flex-row justify-center gap-10 lg:gap-28">
-        <MiniCard title="Komfort" size="lg" type="ghost" color="indigo">
+        <MiniCard title="Komfort" size="lg" type="ghost" color="indigo-900">
           <List
             className="text-black"
             list={[
@@ -52,7 +58,7 @@ const text = "pink";
           title="Několik vrstev zabezpečení"
           size="lg"
           type="ghost"
-          color="rose"
+          color="rose-900"
         >
           <List
             className="text-black"
@@ -65,7 +71,12 @@ const text = "pink";
             color={colorWeighted(bg, 900)}
           />
         </MiniCard>
-        <MiniCard title="Vzdálená správa" size="lg" type="ghost" color="indigo">
+        <MiniCard
+          title="Vzdálená správa"
+          size="lg"
+          type="ghost"
+          color="indigo-900"
+        >
           <List
             className="text-black"
             list={["Vzdálená analýza dat", "Vzdálený management Babyboxu"]}
@@ -79,7 +90,7 @@ const text = "pink";
       align="left"
       color="indigo"
       heading="Babybox"
-      image={{ src: "http://placehold.co/640x360", alt: "" }}
+      image={{ image: babyboxImage2, alt: "placeholder" }}
     >
       Babyboxy, umístěné v nemocnicích daného regionu, představují záchranný bod
       pro ty, kteří se ocitnou v hluboké životní nouzi. Toto diskrétní řešení
@@ -95,7 +106,7 @@ const text = "pink";
       align="right"
       color="pink"
       heading="Rozvadec"
-      image={{ src: "http://placehold.co/640x360", alt: "" }}
+      image={{ image: placeholderImage, alt: "placeholder" }}
     >
       Rozváděč v nemocnici je klíčový pro optimální fungování babyboxu. Obsahuje
 
@@ -111,7 +122,7 @@ const text = "pink";
       align="left"
       color="indigo"
       heading="Monitorovaci panel"
-      image={{ src: "http://placehold.co/640x360", alt: "" }}
+      image={{ image: placeholderImage, alt: "placeholder" }}
     >
       <p>
         V nemocnici je umístěn <strong>monitorovací panel</strong>, primárně

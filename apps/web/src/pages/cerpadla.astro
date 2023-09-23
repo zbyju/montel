@@ -5,17 +5,18 @@ import CenterSection from "../components/sections/CenterSection.astro";
 import PillsSection from "../components/sections/PillsSection.astro";
 import Email from "../components/elements/Email.astro";
 import SectionStripe from "../components/sections/SectionStripe.astro";
+import babyboxImage from "../images/1280x720.svg";
 
-const bg = "green";
-const text = "green";
+const bg = "emerald";
+const text = "emerald";
 ---
 
 <Layout title="MONTEL" bg={bg} text={text}>
   <BigSection
     slot="header"
     color="green"
-    heading="Efektivní čerpadla pro moderní domy"
-    image={{ href: "https://placehold.co/1280x720", alt: "placeholder" }}
+    heading="Klíč k modernímu, účinnému a šetrnému vytápění pro váš dům."
+    image={{ image: babyboxImage, alt: "placeholder" }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
 
@@ -32,32 +33,32 @@ const text = "green";
     </p>
   </CenterSection>
 
-  <CenterSection heading="Dodávané výkony" color="green">
+  <CenterSection heading="Dodávané výkony" color="emerald">
     <PillsSection
       pills={[
         {
           title: "8kW",
-          color: "green-300",
+          color: "emerald-300",
         },
         {
           title: "10kW",
-          color: "green-300",
+          color: "emerald-300",
         },
         {
           title: "12kW",
-          color: "green-300",
+          color: "emerald-300",
         },
         {
           title: "15kW",
-          color: "green-300",
+          color: "emerald-300",
         },
         {
           title: "16kW",
-          color: "green-300",
+          color: "emerald-300",
         },
         {
           title: "17kW",
-          color: "green-300",
+          color: "emerald-300",
         },
       ]}
     />

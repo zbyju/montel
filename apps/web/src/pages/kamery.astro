@@ -1,17 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import BigSection from "../components/sections/BigSection.astro";
+import babyboxImage from "../images/1280x720.svg";
 
 const bg = "yellow";
-const text = "yellow";
+const text = "stone";
 ---
 
 <Layout title="MONTEL" bg={bg} text={text}>
   <BigSection
     slot="header"
-    color="yellow"
-    heading="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    image={{ href: "https://placehold.co/1280x720", alt: "placeholder" }}
+    color={bg}
+    text={text}
+    heading="Pohlídejte svůj domov či firmu z jakéhokoli místa s našimi kamerovými řešeními."
+    image={{ image: babyboxImage, alt: "placeholder" }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
 </Layout>

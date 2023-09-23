@@ -16,6 +16,10 @@ import SectionStripe from "../components/sections/SectionStripe.astro";
 import BigSection from "../components/sections/BigSection.astro";
 import HoverImage from "../components/elements/HoverImage.astro";
 import CenterSection from "../components/sections/CenterSection.astro";
+import placeholderImage from "../images/1280x720.svg";
+import buildingImage from "../images/IMG_2227.jpg";
+import babyboxImage from "../images/IMG_2241.jpg";
+import Link from "../components/elements/Link.astro";
 
 const bg = "blue";
 const text = "blue";
@@ -27,8 +31,8 @@ const iconClass = "max-w-[40px] max-h-[40px]";
   <BigSection
     slot="header"
     color="blue"
-    heading="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    image={{ href: "https://placehold.co/1280x720", alt: "placeholder" }}
+    heading="Kvalita, spolehlivost a odbornost v každé službě, kterou nabízíme. Od vašeho domova po vozový park."
+    image={{ image: buildingImage, alt: "placeholder" }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
   <div
@@ -105,20 +109,26 @@ const iconClass = "max-w-[40px] max-h-[40px]";
     align="left"
     color="pink"
     heading="Babybox"
-    image={{ src: "https://placehold.co/640x360", alt: "" }}
+    image={{ image: babyboxImage, alt: "", className: "max-h-[200px]" }}
     className="mt-10 shadow-lg rounded-xl"
   >
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda
-    distinctio iste quia dolore. Animi magni nisi similique enim repellendus,
-    excepturi provident ab explicabo quo, harum voluptatibus soluta voluptate
-    nulla aperiam?
+    <p>
+      Babyboxy jsou klíčové v ochraně novorozenců v ČR. Po jejich umístění
+      rychle upozorní na uložené děťátko, zajišťujíc tak jeho bezpečí. Po celé
+      republice servisujeme a spravujeme řadu těchto zařízení a současně
+      vyrábíme nové.
+    </p>
+    <Link
+      link={{ href: "/babybox", text: "Více", className: "mt-3" }}
+      bg="rose"
+    />
   </SectionStripe>
 
   <SectionStripe
     align="right"
     color="yellow"
     heading="Zabezpecovaci systemy"
-    image={{ src: "https://placehold.co/640x360", alt: "" }}
+    image={{ image: placeholderImage, alt: "" }}
     className="shadow-lg rounded-xl"
   >
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda
@@ -129,7 +139,7 @@ const iconClass = "max-w-[40px] max-h-[40px]";
 
   <CenterSection heading="Projekty na kterych jsme pracovali" color="blue">
     <div class="flex justify-center flex-wrap gap-10 mt-16">
-      <HoverImage
+      <!-- <HoverImage
         src="https://placehold.co/640x360"
         alt=""
         className="md:w-1/4 sm:w-1/3 w-full flex-grow"
@@ -188,7 +198,7 @@ const iconClass = "max-w-[40px] max-h-[40px]";
       >
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id temporibus
         nobis tempore obcaecati nihil.
-      </HoverImage>
+      </HoverImage> -->
     </div>
   </CenterSection>
   <CenterSection heading="Kontakt" color="slate" />
