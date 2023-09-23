@@ -3,37 +3,276 @@ import Layout from "../layouts/Layout.astro";
 import BigSection from "../components/sections/BigSection.astro";
 import CenterSection from "../components/sections/CenterSection.astro";
 import PillsSection from "../components/sections/PillsSection.astro";
+import babyboxImage from "../images/1280x720.svg";
+import List from "../components/elements/List.astro";
+import MiniCard from "../components/elements/MiniCard.astro";
+import { colorWeighted } from "../utils/colors";
+import {
+  faBaby,
+  faCheckCircle,
+  faClock,
+  faCouch,
+  faLock,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const bg = "yellow";
-const text = "yellow";
+const text = "stone";
 ---
 
 <Layout title="MONTEL" bg={bg} text={text}>
   <BigSection
     slot="header"
     color={bg}
-    heading="Hledáte zabezpečení či automatizaci pro domov či obchod? Nabízíme vše v jednom."
-    image={{ href: "https://placehold.co/1280x720", alt: "placeholder" }}
+    text={text}
+    heading="Zabezpečení či automatizace pro Váš domov či obchod? Nabízíme vše v jednom."
+    image={{ image: babyboxImage, alt: "placeholder" }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
 
-  <CenterSection heading="Nabízíme" color="white">
+  <CenterSection color="white" heading="Funkce">
+    <div class="flex flex-wrap flex-row justify-center gap-10 lg:gap-28">
+      <MiniCard
+        title="Bezpečnostní řešení"
+        size="lg"
+        type="filled"
+        color="amber-300"
+        className="flex-1"
+      >
+        <List
+          list={[
+            "Vnitřní zabezpečení",
+            "Venkovní zabezpečení",
+            "Zabezpečení bazénu",
+            "Zabezpečení garáže",
+            "Zabezpečení balkonu/terasy",
+            "Zabezpečení sklepů",
+            "Detekce pohybu",
+          ]}
+          color={"slate-900"}
+        />
+      </MiniCard>
+      <MiniCard
+        title="Ochrana před živly"
+        size="lg"
+        type="ghost"
+        color="amber-500"
+        className="flex-1"
+      >
+        <List
+          className="text-black"
+          list={[
+            "Požární zabezpečení",
+            "Hlídaní vniknutí vody",
+            "Detekce plynu",
+            "Chytrá detekce kouře",
+            "Hlídání úrovně CO2",
+          ]}
+          color={colorWeighted(bg, 900)}
+        />
+      </MiniCard>
+      <MiniCard
+        title="Chytrá domácnost"
+        size="lg"
+        type="ghost"
+        color="amber-500"
+        className="flex-1"
+      >
+        <List
+          className="text-black"
+          list={[
+            "Ovládání rozsvěcení světel",
+            "Ovládání zámků",
+            "Zónová regulaci teploty",
+            "Ovládání spotřebičů",
+            "Zvonek u vchodu",
+          ]}
+          color={colorWeighted(bg, 900)}
+        />
+      </MiniCard>
+      <MiniCard
+        title="Energetika a měření"
+        size="lg"
+        type="ghost"
+        color="amber-500"
+        className="flex-1"
+      >
+        <List
+          className="text-black"
+          list={[
+            "Měření odběru",
+            "Měření výroby elektřiny",
+            "Snímání teploty",
+            "Nabíjení elektromobilů",
+          ]}
+          color={colorWeighted(bg, 900)}
+        />
+      </MiniCard>
+    </div>
+  </CenterSection>
+
+  <CenterSection heading="Vhodné pro zabezpečení:" color="yellow">
     <PillsSection
       pills={[
-        { title: "Vnitřní zabezpečení", color: "blue-600" },
-        { title: "Venkovní zabezpečení", color: "blue-600" },
-        { title: "Požární zabezpečení", color: "orange-700" },
-        { title: "Zabezpečení bazénu", color: "sky-300" },
-        { title: "Hlídaní vniknutí vody", color: "sky-500" },
-        { title: "Ovládání rozsvěcení světel", color: "green-600" },
-        { title: "Ovládání zámků", color: "green-600" },
-        { title: "Zvonek u vchodu", color: "green-700" },
-        { title: "Propojení s kamerovým systémem", color: "teal-700" },
-        { title: "Měření odběru, výroby elektřiny", color: "yellow-300" },
-        { title: "Snímání teploty", color: "purple-600" },
-        { title: "Zónovou regulaci teploty", color: "purple-600" },
-        { title: "Ovládání přes mobilní aplikaci / PC", color: "purple-700" },
+        {
+          title: "Domácnosti",
+          color: "yellow-300",
+        },
+        {
+          title: "Firmy",
+          color: "yellow-300",
+        },
+        {
+          title: "Obchodu",
+          color: "yellow-300",
+        },
+        {
+          title: "Objektu",
+          color: "yellow-300",
+        },
+        {
+          title: "Skladu",
+          color: "yellow-300",
+        },
+        {
+          title: "Zahrady",
+          color: "yellow-300",
+        },
+        {
+          title: "Hotelu",
+          color: "yellow-300",
+        },
+        {
+          title: "Výrobní haly",
+          color: "yellow-300",
+        },
       ]}
     />
+  </CenterSection>
+
+  <CenterSection heading="Integrace a Automatizace" color="white" text="slate">
+    <p class="w-3/5 mx-auto">
+      Alarm Jablotron nabízí širokou škálu integrací, která promění vaše
+      prostředí v moderně zabezpečený a maximalizovaně využitelný prostor. Ať už
+      se jedná o domácnost, obchod, firmu nebo školní instituci, Jablotron lze
+      snadno integrovat s různými systémy a zařízeními. Od automatizace
+      osvětlení, kontroly zámků, ovládání rolet, až po komplexní propojení s
+      kamerovými systémy. Toto vše dělá z Jablotronu univerzální a flexibilní
+      řešení pro každou potřebu zabezpečení.
+    </p>
+  </CenterSection>
+
+  <CenterSection color="yellow" heading="Příklady použití">
+    <div class="flex flex-wrap flex-row justify-center gap-10 lg:gap-28">
+      <MiniCard
+        title="Automatické světla"
+        type="ghost"
+        color="stone-900"
+        className="flex-1"
+      >
+        <p>
+          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
+          fdljsaflkdjsa lfs
+        </p>
+      </MiniCard>
+      <MiniCard
+        title="Automatické světla"
+        type="ghost"
+        color="stone-900"
+        className="flex-1"
+      >
+        <p>
+          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
+          fdljsaflkdjsa lfs
+        </p>
+      </MiniCard>
+      <MiniCard
+        title="Automatické světla"
+        type="ghost"
+        color="stone-900"
+        className="flex-1"
+      >
+        <p>
+          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
+          fdljsaflkdjsa lfs
+        </p>
+      </MiniCard>
+      <MiniCard
+        title="Automatické světla"
+        type="ghost"
+        color="stone-900"
+        className="flex-1"
+      >
+        <p>
+          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
+          fdljsaflkdjsa lfs
+        </p>
+      </MiniCard>
+    </div>
+  </CenterSection>
+
+  <CenterSection color="white" heading="Co Vám Jablotron přinese">
+    <div class="flex flex-wrap flex-row justify-center gap-10 lg:gap-28">
+      <MiniCard
+        title="Bezpečí"
+        type="ghost"
+        color="stone-900"
+        className="flex-1"
+      >
+        <p>
+          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
+          fdljsaflkdjsa lfs
+        </p>
+        <FontAwesomeIcon icon={faLock} slot="icon" className="text-amber-400" />
+      </MiniCard>
+      <MiniCard
+        title="Pohodlí"
+        type="ghost"
+        color="stone-900"
+        className="flex-1"
+      >
+        <p>
+          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
+          fdljsaflkdjsa lfs
+        </p>
+        <FontAwesomeIcon
+          icon={faCouch}
+          slot="icon"
+          className="text-amber-400 pt-3"
+        />
+      </MiniCard>
+      <MiniCard
+        title="Jistotu"
+        type="ghost"
+        color="stone-900"
+        className="flex-1"
+      >
+        <p>
+          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
+          fdljsaflkdjsa lfs
+        </p>
+        <FontAwesomeIcon
+          icon={faCheckCircle}
+          slot="icon"
+          className="text-amber-400"
+        />
+      </MiniCard>
+      <MiniCard
+        title="Ušetří čas"
+        type="ghost"
+        color="stone-900"
+        className="flex-1"
+      >
+        <p>
+          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
+          fdljsaflkdjsa lfs
+        </p>
+        <FontAwesomeIcon
+          icon={faClock}
+          slot="icon"
+          className="text-amber-400"
+        />
+      </MiniCard>
+    </div>
   </CenterSection>
 </Layout>
