@@ -1,7 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import BigSection from "../components/sections/BigSection.astro";
-import babyboxImage from "../images/1280x720.svg";
+import fotovoltaikaImage from "../images/fotovoltaika.jpg";
+import CenterSection from "../components/sections/CenterSection.astro";
+import MyImage from "../components/elements/MyImage.astro";
+import fotovoltaikaVelkaImage from "../images/fotovoltaika_velka.jpg";
+import fotovoltaika3Image from "../images/fotovoltaika3.jpg";
+import fotovoltaikaInstalaceImage from "../images/fotovoltaika_instalace.jpg";
+import Email from "../components/elements/Email.astro";
 
 const bg = "emerald";
 const text = "emerald";
@@ -12,7 +18,76 @@ const text = "emerald";
     slot="header"
     color={bg}
     heading="Investujte do fotovoltaiky a užívejte si dlouhodobé úspory a čistou energii pro váš domov."
-    image={{ image: babyboxImage, alt: "placeholder" }}
+    image={{
+      image: fotovoltaikaImage,
+      alt: "placeholder",
+      className: "max-h-[500px] w-auto mx-auto",
+    }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
+
+  <div id="offering"></div>
+  <CenterSection heading="Nabízíme" color="white" space="md">
+    <div class="md:w-3/5 w-11/12 mx-auto flex flex-col gap-2">
+      <p>
+        Montáže fotovoltaických elektráren jsme se rozhodli zařadit do našich
+        služeb kvůli vzniklé energetické krizi v kombinaci s nedostatečnou a
+        předraženou nabídkou montážních firem. Ozvalo se nám také mnoho
+        zákazníků, kteří chtěli již hotovou elektrárnu předělat, z důvodu
+        nedostatečného výkonu panelů a baterií. V současné době montujeme ve
+        většině případů <strong
+          >FVE o výkonu 6 - 50kW s bateriemi 10 - 50kW</strong
+        >.
+      </p><p>
+        Hlavní součásti, střídače a baterie používáme od čínských výrobců Solax
+        a SofarSolar. Panely používáme, aby byly nejvýhodnější pro požadovaný
+        výkon, sklon, orientaci a rozměr střechy.
+      </p><p>
+        Konstrukce pro uchycení ke střeše si vyrábíme sami, přesně na míru, z
+        kvalitních nerezových materiálů. Instalaci provádíme včetně předělání
+        domovního a elektroměrového rozvaděče.
+      </p>
+      <p>
+        Taktéž zajistíme vyřízení dotace, připojení k síti a následný výkup
+        přebytečné energie.
+      </p>
+      <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
+        <MyImage
+          image={{
+            image: fotovoltaikaVelkaImage,
+            alt: "cerpadlo",
+            className: "max-h-[220px]",
+          }}
+        />
+        <MyImage
+          image={{
+            image: fotovoltaika3Image,
+            alt: "cerpadlo",
+            className: "max-h-[220px]",
+          }}
+        />
+      </div>
+    </div>
+  </CenterSection>
+
+  <CenterSection heading="Dotace" color="emerald">
+    <div class="w-3/5 mx-auto">
+      <p>
+        Na fotovoltaické systémy se v rámci projektu Nová zelená úsporám
+        vypisují dotace, které je možné čerpat. Zpracujeme pro Vás tedy také
+        projekt, odborný posudek a vyřídíme všechnu potřebnou administrativu
+        nutnou pro získání dotace.
+      </p>
+    </div>
+  </CenterSection>
+
+  <CenterSection heading="Ozvěte se nám!" color="white">
+    <div class="text-center">
+      <p>Zarezervujte si bezplatnou konzultaci a nabídku:</p>
+      <p>+420 561 035 488</p>
+      <p>
+        <Email email="recepce@jurica-montel.cz" color={text} />
+      </p>
+    </div>
+  </CenterSection>
 </Layout>
