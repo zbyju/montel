@@ -8,4 +8,26 @@ interface Props {
 const { color, className } = Astro.props;
 ---
 
-<h1 class={`font-bold text-6xl ${color} ${className}`}>MONTEL</h1>
+<h1
+  class={`font-black lg:text-7xl md:text-6xl text-5xl tracking-wider ${color} ${className}`}
+>
+  MONTEL
+</h1>
+
+<!-- <div class="relative">
+  <h1
+    class={`absolute z-30 font-black text-7xl tracking-widest text-blue-800 ${className}`}
+  >
+    MONTEL
+  </h1>
+  <h1
+    class={`absolute z-20 -ml-[0.35rem] mt-[0.35rem] opacity-80 font-black text-7xl tracking-widest text-emerald-700 ${className}`}
+  >
+    MONTEL
+  </h1>
+  <h1
+    class={`absolute z-10 -ml-[0.7rem] mt-[0.7rem] opacity-60 font-black text-7xl  tracking-widest text-yellow-300 ${className}`}
+  >
+    MONTEL
+  </h1>
+</div> -->
