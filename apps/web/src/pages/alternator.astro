@@ -1,18 +1,89 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import BigSection from "../components/sections/BigSection.astro";
-import babyboxImage from "../images/1280x720.svg";
+import altImage from "../images/alt.jpg";
+import alt1Image from "../images/alt1.jpg";
+import alt2Image from "../images/alt2.jpg";
+import MyImage from "../components/elements/MyImage.astro";
+import CenterSection from "../components/sections/CenterSection.astro";
+import Email from "../components/elements/Email.astro";
 
-const bg = "blue";
-const text = "blue";
+const bg = "indigo";
+const text = "indigo";
 ---
 
 <Layout title="MONTEL" bg={bg} text={text}>
   <BigSection
     slot="header"
-    color="blue"
+    color={bg}
     heading="Dlouholeté zkušenosti v opravě alternátorů garantují vašemu vozidlu nejlepší péči."
-    image={{ image: babyboxImage, alt: "placeholder" }}
+    image={{ image: altImage, alt: "placeholder" }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
+
+  <CenterSection heading="Nabízíme" color="white" space="lg">
+    <p class="md:w-3/5 w-11/12 mx-auto">
+      Specializujeme se na opravy alternátorů a startérů pro široké spektrum
+      vozidel, ať už jde o osobní automobily, nákladní vozidla či zemědělskou
+      techniku. Nezáleží na značce; díky našim zkušenostem a vybavení dokážeme
+      provést opravy téměř jakéhokoliv alternátoru či startéru. U běžně
+      používaných agregátů, jako jsou Bosch, Valeo či Magneto Mareli, máme navíc
+      tu výhodu, že většina náhradních dílů je přímo u nás skladem, což umožňuje
+      rychlejší a efektivnější servis.
+    </p>
+    <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
+      <MyImage
+        image={{
+          image: alt1Image,
+          alt: "cerpadlo",
+          className: "max-h-[240px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: alt2Image,
+          alt: "cerpadlo",
+          className: "max-h-[240px]",
+        }}
+      />
+    </div>
+  </CenterSection>
+
+  <CenterSection heading="Postup opravy" color="indigo">
+    <div class="flex flex-row flex-wrap gap-10 justify-between mt-10">
+      <div class="flex flex-col text-center flex-1 min-w-[140px] mx-auto">
+        <span class="font-bold text-3xl">1.</span>Příjem a kontrola agregátu
+      </div>
+      <div class="flex flex-col text-center flex-1 min-w-[140px] mx-auto">
+        <span class="font-bold text-3xl">2.</span>
+         Diagnostika a identifikace vad
+      </div>
+      <div class="flex flex-col text-center flex-1 min-w-[140px] mx-auto">
+        <span class="font-bold text-3xl">3.</span>
+         Konsultace s klientem a cenový odhad
+      </div>
+      <div class="flex flex-col text-center flex-1 min-w-[140px] mx-auto">
+        <span class="font-bold text-3xl">4.</span>
+         Oprava a výměna dílů
+      </div>
+      <div class="flex flex-col text-center flex-1 min-w-[140px] mx-auto">
+        <span class="font-bold text-3xl">5.</span>
+         Zkouška a ověření funkčnosti
+      </div>
+      <div class="flex flex-col text-center flex-1 min-w-[140px] mx-auto">
+        <span class="font-bold text-3xl">6.</span>
+         Předání zákazníkovi
+      </div>
+    </div>
+  </CenterSection>
+
+  <CenterSection heading="Ozvěte se nám!" color="white">
+    <div class="text-center">
+      <p>Zarezervujte si bezplatnou konzultaci a nabídku:</p>
+      <p>+420 561 035 488</p>
+      <p>
+        <Email email="recepce@jurica-montel.cz" color={text} />
+      </p>
+    </div>
+  </CenterSection>
 </Layout>
