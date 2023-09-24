@@ -6,11 +6,12 @@ import { colorText, colorWeighted, hoverColor } from "../../utils/colors";
 interface Props extends ElementInfo {
   email: string;
   color: ColorName;
+  light?: boolean;
 }
 
-const { email, color, className = "" } = Astro.props;
+const { email, color, light = false, className = "" } = Astro.props;
 
-const textColor = colorWeighted(color, 600);
+const textColor = light ? colorWeighted(color, 400) : colorWeighted(color, 600);
 const textColorHover = hoverColor(textColor);
 ---
 
