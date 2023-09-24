@@ -24,15 +24,15 @@ const style =
 
 const sizeTitle =
   size === "sm"
-    ? "text-xl"
+    ? "lg:text-xl text-lg"
     : size === "md"
-    ? "text-2xl"
+    ? "lg:text-2xl text-xl"
     : size === "lg"
-    ? "text-3xl"
-    : "text-2xl";
+    ? "lg:text-3xl text-2xl"
+    : "lg:text-2xl text-xl";
 ---
 
-<div class={`${style} ${className}`}>
+<div class={`md:min-w-0 min-w-full ${style} ${className}`}>
   <div class="h-full p-5 flex flex-col justify-between">
     <div>
       <div class={`w-10 max-h-[50px] mb-3`}>
