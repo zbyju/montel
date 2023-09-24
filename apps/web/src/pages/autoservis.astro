@@ -1,7 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import BigSection from "../components/sections/BigSection.astro";
-import babyboxImage from "../images/1280x720.svg";
+import servisImage from "../images/servis.jpg";
+import servis1Image from "../images/servis1.jpg";
+import servis2Image from "../images/servis2.jpg";
+import servis3Image from "../images/servis3.jpg";
+import servis4Image from "../images/servis4.jpg";
+import servis5Image from "../images/servis5.jpg";
 import MyImage from "../components/elements/MyImage.astro";
 import CenterSection from "../components/sections/CenterSection.astro";
 import PillsSection from "../components/sections/PillsSection.astro";
@@ -15,7 +20,11 @@ const text = "indigo";
     slot="header"
     color={bg}
     heading="Odborný servis a pneuservis pro všechna vozidla, od malých automobilů po velké nákladní vozy."
-    image={{ image: babyboxImage, alt: "placeholder" }}
+    image={{
+      image: servisImage,
+      alt: "placeholder",
+      className: "max-h-[500px] w-auto mx-auto",
+    }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
 
@@ -41,14 +50,35 @@ const text = "indigo";
     <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
       <MyImage
         image={{
-          image: babyboxImage,
+          image: servis1Image,
           alt: "cerpadlo",
           className: "max-h-[220px]",
         }}
       />
       <MyImage
         image={{
-          image: babyboxImage,
+          image: servis2Image,
+          alt: "cerpadlo",
+          className: "max-h-[220px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: servis3Image,
+          alt: "cerpadlo",
+          className: "max-h-[220px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: servis4Image,
+          alt: "cerpadlo",
+          className: "max-h-[220px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: servis5Image,
           alt: "cerpadlo",
           className: "max-h-[220px]",
         }}
