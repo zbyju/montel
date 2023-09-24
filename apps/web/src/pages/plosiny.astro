@@ -4,7 +4,11 @@ import BigSection from "../components/sections/BigSection.astro";
 import SmallCard from "../components/elements/SmallCard.astro";
 import CenterSection from "../components/sections/CenterSection.astro";
 import PillsSection from "../components/sections/PillsSection.astro";
-import babyboxImage from "../images/1280x720.svg";
+import plosinaImage from "../images/plosina.jpg";
+import plosina1Image from "../images/plosina1.jpg";
+import plosina2Image from "../images/plosina2.jpg";
+import MyImage from "../components/elements/MyImage.astro";
+import Email from "../components/elements/Email.astro";
 
 const bg = "indigo";
 const text = "indigo";
@@ -15,45 +19,44 @@ const text = "indigo";
     slot="header"
     color={bg}
     heading="Ušetřete čas a peníze a využijte naší expertýzy v oblasti zdvihacích plošin."
-    image={{ image: babyboxImage, alt: "placeholder" }}
+    image={{ image: plosinaImage, alt: "placeholder" }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
 
-  <CenterSection heading="Nabízíme" color="white">
-    <PillsSection
-      pills={[
-        { title: "Montáž nových plošin", color: "green-600" },
-        { title: "Montáž bezdrátového dálkového ovládání", color: "green-600" },
-        { title: "Oprava řídích jednotek", color: "yellow-300" },
-        { title: "Oprava elektroinstalace plošin", color: "yellow-300" },
-        { title: "Opravy mechanických částí", color: "yellow-300" },
-        { title: "Výkup a prodej použitých plošin", color: "purple-600" },
-        { title: "Prodej náhradních dílů", color: "purple-600" },
-        { title: "Vystavení TP pro hydraulickou plošinu", color: "green-400" },
-      ]}
-    />
+  <div id="offering"></div>
+  <CenterSection heading="Nabízíme" color="white" space="lg">
+    <p class="md:w-3/5 w-11/12 mx-auto">
+      Nabízíme kompletní servis v této oblasti. Víme, které součásti můžeme
+      nahradit replikou a které musí být originální, tedy kde se dá ušetřit a
+      kde ne. Operativně dokážeme vyřešit jakýkoliv problém a to i tehdy, pokud
+      Vám vyhoří celý hydraulický agregát včetně řídící jednotky vlivem zkratu,
+      nebo zaseknutého hlavního stykače motoru.
+    </p>
+    <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
+      <MyImage
+        image={{
+          image: plosina1Image,
+          alt: "cerpadlo",
+          className: "max-h-[240px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: plosina2Image,
+          alt: "cerpadlo",
+          className: "max-h-[240px]",
+        }}
+      />
+    </div>
   </CenterSection>
 
-  <div class="w-11/12 m-auto">
-    <p class="text-7xl font-black w-9/12 tracking-wider word-wider">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </p>
-    <div class="flex flex-wrap gap-5 justify-around mt-5 px-10">
-      <SmallCard heading="Automaticke dvere" color="white">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </SmallCard>
-      <SmallCard heading="Vytapeni" color="white">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </SmallCard>
-      <SmallCard heading="Email" color="white">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </SmallCard>
-      <SmallCard heading="SMS" color="white">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </SmallCard>
-      <SmallCard heading="Automaticke dvere" color="white">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </SmallCard>
+  <CenterSection heading="Ozvěte se nám!" color="indigo">
+    <div class="text-center">
+      <p>Zarezervujte si bezplatnou konzultaci a nabídku:</p>
+      <p>+420 561 035 488</p>
+      <p>
+        <Email email="recepce@jurica-montel.cz" color={text} />
+      </p>
     </div>
-  </div>
+  </CenterSection>
 </Layout>
