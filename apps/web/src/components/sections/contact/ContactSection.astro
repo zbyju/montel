@@ -14,46 +14,61 @@ import type { ElementInfo } from "../../../types/element.types";
 interface Props extends ElementInfo {
   color: ColorName;
   color2: ColorName;
+  noAddresses?: boolean;
 }
 
-const { color, color2, className } = Astro.props;
+const { color, color2, noAddresses = false, className } = Astro.props;
 ---
 
-<div class={`w-11/12 mx-auto ${className}`}>
+<div class={`${className}`}>
   <h2
     class={`lg:text-7xl md:text-5xl sm:text-6xl text-5xl md:text-left text-center font-black tracking-wider word-wide mb-20`}
   >
     Kontaktujte nás
   </h2>
   <div class="flex flex-wrap justify-between gap-10 lg:gap-x-24 lg:gap-y-20">
-    <ContactCard department="Fakturační adresa" color={color} color2={color2}>
-      <p>Zdeněk Juřica - MONTEL</p>
-      <p>Třebíčská 272</p>
-      <p>675 71 Náměšť nad Oslavou</p>
-      <p>IČO: 13070819</p>
+    {
+      noAddresses !== true && (
+        <>
+          <ContactCard
+            department="Fakturační adresa"
+            color={color}
+            color2={color2}
+          >
+            <p>Zdeněk Juřica - MONTEL</p>
+            <p>Třebíčská 272</p>
+            <p>675 71 Náměšť nad Oslavou</p>
+            <p>IČO: 13070819</p>
 
-      <FontAwesomeIcon slot="icon" icon={faLocationDot} className={color} />
-    </ContactCard>
-    <ContactCard
-      department="Adresa provozovny"
-      color={color}
-      color2={color2}
-      phone="+420 568 620 066"
-      email="info@jurica-montel.cz"
-    >
-      <p>
-        <p>Zdeněk Juřica - MONTEL</p>
-        <p>Vícenice u Náměště nad Oslavou 109</p>
-        <p>675 71 Náměšť nad Oslavou</p>
-      </p>
+            <FontAwesomeIcon
+              slot="icon"
+              icon={faLocationDot}
+              className={color}
+            />
+          </ContactCard>
+          <ContactCard
+            department="Adresa provozovny"
+            color={color}
+            color2={color2}
+            phone="+420 568 620 066"
+            email="info@jurica-montel.cz"
+          >
+            <p>
+              <p>Zdeněk Juřica - MONTEL</p>
+              <p>Vícenice u Náměště nad Oslavou 109</p>
+              <p>675 71 Náměšť nad Oslavou</p>
+            </p>
 
-      <FontAwesomeIcon slot="icon" icon={faBuilding} className={color} />
-    </ContactCard>
+            <FontAwesomeIcon slot="icon" icon={faBuilding} className={color} />
+          </ContactCard>
+        </>
+      )
+    }
     <ContactCard
       department="Příjem zakázek"
       color={color}
       color2={color2}
-      phone="+420 568"
+      phone="+420 561 035 488"
       email="recepce@jurica-montel.cz"
     >
       <FontAwesomeIcon slot="icon" icon={faBoxesStacked} className={color} />
