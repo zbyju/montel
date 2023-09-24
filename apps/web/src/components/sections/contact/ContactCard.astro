@@ -12,6 +12,7 @@ interface Props extends ElementInfo {
   department: string;
   phone?: string;
   email?: string;
+  emailLight?: boolean;
   align?: "left" | "center";
 }
 
@@ -22,6 +23,7 @@ const {
   phone,
   email,
   align = "left",
+  emailLight = false,
   className = "",
 } = Astro.props;
 
@@ -43,7 +45,7 @@ const alignStyle2 = align === "center" ? "items-center" : "items-start";
     {
       email && (
         <p>
-          Email: <Email email={email} color={color} />
+          Email: <Email email={email} color={color} light={emailLight} />
         </p>
       )
     }
