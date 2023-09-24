@@ -2,9 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import BigSection from "../components/sections/BigSection.astro";
 import babyboxImage from "../images/1280x720.svg";
+import MyImage from "../components/elements/MyImage.astro";
+import CenterSection from "../components/sections/CenterSection.astro";
+import PillsSection from "../components/sections/PillsSection.astro";
 
-const bg = "cyan";
-const text = "cyan";
+const bg = "indigo";
+const text = "indigo";
 ---
 
 <Layout title="MONTEL" bg={bg} text={text}>
@@ -15,4 +18,94 @@ const text = "cyan";
     image={{ image: babyboxImage, alt: "placeholder" }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
+
+  <div id="offering"></div>
+  <CenterSection heading="Nabízíme" color="white" space="md">
+    <div class="md:w-3/5 w-11/12 mx-auto flex flex-col gap-2">
+      <p>
+        V našem autoservisu nabízíme širokou škálu služeb zaměřených na vaše
+        vozidla. Specializujeme se na důkladné <strong
+          >opravy motorů a převodovek</strong
+        >, což zajišťuje jejich spolehlivý a dlouhodobý chod. Kromě toho
+        provádíme
+        <strong>diagnostiku a nastavení řídících jednotek</strong> pro optimální
+        výkon vozidla. Majitelům nákladních vozidel nabízíme také, a to <strong
+          >výměnu svislých čepů</strong
+        >. Ať už potřebujete <strong>běžnou opravu, pravidelnou údržbu</strong>
+         osobního či nákladního vozidla, jsme zde pro vás. Naše služby také
+        zahrnují <strong>výměnu skel</strong> a komplexní péči o pneumatiky
+        včetně <strong>osobního pneuservisu a nákladního pneuservisu</strong> až
+        do velikosti 56 palců.
+      </p>
+    </div>
+    <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
+      <MyImage
+        image={{
+          image: babyboxImage,
+          alt: "cerpadlo",
+          className: "max-h-[220px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: babyboxImage,
+          alt: "cerpadlo",
+          className: "max-h-[220px]",
+        }}
+      />
+    </div>
+  </CenterSection>
+
+  <CenterSection heading="Disponujeme" color={bg}>
+    <PillsSection
+      className="lg:w-3/5 mt-10"
+      pills={[
+        {
+          title: "Osvětlenou Temperovanou Dílnou 250m2",
+          color: "indigo-300",
+        },
+        {
+          title: "Montážní Jámou",
+          color: "indigo-300",
+        },
+        {
+          title: "Elektrickým Jámovým Zvedákem 8t",
+          color: "indigo-300",
+        },
+        {
+          title: "Halovým Jeřábem 3t",
+          color: "indigo-300",
+        },
+        {
+          title: "Hydraulickým Lisem 50t",
+          color: "indigo-300",
+        },
+        {
+          title: "Svařovací Soupravou MIG 320A",
+          color: "indigo-300",
+        },
+        {
+          title: "TIG 200A",
+          color: "indigo-300",
+        },
+        {
+          title: "Autogenem",
+          color: "indigo-300",
+        },
+        {
+          title: "Nákladní Optickou Geometrií",
+          color: "indigo-300",
+        },
+        {
+          title: "Zvedákem 3t",
+          color: "indigo-300",
+        },
+        { title: "Nákladní Zouvačkou do 56”", color: "indigo-300" },
+        {
+          title: "Vyvažovačkou",
+          color: "indigo-300",
+        },
+      ]}
+    />
+  </CenterSection>
 </Layout>
