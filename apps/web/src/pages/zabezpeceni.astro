@@ -3,18 +3,18 @@ import Layout from "../layouts/Layout.astro";
 import BigSection from "../components/sections/BigSection.astro";
 import CenterSection from "../components/sections/CenterSection.astro";
 import PillsSection from "../components/sections/PillsSection.astro";
-import babyboxImage from "../images/1280x720.svg";
+import kameryImage from "../images/cerpadlo2.jpg";
 import List from "../components/elements/List.astro";
 import MiniCard from "../components/elements/MiniCard.astro";
 import { colorWeighted } from "../utils/colors";
 import {
-  faBaby,
   faCheckCircle,
   faClock,
   faCouch,
   faLock,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Email from "../components/elements/Email.astro";
 
 const bg = "yellow";
 const text = "stone";
@@ -26,7 +26,11 @@ const text = "stone";
     color={bg}
     text={text}
     heading="Zabezpečení či automatizace pro Váš domov či obchod? Nabízíme vše v jednom."
-    image={{ image: babyboxImage, alt: "placeholder" }}
+    image={{
+      image: kameryImage,
+      alt: "placeholder",
+      className: "max-h-[500px] w-auto mx-auto",
+    }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
 
@@ -66,7 +70,6 @@ const text = "stone";
             "Hlídaní vniknutí vody",
             "Detekce plynu",
             "Chytrá detekce kouře",
-            "Hlídání úrovně CO2",
           ]}
           color={colorWeighted(bg, 900)}
         />
@@ -162,56 +165,7 @@ const text = "stone";
     </p>
   </CenterSection>
 
-  <CenterSection color="yellow" heading="Příklady použití">
-    <div class="flex flex-wrap flex-row justify-center gap-10 lg:gap-28">
-      <MiniCard
-        title="Automatické světla"
-        type="ghost"
-        color="stone-900"
-        className="flex-1"
-      >
-        <p>
-          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
-          fdljsaflkdjsa lfs
-        </p>
-      </MiniCard>
-      <MiniCard
-        title="Automatické světla"
-        type="ghost"
-        color="stone-900"
-        className="flex-1"
-      >
-        <p>
-          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
-          fdljsaflkdjsa lfs
-        </p>
-      </MiniCard>
-      <MiniCard
-        title="Automatické světla"
-        type="ghost"
-        color="stone-900"
-        className="flex-1"
-      >
-        <p>
-          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
-          fdljsaflkdjsa lfs
-        </p>
-      </MiniCard>
-      <MiniCard
-        title="Automatické světla"
-        type="ghost"
-        color="stone-900"
-        className="flex-1"
-      >
-        <p>
-          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
-          fdljsaflkdjsa lfs
-        </p>
-      </MiniCard>
-    </div>
-  </CenterSection>
-
-  <CenterSection color="white" heading="Co Vám Jablotron přinese">
+  <CenterSection color={bg} heading="Co Vám Jablotron přinese">
     <div class="flex flex-wrap flex-row justify-center gap-10 lg:gap-28">
       <MiniCard
         title="Bezpečí"
@@ -220,8 +174,10 @@ const text = "stone";
         className="flex-1"
       >
         <p>
-          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
-          fdljsaflkdjsa lfs
+          Periferie Jablotronu jsou vybaven pokročilými senzory, čímž vám
+          zajišťuje maximální zabezpečení vašeho domova nebo firmy. Toto
+          zařízení zaznamenává veškerý pohyb a činnost, takže můžete být vždy v
+          klidu a vědět, že váš dům je v bezpečí.
         </p>
         <FontAwesomeIcon icon={faLock} slot="icon" className="text-amber-400" />
       </MiniCard>
@@ -232,8 +188,10 @@ const text = "stone";
         className="flex-1"
       >
         <p>
-          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
-          fdljsaflkdjsa lfs
+          S Jablotronem můžete jednoduše ovládat různé funkce domácnosti přes
+          svůj mobilní telefon. Automatizace osvětlení, topení nebo rolet je
+          nyní na dosah ruky, což vám umožňuje nastavit svůj domov přesně podle
+          svých potřeb.
         </p>
         <FontAwesomeIcon
           icon={faCouch}
@@ -248,8 +206,10 @@ const text = "stone";
         className="flex-1"
       >
         <p>
-          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
-          fdljsaflkdjsa lfs
+          Díky Jablotronu získáte jistotu, že se můžete spolehnout na stále
+          sledování stavu svého objektu. Vzdálený přístup přes mobilní aplikaci
+          vám umožňuje mít okamžitý přehled o tom, co se děje v domě, ať už jste
+          kdekoli.
         </p>
         <FontAwesomeIcon
           icon={faCheckCircle}
@@ -264,8 +224,10 @@ const text = "stone";
         className="flex-1"
       >
         <p>
-          Aasjdfk laslfdj f;dajs;flkdjalskf;djas; fdfadsakfjdksa jfdkljsa
-          fdljsaflkdjsa lfs
+          Díky pokročilé automatizaci může Jablotron reagovat na různé události
+          nebo spouštět naplánované akce na určitý čas. Místo toho, abyste
+          manuálně ovládali různé domácí systémy, můžete nechat Jablotron, aby
+          to udělal za vás.
         </p>
         <FontAwesomeIcon
           icon={faClock}
@@ -273,6 +235,16 @@ const text = "stone";
           className="text-amber-400"
         />
       </MiniCard>
+    </div>
+  </CenterSection>
+
+  <CenterSection heading="Ozvěte se nám!" color="white">
+    <div class="text-center">
+      <p>Zarezervujte si bezplatnou konzultaci a nabídku:</p>
+      <p>+420 561 035 488</p>
+      <p>
+        <Email email="recepce@jurica-montel.cz" color={text} />
+      </p>
     </div>
   </CenterSection>
 </Layout>
