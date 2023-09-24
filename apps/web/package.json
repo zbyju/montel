@@ -25,6 +25,7 @@
     "@types/react-dom": "^18.0.10",
     "astro": "^3.1.1",
     "flowbite": "^1.7.0",
+    "moment": "^2.29.4",
     "nivo": "^0.31.0",
     "react": "^18.2.0",
     "react-burger-menu": "^3.0.9",
