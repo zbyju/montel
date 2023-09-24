@@ -4,8 +4,11 @@ import BigSection from "../components/sections/BigSection.astro";
 import CenterSection from "../components/sections/CenterSection.astro";
 import PillsSection from "../components/sections/PillsSection.astro";
 import Email from "../components/elements/Email.astro";
-import SectionStripe from "../components/sections/SectionStripe.astro";
-import babyboxImage from "../images/1280x720.svg";
+import cerpadloDumImage from "../images/cerpadlo_dum.jpg";
+import cerpadlo2Image from "../images/cerpadlo2.jpg";
+import cerpadloZapojeniImage from "../images/cerpadlo_zapojeni.jpg";
+import cerpadloInImage from "../images/cerpadlo_in.jpg";
+import MyImage from "../components/elements/MyImage.astro";
 
 const bg = "emerald";
 const text = "emerald";
@@ -14,23 +17,53 @@ const text = "emerald";
 <Layout title="MONTEL" bg={bg} text={text}>
   <BigSection
     slot="header"
-    color="green"
+    color="emerald"
     heading="Klíč k modernímu, účinnému a šetrnému vytápění pro váš dům."
-    image={{ image: babyboxImage, alt: "placeholder" }}
+    image={{
+      image: cerpadloDumImage,
+      alt: "placeholder",
+      className: "max-h-[500px] w-auto mx-auto",
+    }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
 
+  <div id="offering"></div>
   <CenterSection heading="Nabízíme" color="white" space="lg">
-    <p class="w-3/5 mx-auto">
-      Tepelná čerpadla vyrábíme a dodáváme v kombinaci <strong
-        >vzduch-voda</strong
-      >. Základem je velice kvalitní venkovní jednotka Fujitsu s vynikající
-      účinností, k níž vyrábíme vnitřní jednotku. Ta umožňuje přímé napojení na
-      podlahové topení, nebo radiátory, ale také může ohřívat TUV,
-      prostřednictvím zásobníku. Nastavení základních parametrů se provádí na
-      barevném dotykovém displeji, případně přes internet vzdáleně na PC, nebo
-      mobilu.
+    <p class="md:w-3/5 w-11/12 mx-auto">
+      Tepelná čerpadla <strong>vzduch/voda</strong> vyrábíme, dodáváme,
+      montujeme a opravujeme. Základem je velice kvalitní venkovní jednotka
+      Japonského výrobce Fujitsu s vynikající účinností, k níž vyrábíme vnitřní
+      jednotku. Ta umožňuje přímé napojení na <strong>podlahové topení</strong>,
+      nebo <strong>radiátory</strong>, ale také může <strong
+        >ohřívat teplé užitkové vody (TUV)</strong
+      >, prostřednictvím zásobníku. Nastavení základních parametrů se provádí na
+      barevném <strong>dotykovém displeji</strong>, případně přes datovou síť,
+      nebo internet na
+      <strong>PC</strong>, nebo <strong>mobilu</strong>.
     </p>
+    <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
+      <MyImage
+        image={{
+          image: cerpadlo2Image,
+          alt: "cerpadlo",
+          className: "max-h-[240px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: cerpadloInImage,
+          alt: "cerpadlo",
+          className: "max-h-[240px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: cerpadloZapojeniImage,
+          alt: "cerpadlo",
+          className: "max-h-[240px]",
+        }}
+      />
+    </div>
   </CenterSection>
 
   <CenterSection heading="Dodávané výkony" color="emerald">
