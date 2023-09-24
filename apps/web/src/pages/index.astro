@@ -2,9 +2,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBaby,
-  faVideo,
-  faTruck,
-  faTruckFast,
   faMicrochip,
   faShield,
   faCar,
@@ -14,12 +11,12 @@ import Card from "../components/elements/Card.astro";
 import Layout from "../layouts/Layout.astro";
 import SectionStripe from "../components/sections/SectionStripe.astro";
 import BigSection from "../components/sections/BigSection.astro";
-import HoverImage from "../components/elements/HoverImage.astro";
 import CenterSection from "../components/sections/CenterSection.astro";
 import placeholderImage from "../images/1280x720.svg";
-import buildingImage from "../images/IMG_2227.jpg";
-import babyboxImage from "../images/IMG_2241.jpg";
+import buildingImage from "../images/building.jpg";
+import babyboxImage from "../images/babybox2.jpg";
 import Link from "../components/elements/Link.astro";
+import ContactSection from "../components/sections/contact/ContactSection.astro";
 
 const bg = "blue";
 const text = "blue";
@@ -44,22 +41,24 @@ const iconClass = "max-w-[40px] max-h-[40px]";
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
       color={text}
       iconColor="rose-600"
+      link="/babybox"
     >
       <FontAwesomeIcon icon={faBaby} slot="icon" className={iconClass} />
     </Card>
-    <Card
+    <!-- <Card
       header="Kamerove systemy"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
       color={text}
       iconColor="rose-600"
     >
       <FontAwesomeIcon icon={faVideo} slot="icon" className={iconClass} />
-    </Card>
+    </Card> -->
     <Card
       header="Elektrovyroba"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
       color={text}
       iconColor="red-600"
+      link="/elektrovyroba"
     >
       <FontAwesomeIcon icon={faMicrochip} slot="icon" className={iconClass} />
     </Card>
@@ -68,22 +67,24 @@ const iconClass = "max-w-[40px] max-h-[40px]";
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
       color={text}
       iconColor="red-600"
+      link="/cerpadla"
     >
       <FontAwesomeIcon icon={faFan} slot="icon" className={iconClass} />
     </Card>
-    <Card
+    <!-- <Card
       header="Opravy zdvihacich plosin"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
       color={text}
       iconColor="red-600"
     >
       <FontAwesomeIcon icon={faTruck} slot="icon" className={iconClass} />
-    </Card>
+    </Card> -->
     <Card
       header="Zabezpecovaci systemy"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
       color={text}
       iconColor="red-600"
+      link="/zabezpeceni"
     >
       <FontAwesomeIcon icon={faShield} slot="icon" className={iconClass} />
     </Card>
@@ -92,25 +93,28 @@ const iconClass = "max-w-[40px] max-h-[40px]";
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
       color={text}
       iconColor="red-600"
+      link="/autoservis"
     >
       <FontAwesomeIcon icon={faCar} slot="icon" className={iconClass} />
     </Card>
-    <Card
+    <!-- <Card
       header="Doprava"
       description="Lorem ipsum dolor sit amet consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
       color={text}
       iconColor="red-600"
     >
       <FontAwesomeIcon icon={faTruckFast} slot="icon" className={iconClass} />
-    </Card>
+    </Card> -->
   </div>
 
   <SectionStripe
     align="left"
     color="pink"
     heading="Babybox"
+    spacing="lg"
     image={{ image: babyboxImage, alt: "", className: "max-h-[200px]" }}
     className="mt-10 shadow-lg rounded-xl"
+    innerClassName="lg:w-3/5 mx-auto"
   >
     <p>
       Babyboxy jsou klíčové v ochraně novorozenců v ČR. Po jejich umístění
@@ -124,33 +128,8 @@ const iconClass = "max-w-[40px] max-h-[40px]";
     />
   </SectionStripe>
 
-  <SectionStripe
-    align="right"
-    color="yellow"
-    heading="Zabezpecovaci systemy"
-    image={{ image: placeholderImage, alt: "" }}
-    className="shadow-lg rounded-xl"
-  >
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda
-    distinctio iste quia dolore. Animi magni nisi similique enim repellendus,
-    excepturi provident ab explicabo quo, harum voluptatibus soluta voluptate
-    nulla aperiam?
-  </SectionStripe>
-
-  <CenterSection heading="Projekty na kterych jsme pracovali" color="blue">
+  <!--<CenterSection heading="Projekty na kterych jsme pracovali" color="blue">
     <div class="flex justify-center flex-wrap gap-10 mt-16">
-      <!-- <HoverImage
-        src="https://placehold.co/640x360"
-        alt=""
-        className="md:w-1/4 sm:w-1/3 w-full flex-grow"
-        bg="bg-blue-900"
-        text="text-blue-50"
-        heading="Test"
-        href="/babybox"
-      >
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id temporibus
-        nobis tempore obcaecati nihil.
-      </HoverImage>
       <HoverImage
         src="https://placehold.co/640x360"
         alt=""
@@ -198,10 +177,27 @@ const iconClass = "max-w-[40px] max-h-[40px]";
       >
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id temporibus
         nobis tempore obcaecati nihil.
-      </HoverImage> -->
+      </HoverImage>
+      <HoverImage
+        src="https://placehold.co/640x360"
+        alt=""
+        className="md:w-1/4 sm:w-1/3 w-full flex-grow"
+        bg="bg-blue-900"
+        text="text-blue-50"
+        heading="Test"
+        href="/babybox"
+      >
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id temporibus
+        nobis tempore obcaecati nihil.
+      </HoverImage>
     </div>
-  </CenterSection>
-  <CenterSection heading="Kontakt" color="slate" />
+  </CenterSection> -->
+
+  <div class={`bg-${bg}-100 text-${text}-900 py-20`}>
+    <div class="lg:w-3/5 mx-auto">
+      <ContactSection color={bg} color2="yellow" noAddresses />
+    </div>
+  </div>
 </Layout>
 
 <style>
