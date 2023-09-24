@@ -1,7 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import babyboxImage from "../images/1280x720.svg";
+import dopravaImage from "../images/doprava.jpg";
 import BigSection from "../components/sections/BigSection.astro";
+import Email from "../components/elements/Email.astro";
+import MyImage from "../components/elements/MyImage.astro";
+import CenterSection from "../components/sections/CenterSection.astro";
 
 const bg = "cyan";
 const text = "cyan";
@@ -12,8 +16,47 @@ const text = "cyan";
     slot="header"
     color={bg}
     heading="Na cestách již léta: Podívejte se na naši dlouhou tradici v nákladní dopravě."
-    image={{ image: babyboxImage, alt: "placeholder" }}
+    image={{ image: dopravaImage, alt: "placeholder" }}
   />
+
+  <div id="offering"></div>
+  <CenterSection heading="Nabízíme" color="white" space="lg">
+    <p class="md:w-3/5 w-11/12 mx-auto">
+      Naše nákladní doprava je zaměřena na poskytování služeb logistickým
+      společnostem, se zaměřením na rozvoz a svoz kusových zásilek, zejména
+      paletového zboží. V našem vozovém parku disponujeme valníkovými a
+      skříňovými vozidly zn. MAN, s ložnou plochou 15 – 17 europalet, všechny
+      vozidla jsou vybavena hydraulickou zdvihací plošinou. Uvítáme nabídku
+      práce, zejména od zákazníka, který dokáže ocenit stálý a precizní přístup
+      k této práci.
+    </p>
+    <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
+      <MyImage
+        image={{
+          image: babyboxImage,
+          alt: "cerpadlo",
+          className: "max-h-[240px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: babyboxImage,
+          alt: "cerpadlo",
+          className: "max-h-[240px]",
+        }}
+      />
+    </div>
+  </CenterSection>
+
+  <CenterSection heading="Ozvěte se nám!" color="cyan">
+    <div class="text-center">
+      <p>Zarezervujte si bezplatnou konzultaci a nabídku:</p>
+      <p>+420 561 035 488</p>
+      <p>
+        <Email email="recepce@jurica-montel.cz" color={text} />
+      </p>
+    </div>
+  </CenterSection>
 </Layout>
 
 <style>
