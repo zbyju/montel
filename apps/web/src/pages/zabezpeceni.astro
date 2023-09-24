@@ -15,6 +15,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Email from "../components/elements/Email.astro";
+import jablotronImage from "../images/jablotron.png";
+import alarmTurni1Image from "../images/alarm_turni1.jpg";
+import alarmTurni2Image from "../images/alarm_turni2.jpg";
+import MyImage from "../components/elements/MyImage.astro";
 
 const bg = "yellow";
 const text = "stone";
@@ -27,9 +31,10 @@ const text = "stone";
     text={text}
     heading="Zabezpečení či automatizace pro Váš domov či obchod? Nabízíme vše v jednom."
     image={{
-      image: kameryImage,
+      image: jablotronImage,
       alt: "placeholder",
-      className: "max-h-[500px] w-auto mx-auto",
+      className: "max-h-[400px] w-auto mx-auto",
+      noShadow: true,
     }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
@@ -163,6 +168,22 @@ const text = "stone";
       kamerovými systémy. Toto vše dělá z Jablotronu univerzální a flexibilní
       řešení pro každou potřebu zabezpečení.
     </p>
+    <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
+      <MyImage
+        image={{
+          image: alarmTurni1Image,
+          alt: "cerpadlo",
+          className: "max-h-[240px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: alarmTurni2Image,
+          alt: "cerpadlo",
+          className: "max-h-[240px]",
+        }}
+      />
+    </div>
   </CenterSection>
 
   <CenterSection color={bg} heading="Co Vám Jablotron přinese">
@@ -174,7 +195,7 @@ const text = "stone";
         className="flex-1"
       >
         <p>
-          Periferie Jablotronu jsou vybaven pokročilými senzory, čímž vám
+          Periferie Jablotronu jsou vybaveny pokročilými senzory, čímž vám
           zajišťuje maximální zabezpečení vašeho domova nebo firmy. Toto
           zařízení zaznamenává veškerý pohyb a činnost, takže můžete být vždy v
           klidu a vědět, že váš dům je v bezpečí.
@@ -243,7 +264,7 @@ const text = "stone";
       <p>Zarezervujte si bezplatnou konzultaci a nabídku:</p>
       <p>+420 561 035 488</p>
       <p>
-        <Email email="recepce@jurica-montel.cz" color={text} />
+        <Email email="recepce@jurica-montel.cz" color={bg} />
       </p>
     </div>
   </CenterSection>
