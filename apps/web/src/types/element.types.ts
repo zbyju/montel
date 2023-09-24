@@ -8,7 +8,8 @@ export type ElementInfo = {
 export type ImageElInfo = {
   image: ImageMetadata;
   alt: string;
-  wrap?: boolean
+  wrap?: boolean;
+  noShadow?: boolean;
 } & ElementInfo
 
 export type LinkElInfo = {
