@@ -42,7 +42,7 @@ const records = getRecords();
   <div>
     <CenterSection color="white" heading="Funkce">
       <div class="flex flex-wrap flex-row justify-center gap-10 lg:gap-28">
-        <MiniCard title="Komfort" size="lg" type="ghost" color="indigo-900">
+        <MiniCard title="Vybavení" size="lg" type="ghost" color="indigo-900">
           <List
             className="text-black"
             list={[
@@ -81,7 +81,11 @@ const records = getRecords();
         >
           <List
             className="text-black"
-            list={["Vzdálená analýza dat", "Vzdálený management Babyboxu"]}
+            list={[
+              "Analýza a vizualizace at",
+              "Vzdálený management Babyboxu",
+              "Vzdálená správa monitorovacího počítače",
+            ]}
             color={colorWeighted(bg, 900)}
           />
         </MiniCard>
@@ -103,31 +107,15 @@ const records = getRecords();
       nabízí rodičům ve špatné životní situaci možnost zanechat své novorozence
       v bezpečném a regulovaném prostředí, když cítí, že nemohou poskytnout
       dítěti odpovídající péči. Díky moderním technologiím babyboxy zajišťují
-      nepřetržitý dohled, pohodlí a teplotní regulaci pro miminka. Tímto
-      způsobem nemocnice ukazuje svůj hluboký závazek k ochraně a podpoře těch
-      nejzranitelnějších členů regionu v kritických chvílích jejich života.
-    </SectionStripe>
-
-    <SectionStripe
-      align="right"
-      color="pink"
-      heading="Rozvadec"
-      image={{ image: placeholderImage, alt: "placeholder" }}
-    >
-      Rozváděč v nemocnici je klíčový pro optimální fungování babyboxu. Obsahuje
-
-
-      <strong>akumulátor</strong>, který přebírá napájení při výpadku elektrické
-      energie. <strong>Router</strong> zajišťuje stálé připojení k internetu a
-      komunikaci s monitorovacím panelem. <strong>GSM komunikátor</strong>,
-      který v případě potřeby rozesílá SMS zprávy jako upozornění, poskytuje
-      další vrstvu zabezpečení. Vše je napájeno z 12V zdroje.
+      nepřetržitý dohled a teplotní regulaci pro miminka. Díky několika
+      úrovňovém notifikačním provedení je obsluha při vložení dítěte okamžitě
+      notifkována, díky čemuž dítě v Babyboxu tráví minimální čas.
     </SectionStripe>
 
     <SectionStripe
       align="left"
-      color="indigo"
-      heading="Monitorovaci panel"
+      color="rose"
+      heading="Monitorovací panel"
       image={{
         image: babyboxPanelInImage,
         alt: "placeholder",
@@ -148,8 +136,8 @@ const records = getRecords();
         >, <strong>napětí</strong>, <strong>stav dvířek</strong> a další
         důležité ukazatele. Jakékoli odchylky nebo neobvyklé události generují
 
-        <strong>upozornění</strong>, což zajišťuje, že dítě v babyboxu má
-        neustálou péči a dohled.
+        <strong>upozornění</strong>, což zajišťuje vysokou dostupnost a
+        spolehlivost Babyboxů.
       </p>
     </SectionStripe>
 
