@@ -8,9 +8,10 @@ interface Props {
   description: string;
   color: ColorName;
   iconColor: ColorWeighted;
+  link: string;
 }
 
-const { header, description, color, iconColor } = Astro.props;
+const { header, description, color, iconColor, link } = Astro.props;
 
 const primaryColor = colorWeighted(color, 900);
 ---
@@ -27,7 +28,7 @@ const primaryColor = colorWeighted(color, 900);
       <p class={`mb-2 text-${primaryColor}`}>{description}</p>
     </div>
     <Link
-      link={{ href: "/babybox", text: "Více", className: "self-start" }}
+      link={{ href: link, text: "Více", className: "self-start" }}
       bg={color}
     />
   </div>
