@@ -8,12 +8,24 @@ interface Props extends ElementInfo {
 const { image, className, style } = Astro.props;
 ---
 
-<div class={className} style={style}>
-  <img
-    src={image.image.src}
-    width="auto"
-    height="auto"
-    alt={image.alt}
-    class={`${image.className} rounded-lg shadow-md hover:shadow-lg transition-all duration-500`}
-  />
-</div>
+{
+  image.wrap === false ? (
+    <img
+      src={image.image.src}
+      width="auto"
+      height="auto"
+      alt={image.alt}
+      class={`shadow-md hover:shadow-lg transition-all duration-500 ${image.className}`}
+    />
+  ) : (
+    <div class={className} style={style}>
+      <img
+        src={image.image.src}
+        width="auto"
+        height="auto"
+        alt={image.alt}
+        class={`${image.className} rounded-lg shadow-md hover:shadow-lg transition-all duration-500`}
+      />
+    </div>
+  )
+}
