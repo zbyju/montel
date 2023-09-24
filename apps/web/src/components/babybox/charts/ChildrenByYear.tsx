@@ -1,19 +1,18 @@
 import { ResponsiveLine } from "@nivo/line"
+import { calculateChildrenByYear, type Record } from "../../../logic/babyboxStats"
 
-export default function ChildrenByYear() {
-  const years = [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
+interface Props {
+  records: Record[]
+}
+
+export default function ChildrenByYear({ records }: Props) {
+  const rawData = calculateChildrenByYear(records)
   const data = [{
     id: "Kluci",
-    data: years.map(i => ({
-      x: i,
-      y: Math.floor(Math.random() * 15)
-    }))
+    data: rawData[0]
   }, {
     id: "Holky",
-    data: years.map(i => ({
-      x: i,
-      y: Math.floor(Math.random() * 15)
-    }))
+    data: rawData[1]
   }]
 
   return (

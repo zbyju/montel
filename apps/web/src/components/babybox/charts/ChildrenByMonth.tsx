@@ -1,13 +1,13 @@
 import { ResponsiveBar } from "@nivo/bar"
+import { calculateChildrenByMonth } from "../../../logic/babyboxStats"
+import type { Record } from "../../../logic/babyboxStats"
 
-export default function ChildrenByMonth() {
-  const months = ["Leden", "Únor", "Březen", "Duben", "Květen", "Červen", "Červenec", "Srpen", "Září", "Říjen", "Listopad", "Prosinec"]
+interface Props {
+  records: Record[]
+}
 
-  const data = months.map(i => ({
-    x: i,
-    Holky: Math.floor(Math.random() * 15),
-    Kluci: Math.floor(Math.random() * 15)
-  }))
+export default function ChildrenByMonth({ records }: Props) {
+  const data = calculateChildrenByMonth(records)
   return (
     <div className="lg:w-3/5 w-full aspect-video pa-5 m-auto">
       <ResponsiveBar

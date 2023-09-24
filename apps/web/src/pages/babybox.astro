@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import babybox from "../images/IMG_2241.jpg";
 import CenterSection from "../components/sections/CenterSection.astro";
 import SectionStripe from "../components/sections/SectionStripe.astro";
 import ChildrenByHour from "../components/babybox/charts/ChildrenByHour";
@@ -14,14 +12,18 @@ import MiniCard from "../components/elements/MiniCard.astro";
 import { colorWeighted } from "../utils/colors";
 import ContactCard from "../components/sections/contact/ContactCard.astro";
 import List from "../components/elements/List.astro";
-import { faBaby } from "@fortawesome/free-solid-svg-icons";
+import { faWrench } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import placeholderImage from "../images/1280x720.svg";
-import babyboxImage from "../images/IMG_2241.jpg";
-import babyboxImage2 from "../images/IMG_38732.jpg";
+import babyboxImage from "../images/babybox.jpg";
+import babyboxFrontImage from "../images/babybox_front.jpg";
+import babyboxPanelInImage from "../images/babybox_panel_in.jpg";
+import { getRecords } from "../logic/babyboxStats";
 
 const bg = "pink";
 const text = "pink";
+
+const records = getRecords();
 ---
 
 <Layout title="MONTEL" bg={bg} text={text}>
@@ -90,7 +92,11 @@ const text = "pink";
       align="left"
       color="indigo"
       heading="Babybox"
-      image={{ image: babyboxImage2, alt: "placeholder" }}
+      image={{
+        image: babyboxFrontImage,
+        alt: "placeholder",
+        className: "max-h-[400px]",
+      }}
     >
       Babyboxy, umístěné v nemocnicích daného regionu, představují záchranný bod
       pro ty, kteří se ocitnou v hluboké životní nouzi. Toto diskrétní řešení
@@ -122,7 +128,11 @@ const text = "pink";
       align="left"
       color="indigo"
       heading="Monitorovaci panel"
-      image={{ image: placeholderImage, alt: "placeholder" }}
+      image={{
+        image: babyboxPanelInImage,
+        alt: "placeholder",
+        className: "max-h-[360px]",
+      }}
     >
       <p>
         V nemocnici je umístěn <strong>monitorovací panel</strong>, primárně
@@ -146,39 +156,43 @@ const text = "pink";
     <CenterSection heading="Kontakt Servis" color="white">
       <ContactCard
         color="blue"
-        color2="rose"
+        color2="pink"
         department="Servis"
         phone="+420 606 043 886"
         email="babybox@jurica-montel.cz"
         align="center"
       >
-        <FontAwesomeIcon slot="icon" icon={faBaby} className="text-blue-900" />
+        <FontAwesomeIcon
+          slot="icon"
+          icon={faWrench}
+          className="text-blue-900"
+        />
       </ContactCard>
     </CenterSection>
 
     <CenterSection heading="Statistiky" color="pink">
       <h3 class="text-xl text-center font-bold mt-5">Počet dětí</h3>
-      <ChildrenTotal client:load />
+      <ChildrenTotal client:load records={records} />
 
       <h3 class="text-xl text-center font-bold mt-10">
         Počet dětí v jednotlivých letech
       </h3>
-      <ChildrenByYear client:load />
+      <ChildrenByYear client:load records={records} />
 
       <h3 class="text-xl text-center font-bold mt-10">
         Počet dětí podle měsíce
-        <ChildrenByMonth client:load />
+        <ChildrenByMonth client:load records={records} />
       </h3>
 
       <h3 class="text-xl text-center font-bold mt-10">
         Počet dětí podle dne v týdnu
       </h3>
-      <ChildrenByDay client:load />
+      <ChildrenByDay client:load records={records} />
 
       <h3 class="text-xl text-center font-bold mt-10">
         Počet dětí podle času odložení
       </h3>
-      <ChildrenByHour client:load />
+      <ChildrenByHour client:load records={records} />
     </CenterSection>
   </div>
 </Layout>

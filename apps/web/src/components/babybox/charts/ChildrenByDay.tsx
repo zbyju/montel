@@ -1,13 +1,13 @@
 import { ResponsiveBar } from "@nivo/bar"
+import { calculateChildrenByDay, type Record } from "../../../logic/babyboxStats"
 
-export default function ChildrenByDay() {
-  const days = ["Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota", "Neděle"]
+interface Props {
+  records: Record[]
+}
 
-  const data = days.map(i => ({
-    x: i,
-    Holky: Math.floor(Math.random() * 15),
-    Kluci: Math.floor(Math.random() * 15)
-  }))
+export default function ChildrenByDay({ records }: Props) {
+  const data = calculateChildrenByDay(records)
+
   return (
     <div className="lg:w-3/5 w-full aspect-video pa-5 m-auto">
       <ResponsiveBar
@@ -40,7 +40,6 @@ export default function ChildrenByDay() {
         labelSkipHeight={12}
         legends={[]}
         role="application"
-        ariaLabel="Nivo bar chart demo"
       />
     </div>
   )

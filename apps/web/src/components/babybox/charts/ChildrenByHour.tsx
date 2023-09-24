@@ -1,16 +1,12 @@
 import { ResponsiveBar } from "@nivo/bar"
+import { calculateChildrenByHour, type Record } from "../../../logic/babyboxStats"
 
-export default function ChildrenByHour() {
-  const hours = Array.from(Array(24).keys())
+interface Props {
+  records: Record[]
+}
 
-  const data = hours.map(i => {
-    const hour = i.toString().padStart(2, "0")
-    return {
-      x: `${hour}:00-${hour}:59`,
-      Holky: Math.floor(Math.random() * 15),
-      Kluci: Math.floor(Math.random() * 15)
-    }
-  })
+export default function ChildrenByHour({ records }: Props) {
+  const data = calculateChildrenByHour(records)
   return (
     <div className="lg:w-3/5 w-full aspect-video pa-5 m-auto">
       <ResponsiveBar

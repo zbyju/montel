@@ -1,13 +1,12 @@
 import { ResponsivePie } from "@nivo/pie"
+import { calculateTotal, type Record } from "../../../logic/babyboxStats"
 
-export default function ChildrenTotal() {
-  const data = [{
-    id: "Kluci",
-    value: Math.floor(Math.random() * 200)
-  }, {
-    id: "Holky",
-    value: Math.floor(Math.random() * 200)
-  }]
+interface Props {
+  records: Record[]
+}
+
+export default function ChildrenTotal({ records }: Props) {
+  const data = calculateTotal(records)
   return (
     <div className="lg:w-3/5 w-full aspect-video pa-5 m-auto">
       <ResponsivePie
