@@ -2,6 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 import BigSection from "../components/sections/BigSection.astro";
 import babyboxImage from "../images/1280x720.svg";
+import MyImage from "../components/elements/MyImage.astro";
+import CenterSection from "../components/sections/CenterSection.astro";
+import Email from "../components/elements/Email.astro";
+import List from "../components/elements/List.astro";
+import MiniCard from "../components/elements/MiniCard.astro";
+import { colorWeighted } from "../utils/colors";
+import kameryImage from "../images/kamery.png";
+import kameryZmrzlinaImage from "../images/kamery_zmrzlina.jpg";
+import kameryZebrikImage from "../images/kamery_zebrik.jpg";
+import kameryNahoreImage from "../images/kamery_nahore.jpg";
 
 const bg = "yellow";
 const text = "stone";
@@ -13,7 +23,147 @@ const text = "stone";
     color={bg}
     text={text}
     heading="Pohlídejte svůj domov či firmu z jakéhokoli místa s našimi kamerovými řešeními."
-    image={{ image: babyboxImage, alt: "placeholder" }}
+    image={{
+      image: kameryImage,
+      alt: "placeholder",
+      noShadow: true,
+    }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
+
+  <div id="offering"></div>
+  <CenterSection heading="Nabízíme" color="white" space="lg">
+    <div class="md:w-3/5 w-11/12 mx-auto flex flex-col gap-2">
+      <p>
+        Základem kamerového systému, které montujeme, bývá NVR, nebo DVR, které
+        mohou mít připojený různý počet kamer a mají různé rozlišení. Každý z
+        těchto parametrů má vždy své výhody a nevýhody. Snažíme se proto systém
+        navrhnout tak, aby splňoval co možná nejlépe představy zákazníka. Obraz
+        z kamerového systému lze <strong>prohlížet online</strong>, nebo ze
+        záznamu na <strong>televizi, PC, nebo mobilu</strong> přes místní Wi-Fi,
+        nebo internet a přitom nezáleží, jestli máte od svého poskytovatele
+        internetu pevnou veřejnou IP adresu.
+      </p><p>
+        V posledních letech šel vývoj velmi rychle dopředu i u kamer s umělou
+        inteligencí. Jedná se zejména o funkce <strong
+          >rozpoznání obličeje, SPZ, počítání osob, opuštění předmětu, a mnoho
+          dalších</strong
+        >. Inteligentní funkce se dají využít pro různé automatizační procesy,
+        nebo pro zabezpečení. Přímo do kamer se také začali montovat výstražné
+        zvuky a světla, které se mohou aktivovat, když uvidí narušitele. S
+        vhodným software mohou kamery také hlídat počet volných míst na
+        parkovišti, takže využití je opravdu velmi široké.
+      </p>
+    </div>
+    <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
+      <MyImage
+        image={{
+          image: kameryZebrikImage,
+          alt: "cerpadlo",
+          className: "max-h-[240px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: kameryZmrzlinaImage,
+          alt: "cerpadlo",
+          className: "max-h-[240px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: kameryNahoreImage,
+          alt: "cerpadlo",
+          className: "max-h-[240px]",
+        }}
+      />
+    </div>
+  </CenterSection>
+
+  <CenterSection color={bg} heading="Funkce">
+    <div class="flex flex-wrap flex-row justify-center gap-10 lg:gap-28">
+      <MiniCard
+        title="Individuální řešení"
+        size="lg"
+        type="filled"
+        color="amber-300"
+        className="flex-1"
+      >
+        <List
+          list={[
+            "Vnitřní kamery",
+            "Venkovní kamery",
+            "Různý počet kamer",
+            "Různé rozlišení",
+            "Různý přisvit",
+          ]}
+          color={"slate-900"}
+        />
+      </MiniCard>
+      <MiniCard
+        title="Umělá inteligence"
+        size="lg"
+        type="ghost"
+        color="amber-500"
+        className="flex-1"
+      >
+        <List
+          className="text-black"
+          list={[
+            "Rozpoznání obličeje",
+            "Rozpoznání SPZ",
+            "Počítání osob",
+            "Opuštění předmětu",
+            "Další chytré funkce",
+          ]}
+          color={colorWeighted(bg, 900)}
+        />
+      </MiniCard>
+      <MiniCard
+        title="Vzdálená správa"
+        size="lg"
+        type="ghost"
+        color="amber-500"
+        className="flex-1"
+      >
+        <List
+          className="text-black"
+          list={[
+            "Mobilní aplikace",
+            "Připojení přes PC",
+            "Prohlížení kamer na televizi",
+            "Netřeba pevné veřejné IP adresy/DDNS",
+          ]}
+          color={colorWeighted(bg, 900)}
+        />
+      </MiniCard>
+      <MiniCard
+        title="Dlouhodobý záznam"
+        size="lg"
+        type="ghost"
+        color="amber-500"
+        className="flex-1"
+      >
+        <List
+          className="text-black"
+          list={[
+            "Spuštění na pohyb",
+            "Spuštění na chytrou událost",
+            "Spuštění v časových úsecích",
+          ]}
+          color={colorWeighted(bg, 900)}
+        />
+      </MiniCard>
+    </div>
+  </CenterSection>
+
+  <CenterSection heading="Ozvěte se nám!" color="white">
+    <div class="text-center">
+      <p>Zarezervujte si bezplatnou konzultaci a nabídku:</p>
+      <p>+420 561 035 488</p>
+      <p>
+        <Email email="recepce@jurica-montel.cz" color={bg} />
+      </p>
+    </div>
+  </CenterSection>
 </Layout>
