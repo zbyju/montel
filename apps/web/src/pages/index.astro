@@ -6,6 +6,8 @@ import {
   faShield,
   faCar,
   faFan,
+  faTruckFast,
+  faSun,
 } from "@fortawesome/free-solid-svg-icons";
 import Card from "../components/elements/Card.astro";
 import Layout from "../layouts/Layout.astro";
@@ -33,17 +35,26 @@ const iconClass = "max-w-[40px] max-h-[40px]";
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
   <div
-    class="w-screen m-auto px-10 -mt-16 flex gap-7 justify-around flex-wrap"
+    class="w-screen m-auto px-10 -mt-16 flex gap-7 justify-around flex-wrap mb-20"
     id="offering"
   >
     <Card
       header="Babybox"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
+      description="Babyboxy jsou klíčové v ochraně novorozenců v ČR. Po jejich umístění rychle upozorní na uložené děťátko, zajišťujíc tak jeho bezpečí. Po celé republice servisujeme a spravujeme řadu těchto zařízení a současně vyrábíme nové."
       color={text}
       iconColor="rose-600"
-      link="/babybox"
+      links={[{ href: "/babybox", text: "Více" }]}
     >
       <FontAwesomeIcon icon={faBaby} slot="icon" className={iconClass} />
+    </Card>
+    <Card
+      header="Tepelná čerpadla"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
+      color={text}
+      iconColor="red-600"
+      links={[{ href: "/cerpadla", text: "Více" }]}
+    >
+      <FontAwesomeIcon icon={faFan} slot="icon" className={iconClass} />
     </Card>
     <!-- <Card
       header="Kamerove systemy"
@@ -54,37 +65,23 @@ const iconClass = "max-w-[40px] max-h-[40px]";
       <FontAwesomeIcon icon={faVideo} slot="icon" className={iconClass} />
     </Card> -->
     <Card
-      header="Elektrovyroba"
+      header="Fotovoltaika"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
       color={text}
       iconColor="red-600"
-      link="/elektrovyroba"
+      links={[{ href: "/fotovoltaika", text: "Více" }]}
     >
-      <FontAwesomeIcon icon={faMicrochip} slot="icon" className={iconClass} />
+      <FontAwesomeIcon icon={faSun} slot="icon" className={iconClass} />
     </Card>
     <Card
-      header="Tepelna cerpadla"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
-      color={text}
-      iconColor="red-600"
-      link="/cerpadla"
-    >
-      <FontAwesomeIcon icon={faFan} slot="icon" className={iconClass} />
-    </Card>
-    <!-- <Card
-      header="Opravy zdvihacich plosin"
+      header="Zabezpečovací systémy"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
       color={text}
       iconColor="red-600"
-    >
-      <FontAwesomeIcon icon={faTruck} slot="icon" className={iconClass} />
-    </Card> -->
-    <Card
-      header="Zabezpecovaci systemy"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia augue sit amet ex consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
-      color={text}
-      iconColor="red-600"
-      link="/zabezpeceni"
+      links={[
+        { href: "/zabezpeceni", text: "Alarm" },
+        { href: "/kamery", text: "Kamery" },
+      ]}
     >
       <FontAwesomeIcon icon={faShield} slot="icon" className={iconClass} />
     </Card>
@@ -93,21 +90,22 @@ const iconClass = "max-w-[40px] max-h-[40px]";
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
       color={text}
       iconColor="red-600"
-      link="/autoservis"
+      links={[{ href: "/autoservis", text: "Více" }]}
     >
       <FontAwesomeIcon icon={faCar} slot="icon" className={iconClass} />
     </Card>
-    <!-- <Card
+    <Card
       header="Doprava"
       description="Lorem ipsum dolor sit amet consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
       color={text}
+      links={[{ href: "/doprava", text: "Více" }]}
       iconColor="red-600"
     >
       <FontAwesomeIcon icon={faTruckFast} slot="icon" className={iconClass} />
-    </Card> -->
+    </Card>
   </div>
 
-  <SectionStripe
+  <!-- <SectionStripe
     align="left"
     color="pink"
     heading="Babybox"
@@ -127,7 +125,7 @@ const iconClass = "max-w-[40px] max-h-[40px]";
       bg="rose"
     />
   </SectionStripe>
-
+-->
   <!--<CenterSection heading="Projekty na kterych jsme pracovali" color="blue">
     <div class="flex justify-center flex-wrap gap-10 mt-16">
       <HoverImage
