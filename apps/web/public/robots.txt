@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://jurica-montel.cz/sitemap-index.xml
+
