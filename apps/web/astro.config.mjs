@@ -1,21 +1,18 @@
 import { defineConfig } from "astro/config";
 
 import react from "@astrojs/react";
-
-// https://astro.build/config
 import tailwind from "@astrojs/tailwind";
-
-// https://astro.build/config
-
-// https://astro.build/config
 import node from "@astrojs/node";
+import sitemap from "@astrojs/sitemap";
+import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
 export default defineConfig({
   server: {
     port: 8080
   },
-  integrations: [react(), tailwind()],
+  site: "https://jurica-montel.cz",
+  integrations: [react(), tailwind(), sitemap(), prefetch()],
   output: "server",
   adapter: node({
     mode: "standalone"
