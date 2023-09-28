@@ -32,14 +32,13 @@ const records = getRecords();
     color={bg}
     heading="Pro ty nejmenší v nouzi ostrůvek bezpečí vždy čeká, nesouc naději v těžkých chvílích."
     links={[
-      { href: "#offering", text: "O Babyboxu" },
-      { href: "#stats", text: "Statistiky" },
-      { href: "#contact", text: "Servis" },
+      { href: "#features", text: "O Babyboxu" },
+      { href: "#servis", text: "Servis" },
     ]}
     image={{ image: babyboxImage, alt: "placeholder" }}
   />
 
-  <div>
+  <div id="features">
     <CenterSection color="white" heading="Funkce">
       <div class="flex flex-wrap flex-row justify-center gap-10 lg:gap-28">
         <MiniCard title="Vybavení" size="lg" type="ghost" color="indigo-900">
@@ -102,14 +101,22 @@ const records = getRecords();
         className: "max-h-[400px]",
       }}
     >
-      Babyboxy, umístěné v nemocnicích daného regionu, představují záchranný bod
-      pro ty, kteří se ocitnou v hluboké životní nouzi. Toto diskrétní řešení
-      nabízí rodičům ve špatné životní situaci možnost zanechat své novorozence
-      v bezpečném a regulovaném prostředí, když cítí, že nemohou poskytnout
-      dítěti odpovídající péči. Díky moderním technologiím babyboxy zajišťují
-      nepřetržitý dohled a teplotní regulaci pro miminka. Díky několika
-      úrovňovém notifikačním provedení je obsluha při vložení dítěte okamžitě
-      notifkována, díky čemuž dítě v Babyboxu tráví minimální čas.
+      <p>
+        Babyboxy, umístěné v nemocnicích daného regionu, představují záchranný
+        bod pro ty, kteří se ocitnou v hluboké životní nouzi. Toto diskrétní
+        řešení nabízí rodičům ve špatné životní situaci možnost zanechat své
+        novorozence v bezpečném a regulovaném prostředí, když cítí, že nemohou
+        poskytnout dítěti odpovídající péči. Díky moderním technologiím babyboxy
+        zajišťují nepřetržitý dohled a teplotní regulaci pro miminka. Díky
+        několika úrovňovém notifikačním provedení je obsluha při vložení dítěte
+        okamžitě notifkována, díky čemuž dítě v Babyboxu tráví minimální čas.
+      </p><p class="mt-2">
+        Více o Babyboxech se můžete dozvědět na oficiálních stránkách - <a
+          class="underline"
+          href="https://www.babybox.cz"
+          target="_blank">www.babybox.cz</a
+        >.
+      </p>
     </SectionStripe>
 
     <SectionStripe
@@ -141,6 +148,7 @@ const records = getRecords();
       </p>
     </SectionStripe>
 
+    <div id="servis"></div>
     <CenterSection heading="Kontakt Servis" color="white">
       <ContactCard
         color="blue"
