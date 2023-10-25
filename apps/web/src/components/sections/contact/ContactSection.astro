@@ -22,11 +22,11 @@ const { color, color2, noAddresses = false, className } = Astro.props;
 
 <div class={`${className}`}>
   <h2
-    class={`lg:text-7xl md:text-5xl sm:text-6xl text-5xl md:text-left text-center font-black tracking-wider word-wide mb-20`}
+    class={`lg:text-7xl md:text-6xl text-5xl md:text-left text-center font-black tracking-wider word-wide mb-20`}
   >
     Kontaktujte nás
   </h2>
-  <div class="flex flex-wrap justify-between gap-10 lg:gap-x-24 lg:gap-y-20">
+  <div class="flex flex-wrap justify-between gap-10 items-center lg:gap-x-24 lg:gap-y-20">
     {
       noAddresses !== true && (
         <>

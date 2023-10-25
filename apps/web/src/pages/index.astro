@@ -14,8 +14,6 @@ import Layout from "../layouts/Layout.astro";
 import SectionStripe from "../components/sections/SectionStripe.astro";
 import BigSection from "../components/sections/BigSection.astro";
 import CenterSection from "../components/sections/CenterSection.astro";
-import placeholderImage from "../images/1280x720.svg";
-import buildingImage from "../images/building.jpg";
 import uvodImage from "../images/uvod.jpg";
 import babyboxImage from "../images/bb.jpg";
 import Link from "../components/elements/Link.astro";
@@ -27,7 +25,7 @@ const text = "blue";
 const iconClass = "max-w-[40px] max-h-[40px]";
 ---
 
-<Layout title="MONTEL" bg={bg} text={text}>
+<Layout title="Zdeněk Juřica - MONTEL" bg={bg} text={text}>
   <BigSection
     slot="header"
     color="blue"
@@ -196,8 +194,8 @@ const iconClass = "max-w-[40px] max-h-[40px]";
 
   <CenterSection heading="O nás" color="white"><p></p></CenterSection>
 
-  <div class={`bg-${bg}-100 text-${text}-900 py-20`}>
-    <div class="lg:w-3/5 mx-auto">
+  <div class={` bg-${bg}-100 text-${text}-900 py-20`}>
+    <div class="lg:w-3/5 w-11/12 mx-auto">
       <ContactSection color={bg} color2="yellow" noAddresses />
     </div>
   </div>
