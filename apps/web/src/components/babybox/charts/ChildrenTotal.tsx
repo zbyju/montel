@@ -1,12 +1,12 @@
-import { ResponsivePie } from "@nivo/pie"
-import { calculateTotal, type Record } from "../../../logic/babyboxStats"
+import { ResponsivePie } from "@nivo/pie";
+import { calculateTotal, type Record } from "../../../logic/babyboxStats";
 
 interface Props {
-  records: Record[]
+  records: Record[];
 }
 
 export default function ChildrenTotal({ records }: Props) {
-  const data = calculateTotal(records)
+  const data = calculateTotal(records);
   return (
     <div className="lg:w-3/5 w-full aspect-video pa-5 m-auto">
       <ResponsivePie
@@ -24,21 +24,21 @@ export default function ChildrenTotal({ records }: Props) {
         enableArcLinkLabels={false}
         legends={[
           {
-            anchor: 'bottom',
-            direction: 'row',
+            anchor: "bottom",
+            direction: "row",
             translateX: 15,
             translateY: 30,
             itemsSpacing: 0,
             itemWidth: 75,
             itemHeight: 18,
-            itemTextColor: '#000',
-            itemDirection: 'left-to-right',
+            itemTextColor: "#000",
+            itemDirection: "left-to-right",
             itemOpacity: 1,
             symbolSize: 18,
-            symbolShape: 'circle',
-          }
+            symbolShape: "circle",
+          },
         ]}
       />
     </div>
-  )
+  );
 }

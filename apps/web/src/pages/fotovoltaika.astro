@@ -7,6 +7,9 @@ import MyImage from "../components/elements/MyImage.astro";
 import fotovoltaikaVelkaImage from "../images/fotovoltaika_velka.jpg";
 import fotovoltaika3Image from "../images/fotovoltaika3.jpg";
 import fotovoltaikaInstalaceImage from "../images/fotovoltaika_instalace.jpg";
+import fotovoltaikaInstalace2Image from "../images/fotovoltaika4.jpg";
+import fotovoltaikaInstalace3Image from "../images/fotovoltaika5.jpg";
+import stridacImage from "../images/stridac.jpg";
 import Email from "../components/elements/Email.astro";
 
 const bg = "emerald";
@@ -20,7 +23,7 @@ const text = "emerald";
     color={bg}
     heading="Investujte do fotovoltaiky a užívejte si dlouhodobé úspory a čistou energii pro váš domov."
     image={{
-      image: fotovoltaikaImage,
+      image: fotovoltaikaInstalaceImage,
       alt: "placeholder",
       className: "max-h-[500px] w-auto mx-auto",
     }}
@@ -40,19 +43,26 @@ const text = "emerald";
           >FVE o výkonu 6 - 50kW s bateriemi 10 - 50kW</strong
         >.
       </p><p>
-        Hlavní součásti, střídače a baterie používáme od čínských výrobců Solax
-        a SofarSolar. Panely používáme, aby byly nejvýhodnější pro požadovaný
-        výkon, sklon, orientaci a rozměr střechy.
+        Hlavní součásti, střídače a baterie používáme od výrobců Solax
+        a SofarSolar. Panely používáme, aby byly nejvýhodnější pro <strong>požadovaný
+        výkon, sklon, orientaci a rozměr střechy</strong>.
       </p><p>
         Konstrukce pro uchycení ke střeše si vyrábíme sami, přesně na míru, z
         kvalitních nerezových materiálů. Instalaci provádíme včetně předělání
         domovního a elektroměrového rozvaděče.
       </p>
       <p>
-        Taktéž zajistíme vyřízení dotace, připojení k síti a následný výkup
+        Taktéž pomůžeme zajistit vyřízení dotace, připojení k síti a následný výkup
         přebytečné energie.
       </p>
       <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
+        <MyImage
+          image={{
+            image: fotovoltaikaImage,
+            alt: "cerpadlo",
+            className: "max-h-[220px]",
+          }}
+        />
         <MyImage
           image={{
             image: fotovoltaikaVelkaImage,
@@ -62,7 +72,28 @@ const text = "emerald";
         />
         <MyImage
           image={{
+            image: fotovoltaikaInstalace3Image,
+            alt: "cerpadlo",
+            className: "max-h-[220px]",
+          }}
+        />
+        <MyImage
+          image={{
             image: fotovoltaika3Image,
+            alt: "cerpadlo",
+            className: "max-h-[220px]",
+          }}
+        />
+        <MyImage
+          image={{
+            image: fotovoltaikaInstalace2Image,
+            alt: "cerpadlo",
+            className: "max-h-[220px]",
+          }}
+        />
+        <MyImage
+          image={{
+            image: stridacImage,
             alt: "cerpadlo",
             className: "max-h-[220px]",
           }}
@@ -75,8 +106,8 @@ const text = "emerald";
     <div class="md:w-3/5 w-11/12 mx-auto">
       <p>
         Na fotovoltaické systémy se v rámci projektu Nová zelená úsporám
-        vypisují dotace, které je možné čerpat. Zpracujeme pro Vás tedy také
-        projekt, odborný posudek a vyřídíme všechnu potřebnou administrativu
+        vypisují dotace, které je možné čerpat. Zpracujeme pro Vás také
+        projekt, odborný posudek a pomůžeme vyřídít potřebnou administrativu
         nutnou pro získání dotace.
       </p>
     </div>

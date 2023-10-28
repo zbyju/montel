@@ -1,19 +1,25 @@
-import { ResponsiveLine } from "@nivo/line"
-import { calculateChildrenByYear, type Record } from "../../../logic/babyboxStats"
+import { ResponsiveLine } from "@nivo/line";
+import {
+  calculateChildrenByYear,
+  type Record,
+} from "../../../logic/babyboxStats";
 
 interface Props {
-  records: Record[]
+  records: Record[];
 }
 
 export default function ChildrenByYear({ records }: Props) {
-  const rawData = calculateChildrenByYear(records)
-  const data = [{
-    id: "Kluci",
-    data: rawData[0]
-  }, {
-    id: "Holky",
-    data: rawData[1]
-  }]
+  const rawData = calculateChildrenByYear(records);
+  const data = [
+    {
+      id: "Kluci",
+      data: rawData[0],
+    },
+    {
+      id: "Holky",
+      data: rawData[1],
+    },
+  ];
 
   return (
     <div className="lg:w-3/5 w-full aspect-video pa-5 m-auto">
@@ -28,7 +34,7 @@ export default function ChildrenByYear({ records }: Props) {
         pointSize={14}
         pointColor="#fce7f5"
         pointBorderWidth={4}
-        pointBorderColor={{ from: 'serieColor' }}
+        pointBorderColor={{ from: "serieColor" }}
         pointLabelYOffset={-12}
         useMesh={true}
         axisTop={null}
@@ -36,17 +42,17 @@ export default function ChildrenByYear({ records }: Props) {
         axisBottom={{
           tickSize: 5,
           tickPadding: 5,
-          legend: 'Rok',
-          legendPosition: 'middle',
+          legend: "Rok",
+          legendPosition: "middle",
           legendOffset: 35,
-          tickRotation: 0
+          tickRotation: 0,
         }}
         axisLeft={{
-          legend: 'Celkem',
+          legend: "Celkem",
           legendPosition: "middle",
-          legendOffset: -30
+          legendOffset: -30,
         }}
       />
     </div>
-  )
+  );
 }

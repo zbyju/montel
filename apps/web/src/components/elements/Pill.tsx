@@ -12,9 +12,9 @@ export default function Pill({ pill, className }: Props) {
   const bg = `bg-${pill.color}`;
   const text = `text-${oppositeColor(pill.color)}`;
 
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  const clickClass = pill.description ? "cursor-pointer" : ""
+  const clickClass = pill.description ? "cursor-pointer" : "";
 
   return (
     <>
@@ -23,9 +23,15 @@ export default function Pill({ pill, className }: Props) {
         onClick={() => setIsOpen(true)}
       >
         {pill.title}
-
       </div>
-      {pill.description ? <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} title={pill.title} description={pill.description} /> : undefined}
+      {pill.description ? (
+        <Modal
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          title={pill.title}
+          description={pill.description}
+        />
+      ) : undefined}
     </>
-  )
+  );
 }

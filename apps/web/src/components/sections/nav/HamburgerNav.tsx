@@ -1,8 +1,7 @@
-import rbm from 'react-burger-menu';
+import rbm from "react-burger-menu";
 import type { ColorName } from "../../../types/colors.types";
 import type { Link } from "../../../types/menu.types";
-import HamburgerLink from './HamburgerLink';
-
+import HamburgerLink from "./HamburgerLink";
 
 const { elastic: Menu } = rbm;
 

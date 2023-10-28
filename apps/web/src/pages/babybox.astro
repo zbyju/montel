@@ -16,7 +16,7 @@ import { faWrench } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import babyboxImage from "../images/babybox_uvod.jpg";
 import babyboxFrontImage from "../images/babybox_front.jpg";
-import babyboxPanelInImage from "../images/babybox_panel_in.jpg";
+import monitorInImage from "../images/monitor_in.jpg";
 import { getRecords } from "../logic/babyboxStats";
 
 const bg = "pink";
@@ -44,11 +44,13 @@ const records = getRecords();
           <List
             className="text-black"
             list={[
-              "Automatické dvířka",
+              "Automatická dvířka",
               "Detekce zábrany dvířek",
               "Automatická regulace teploty",
+              "Vyhřívaná vanička",
+              "Vyhřívaný plášť",
               "Klimatizace",
-              "Vytápění",
+              "Nucený přívod vzduchu",
               "Nerezový materiál",
             ]}
             color={colorWeighted(bg, 900)}
@@ -63,10 +65,12 @@ const records = getRecords();
           <List
             className="text-black"
             list={[
+              "Monitorovací počítač s hlasovým a obrazovým výstupem",
+              "Kamera snímající vnitřní prostor Babyboxu",
+              "SMS zprávy a volání při otevření a aktivaci",
+              "Obrázek vnitřního prostoru zasílaný na PC a mobily",
               "24/7 Monitoring",
-              "Kamera uvnitř Babyboxu",
-              "SMS upozornění",
-              "Emailové notifikace",
+              "Emailové notifikace při jakékoliv události",
             ]}
             color={colorWeighted(bg, 900)}
           />
@@ -80,9 +84,11 @@ const records = getRecords();
           <List
             className="text-black"
             list={[
-              "Analýza a vizualizace at",
+              "Periodické odesílání dat na vzdálený server",
+              "Analýza a vizualizace dat",
               "Vzdálený management Babyboxu",
               "Vzdálená správa monitorovacího počítače",
+              "Vzdálená správa notifikací pro nemocnice"
             ]}
             color={colorWeighted(bg, 900)}
           />
@@ -101,14 +107,12 @@ const records = getRecords();
       }}
     >
       <p>
-        Babyboxy, umístěné v nemocnicích daného regionu, představují záchranný
-        bod pro ty, kteří se ocitnou v hluboké životní nouzi. Toto diskrétní
+        Babyboxy, umístěné v nemocnicích daného regionu, představují <strong>záchranný
+        bod</strong> pro ty, kteří se ocitnou v hluboké životní nouzi. Toto diskrétní
         řešení nabízí rodičům ve špatné životní situaci možnost zanechat své
-        novorozence v bezpečném a regulovaném prostředí, když cítí, že nemohou
-        poskytnout dítěti odpovídající péči. Díky moderním technologiím babyboxy
-        zajišťují nepřetržitý dohled a teplotní regulaci pro miminka. Díky
-        několika úrovňovém notifikačním provedení je obsluha při vložení dítěte
-        okamžitě notifkována, díky čemuž dítě v Babyboxu tráví minimální čas.
+        novorozence v <strong>bezpečném a regulovaném prostředí</strong>, když cítí, že nemohou
+        poskytnout dítěti odpovídající péči. Pomocí moderních technologií babyboxy
+        zajišťují <strong>nepřetržitý dohled a teplotní regulaci</strong> pro miminka. Několika úrovňové notifikační provedení okamžitě informuje obsluhu o vloženém dítěti, které díky tomu v současné době ztráví v Babyboxu průměrně pouze asi 6 minut.
       </p><p class="mt-2">
         Více o Babyboxech se můžete dozvědět na oficiálních stránkách - <a
           class="underline"
@@ -123,27 +127,25 @@ const records = getRecords();
       color="rose"
       heading="Monitorovací panel"
       image={{
-        image: babyboxPanelInImage,
+        image: monitorInImage,
         alt: "placeholder",
         className: "max-h-[360px]",
       }}
     >
       <p>
-        V nemocnici je umístěn <strong>monitorovací panel</strong>, primárně
-        navržený pro sledování obsahu babyboxu. Jakmile je zatížena vanička
-        babyboxu, obsluha je okamžitě upozorněna. Díky <strong
-          >integrované kameře</strong
-        > může obsluha v reálném čase vidět, zda je v babyboxu dítě, a okamžitě
-        zasáhnout.
-      </p>
-      <p class="mt-3">
-        Panel také zobrazuje další důležité informace, jako je <strong
+        V nemocnici je umístěn monitorovací panel v místnosti stálé služby (zpravidla na novorozenecké JIP), primárně
+        navržený pro sledování obsahu babyboxu. Panel zobrazuje důležité informace: <strong
           >teplota</strong
-        >, <strong>napětí</strong>, <strong>stav dvířek</strong> a další
+          >, <strong>napětí</strong>, <strong>stav dvířek</strong>, <strong>stav datové sítě</strong>, nastavené parametry, které umožňuje vzdáleně měnit, a další
         důležité ukazatele. Jakékoli odchylky nebo neobvyklé události generují
 
-        <strong>upozornění</strong>, což zajišťuje vysokou dostupnost a
-        spolehlivost Babyboxů.
+        <strong>obrazové upozornění</strong> a na naléhavé události upozorňuje navíc <strong>hlasem a tónem</strong>, což zajišťuje vysokou dostupnost a
+        spolehlivost Babyboxů. Díky <strong
+          >integrované kameře</strong
+        > vidí obsluha v reálném čase dění v Babyboxu, na které může okamžitě reagovat.
+      </p>
+      <p class="mt-3">
+        
       </p>
     </SectionStripe>
 
@@ -154,7 +156,7 @@ const records = getRecords();
         color2="pink"
         department="Servis"
         phone="+420 606 043 886"
-        email="babybox@jurica-montel.cz"
+        email="jurica@babybox.cz"
         align="center"
       >
         <FontAwesomeIcon

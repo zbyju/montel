@@ -1,5 +1,3 @@
-import fs from "fs"
+import fs from "fs";
 
-function getData() {
-
-}
+function getData() {}

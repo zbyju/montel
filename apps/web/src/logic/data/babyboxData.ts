@@ -250,4 +250,4 @@ export const data = `1,17.2.2006,20:10,Sonička,Praha – Hloubětín,F
 250,7.5.2023,22:17,Karolína,Ostrava,F
 251,13.6.2023,6:02,Ondřej,Praha 8,M
 252,18.6.2023,5:40,Jindřiška,Vsetín,F
-253,21.6.2023,0:24,Zuzana,Praha 8,F`
+253,21.6.2023,0:24,Zuzana,Praha 8,F`;

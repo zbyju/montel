@@ -1,13 +1,13 @@
-import { ResponsiveBar } from "@nivo/bar"
-import { calculateChildrenByMonth } from "../../../logic/babyboxStats"
-import type { Record } from "../../../logic/babyboxStats"
+import { ResponsiveBar } from "@nivo/bar";
+import { calculateChildrenByMonth } from "../../../logic/babyboxStats";
+import type { Record } from "../../../logic/babyboxStats";
 
 interface Props {
-  records: Record[]
+  records: Record[];
 }
 
 export default function ChildrenByMonth({ records }: Props) {
-  const data = calculateChildrenByMonth(records)
+  const data = calculateChildrenByMonth(records);
   return (
     <div className="lg:w-3/5 w-full aspect-video pa-5 m-auto">
       <ResponsiveBar
@@ -26,15 +26,15 @@ export default function ChildrenByMonth({ records }: Props) {
         axisBottom={{
           tickSize: 5,
           tickPadding: 5,
-          legend: 'Měsíc',
-          legendPosition: 'middle',
+          legend: "Měsíc",
+          legendPosition: "middle",
           legendOffset: 35,
-          tickRotation: 0
+          tickRotation: 0,
         }}
         axisLeft={{
-          legend: 'Celkem',
+          legend: "Celkem",
           legendPosition: "middle",
-          legendOffset: -30
+          legendOffset: -30,
         }}
         labelSkipWidth={12}
         labelSkipHeight={12}
@@ -43,5 +43,5 @@ export default function ChildrenByMonth({ records }: Props) {
         ariaLabel="Nivo bar chart demo"
       />
     </div>
-  )
+  );
 }

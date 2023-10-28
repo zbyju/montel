@@ -1,12 +1,15 @@
-import { ResponsiveBar } from "@nivo/bar"
-import { calculateChildrenByDay, type Record } from "../../../logic/babyboxStats"
+import { ResponsiveBar } from "@nivo/bar";
+import {
+  calculateChildrenByDay,
+  type Record,
+} from "../../../logic/babyboxStats";
 
 interface Props {
-  records: Record[]
+  records: Record[];
 }
 
 export default function ChildrenByDay({ records }: Props) {
-  const data = calculateChildrenByDay(records)
+  const data = calculateChildrenByDay(records);
 
   return (
     <div className="lg:w-3/5 w-full aspect-video pa-5 m-auto">
@@ -26,15 +29,15 @@ export default function ChildrenByDay({ records }: Props) {
         axisBottom={{
           tickSize: 5,
           tickPadding: 5,
-          legend: 'Den v týdnu',
-          legendPosition: 'middle',
+          legend: "Den v týdnu",
+          legendPosition: "middle",
           legendOffset: 35,
-          tickRotation: 0
+          tickRotation: 0,
         }}
         axisLeft={{
-          legend: 'Celkem',
+          legend: "Celkem",
           legendPosition: "middle",
-          legendOffset: -30
+          legendOffset: -30,
         }}
         labelSkipWidth={12}
         labelSkipHeight={12}
@@ -42,5 +45,5 @@ export default function ChildrenByDay({ records }: Props) {
         role="application"
       />
     </div>
-  )
+  );
 }

@@ -29,7 +29,7 @@ const text = "stone";
     slot="header"
     color={bg}
     text={text}
-    heading="Zabezpečení či automatizace pro Váš domov či obchod? Nabízíme vše v jednom."
+    heading="Zabezpečení či automatizace pro Váši firmu, obchod či domov? Nabízíme vše v jednom."
     image={{
       image: jablotronImage,
       alt: "placeholder",
@@ -62,36 +62,23 @@ const text = "stone";
         />
       </MiniCard>
       <MiniCard
-        title="Ochrana před živly"
-        size="lg"
-        type="ghost"
-        color="amber-500"
-      >
-        <List
-          className="text-black"
-          list={[
-            "Požární zabezpečení",
-            "Hlídaní vniknutí vody",
-            "Detekce plynu",
-            "Chytrá detekce kouře",
-          ]}
-          color={colorWeighted(bg, 900)}
-        />
-      </MiniCard>
-      <MiniCard
         title="Chytrá domácnost"
         size="lg"
         type="ghost"
         color="amber-500"
       >
         <List
-          className="text-black"
+          className="text-black lg:max-w-[300px]"
           list={[
+            "Automatické ovládání",
+            "Ovládaní mobilem/PC",
             "Ovládání rozsvěcení světel",
-            "Ovládání zámků",
+            "Ovládání strojů a spotřebičů",
+            "Ovládání vjezdových a garážových vrat",
+            "Ovládání dveřních zámků",
             "Zónová regulaci teploty",
-            "Ovládání spotřebičů",
             "Zvonek u vchodu",
+            "Signalizace zapomenutých otevřených dveří a vrat"
           ]}
           color={colorWeighted(bg, 900)}
         />
@@ -105,10 +92,28 @@ const text = "stone";
         <List
           className="text-black"
           list={[
-            "Měření odběru",
+            "Měření odběru elektřiny",
+            "Měření odběru vody",
+            "Měření odběru plynu",
             "Měření výroby elektřiny",
             "Snímání teploty",
-            "Nabíjení elektromobilů",
+            "Zobrazení dat na mobilu/PC",
+          ]}
+          color={colorWeighted(bg, 900)}
+        />
+      </MiniCard>
+      <MiniCard
+        title="Ochrana před živly"
+        size="lg"
+        type="ghost"
+        color="amber-500"
+      >
+        <List
+          className="text-black"
+          list={[
+            "Kombinovaná detekce požáru",
+            "Hlídaní vniknutí vody",
+            "Detekce plynu",
           ]}
           color={colorWeighted(bg, 900)}
         />
@@ -165,6 +170,7 @@ const text = "stone";
       kamerovými systémy. Toto vše dělá z Jablotronu univerzální a flexibilní
       řešení pro každou potřebu zabezpečení.
     </p>
+
     <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
       <MyImage
         image={{

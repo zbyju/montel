@@ -32,9 +32,11 @@ export type DarkColor = 600 | 700 | 800 | 900;
 
 export type ColorWeight = LightColor | MediumColor | DarkColor;
 
-export type ColorWeighted = `${ComplexColorName}-${ColorWeight}` | SimpleColorName
+export type ColorWeighted =
+  | `${ComplexColorName}-${ColorWeight}`
+  | SimpleColorName;
 
 export type ColorBg = `bg-${ColorWeighted}`;
-export type ColorText = `text-${ColorWeighted}`
+export type ColorText = `text-${ColorWeighted}`;
 export type ColorBgHover = `hover:${ColorBg}`;
 export type ColorTextHover = `hover:${ColorText}`;

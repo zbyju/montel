@@ -9,12 +9,12 @@ import prefetch from "@astrojs/prefetch";
 // https://astro.build/config
 export default defineConfig({
   server: {
-    port: 8080
+    port: 8080,
   },
   site: "https://jurica-montel.cz",
   integrations: [react(), tailwind(), sitemap(), prefetch()],
   output: "server",
   adapter: node({
-    mode: "standalone"
-  })
+    mode: "standalone",
+  }),
 });
