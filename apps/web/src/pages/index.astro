@@ -16,8 +16,12 @@ import BigSection from "../components/sections/BigSection.astro";
 import CenterSection from "../components/sections/CenterSection.astro";
 import uvodImage from "../images/areal1.jpg";
 import babyboxImage from "../images/bb.jpg";
+import areal1Image from "../images/areal4.jpg"
+import arealpanoImage from "../images/arealpano.jpg"
+import tymImage from "../images/tym.jpg"
 import Link from "../components/elements/Link.astro";
 import ContactSection from "../components/sections/contact/ContactSection.astro";
+import MyImage from "../components/elements/MyImage.astro";
 
 const bg = "blue";
 const text = "blue";
@@ -190,7 +194,29 @@ const iconClass = "max-w-[40px] max-h-[40px]";
   </CenterSection> 
 -->
 
-  <CenterSection heading="O nás" color="white"><p></p></CenterSection>
+  <CenterSection heading="O nás" color="white">
+    <div class="lg:w-3/5 w-full mx-auto">
+      <p>
+        Jsme společností s bohatým a rozmanitým portfoliem služeb, které pokrývají širokou škálu oblastí. Naše firma je známá pro svou odbornost a kvalitu v několika různých odvětvích. Zabýváme se výrobou a servisem Babyboxů, kde klademe důraz na kvalitní a bezpečné provedení. Vedle toho jsme špičkovými odborníky na instalaci fotovoltaických systémů a tepelných čerpadel, které pomáhají našim klientům snižovat energetické náklady. Naše zabezpečovací systémy, alarmy a kamerové systémy zajistí bezpečí vašich objektů a dodají jim prvky automatizace. Poskytujeme širokou škálu služeb v oblasti autoservisu, pneuservisu, oprav zdvihacích plošin, alternátorů a starterů. Spolehlivě a efektivně provozujeme nakladní dopravu. Naše společnost je synonymem pro profesionální přístup, kvalitu a spokojenost našich zákazníků ve všech našich oblastech činnosti.
+      </p>
+      <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
+        <MyImage
+          image={{
+            image: areal1Image,
+            alt: "cerpadlo",
+            className: "max-h-[300px]",
+          }}
+        />
+        <MyImage
+          image={{
+            image: tymImage,
+            alt: "cerpadlo",
+            className: "max-h-[300px]",
+          }}
+        />
+      </div>
+    </div>
+  </CenterSection>
 
   <div class={` bg-${bg}-100 text-${text}-900 py-20`}>
     <div class="w-11/12 mx-auto">
