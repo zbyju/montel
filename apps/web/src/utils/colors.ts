@@ -19,12 +19,12 @@ export function colorWeighted(
   return color === "white" && weight < 500
     ? "white"
     : color === "white"
-    ? "black"
-    : color === "black" && weight > 500
-    ? "black"
-    : color === "black"
-    ? "white"
-    : `${color}-${weight}`;
+      ? "black"
+      : color === "black" && weight > 500
+        ? "black"
+        : color === "black"
+          ? "white"
+          : `${color}-${weight}`;
 }
 
 export function colorBg(color: ColorName, weight: ColorWeight): ColorBg {
@@ -90,3 +90,7 @@ export const darkColorText = (color: ColorName): ColorText =>
   colorText(color, 900);
 export const lightColorText = (color: ColorName): ColorText =>
   colorText(color, 100);
+
+export const tailwindToHex = (color: ColorName): string => {
+  return color.includes("yellow") ? "#fdf6b2" : color.includes("amber") ? "#fef3c7" : color.includes("lime") ? "#ecfccb" : color.includes("green") ? "#dcfce7" : color.includes("emerald") ? "#d1fae5" : color.includes("teal") ? "#ccfbf1" : color.includes("cyan") ? "#cffafe" : color.includes("sky") ? "#e0f2fe" : color.includes("blue") ? "#e1effe" : color.includes("indigo") ? "#e5edff" : color.includes("violet") ? "#ede9fe" : color.includes("purple") ? "#f3e8ff" : color.includes("fuchsia") ? "#fae8ff" : color.includes("pink") ? "#fce8f3" : color.includes("rose") ? "#ffe4e6" : color.includes("white") ? "#ffffff" : color.includes("black") ? "#000000" : "#ffffff"
+}
