@@ -7,9 +7,15 @@ import {
   faBuilding,
   faFileInvoiceDollar,
   faLocationDot,
+  faLocationPin,
+  faMapLocationDot
 } from "@fortawesome/free-solid-svg-icons";
 import type { ColorName } from "../../../types/colors.types";
 import type { ElementInfo } from "../../../types/element.types";
+import MyImage from "../../elements/MyImage.astro"
+import babyboxImage from "../../../images/1280x720.svg";
+import uvodImage from "../../../images/uvod.jpg";
+import umisteniImage from "../../../images/umisteni.jpg";
 
 interface Props extends ElementInfo {
   color: ColorName;
@@ -21,19 +27,22 @@ const { color, color2, noAddresses = false, className } = Astro.props;
 ---
 
 <div class={`${className}`}>
-  <h2
-    class={`lg:text-7xl md:text-6xl text-5xl md:text-left text-center font-black tracking-wider word-wide mb-20`}
-  >
-    Kontaktujte nás
-  </h2>
-  <div class="flex flex-wrap justify-between gap-10 items-center lg:gap-x-24 lg:gap-y-20">
-    {
-      noAddresses !== true && (
-        <>
+  {
+    noAddresses !== true && (
+    <div class="flex flex-row flex-wrap justify-center lg:justify-between gap-y-10 lg:mb-52 mb-20">
+      <div>
+        <h2
+          class={`lg:text-7xl md:text-6xl text-5xl lg:text-left text-center lg:w-full md:w-full w-full mx-auto font-black tracking-wider word-wide mb-10`}
+        >
+          Kde nás najdete?
+        </h2>
+
+        <div class="flex flex-row flex-wrap lg:justify-start justify-center gap-x-24 gap-y-10 lg:w-full md:w-full w-3/5 mx-auto">
           <ContactCard
             department="Fakturační adresa"
             color={color}
             color2={color2}
+            className="flex-1"
           >
             <p>Zdeněk Juřica - MONTEL</p>
             <p>Třebíčská 272</p>
@@ -52,48 +61,81 @@ const { color, color2, noAddresses = false, className } = Astro.props;
             color2={color2}
             phone="+420 568 620 066"
             email="info@jurica-montel.cz"
+            className="flex-1"
           >
-            <p>
-              <p>Zdeněk Juřica - MONTEL</p>
-              <p>Vícenice u Náměště nad Oslavou 109</p>
-              <p>675 71 Náměšť nad Oslavou</p>
-            </p>
+            <p>Zdeněk Juřica - MONTEL</p>
+            <p>Vícenice u Náměště nad Oslavou 109</p>
+            <p>675 71 Náměšť nad Oslavou</p>
+            <a href="https://maps.app.goo.gl/cwTzRCJEbv7c4VYu8" target="_blank" class="flex flex-row flex-start gap-x-1"><FontAwesomeIcon icon={faLocationDot} className="w-3" /><span class="underline hover:brightness-200">Google Maps</span></a>
+            <a href="https://mapy.cz/s/nohocepumo" target="_blank" class="flex flex-row flex-start gap-x-1"><FontAwesomeIcon icon={faMapLocationDot} className="w-4" /><span class="underline hover:brightness-200">Mapy.cz</span></a>
 
             <FontAwesomeIcon slot="icon" icon={faBuilding} className={color} />
           </ContactCard>
-        </>
-      )
-    }
-    <ContactCard
-      department="Příjem zakázek"
-      color={color}
-      color2={color2}
-      phone="+420 561 035 488"
-      email="recepce@jurica-montel.cz"
-    >
-      <FontAwesomeIcon slot="icon" icon={faBoxesStacked} className={color} />
-    </ContactCard>
-    <ContactCard
-      department="Fakturace"
-      color={color}
-      color2={color2}
-      phone="+420 568 620 066"
-      email="fakturace@jurica-montel.cz"
-    >
-      <FontAwesomeIcon
-        slot="icon"
-        icon={faFileInvoiceDollar}
-        className={color}
+        </div>
+      </div>
+      <MyImage
+        image={{
+          image: umisteniImage,
+          alt: "cerpadlo",
+          className: "max-h-[240px] my-auto",
+          wrap: false
+        }}
       />
-    </ContactCard>
-    <ContactCard
-      department="Servis Babyboxu"
-      color={color}
-      color2={color2}
-      phone="+420 606 043 886"
-      email="babybox@jurica-montel.cz"
-    >
-      <FontAwesomeIcon slot="icon" icon={faBaby} className={color} />
-    </ContactCard>
+    </div>
+    )
+  }
+
+  <div class="flex flex-row flex-wrap justify-center lg:justify-between gap-y-10">
+    <div>
+      <h2
+        class={`lg:text-7xl md:text-6xl text-5xl lg:text-left text-center lg:w-full md:w-full mx-auto w-full mb-10 font-black tracking-wider word-wide`}
+      >
+        Kontaktujte nás
+      </h2>
+      <div class="flex flex-row flex-wrap lg:justify-start justify-center gap-x-24 gap-y-10 lg:w-full md:w-full w-3/5 mx-auto">
+        <ContactCard
+          department="Příjem zakázek"
+          color={color}
+          color2={color2}
+          phone="+420 561 035 488"
+          email="recepce@jurica-montel.cz"
+          className="flex-1 mx-auto"
+        >
+          <FontAwesomeIcon slot="icon" icon={faBoxesStacked} className={color} />
+        </ContactCard>
+        <ContactCard
+          department="Fakturace"
+          color={color}
+          color2={color2}
+          phone="+420 568 620 066"
+          email="fakturace@jurica-montel.cz"
+          className="flex-1"
+        >
+          <FontAwesomeIcon
+            slot="icon"
+            icon={faFileInvoiceDollar}
+            className={color}
+          />
+        </ContactCard>
+        <ContactCard
+          department="Servis Babyboxu"
+          color={color}
+          color2={color2}
+          phone="+420 606 043 886"
+          email="babybox@jurica-montel.cz"
+          className="flex-1"
+        >
+          <FontAwesomeIcon slot="icon" icon={faBaby} className={color} />
+        </ContactCard>
+      </div>
+    </div>
+    <MyImage
+      image={{
+        image: uvodImage,
+        alt: "cerpadlo",
+        className: "max-h-[240px] my-auto",
+        wrap: false
+      }}
+    />
   </div>
 </div>

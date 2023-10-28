@@ -48,15 +48,14 @@ const alsoLookAtClass = "ml-4 underline hover:brightness-200";
         emailLight={true}
         className="mx-auto"
       >
-        <p>
-          <p>Zdeněk Juřica - MONTEL</p>
-          <p>Vícenice u Náměště nad Oslavou 109</p>
-          <p>675 71 Náměšť nad Oslavou</p>
-        </p>
+        <p>Zdeněk Juřica - MONTEL</p>
+        <p>Vícenice u Náměště nad Oslavou 109</p>
+        <p>675 71 Náměšť nad Oslavou</p>
 
         <FontAwesomeIcon slot="icon" icon={faBuilding} className={text} />
       </ContactCard>
-      <div class="mx-auto flex-1 min-w-[250px]">
+
+      <div class="mx-auto min-w-[260px]">
         <FontAwesomeIcon
           slot="icon"
           icon={faCircleInfo}
@@ -65,6 +64,7 @@ const alsoLookAtClass = "ml-4 underline hover:brightness-200";
         <div class={`w-12 h-1 ${colorBg(text, 300)} mb-7`}></div>
         <h5 class="text-xl font-semibold">Podívejte se také:</h5>
         <ul class="list-disc"
+          <li></li>
           <li class={alsoLookAtClass}>
             <a href="/babybox" rel="prefetch-intent">Babybox</a>
           </li>
