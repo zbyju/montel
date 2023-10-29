@@ -9,6 +9,7 @@ import cerpadlo2Image from "../images/cerpadlo2.jpg";
 import cerpadloZapojeniImage from "../images/cerpadlo_zapojeni.jpg";
 import cerpadloInImage from "../images/cerpadlo_in.jpg";
 import cerpadlo3Image from "../images/cepradlo3.jpg"
+import cerpadloKotelImage from "../images/cerpadlo_kotel.jpg"
 import MyImage from "../components/elements/MyImage.astro";
 
 const bg = "emerald";
@@ -61,6 +62,13 @@ const text = "emerald";
       <MyImage
         image={{
           image: cerpadlo3Image,
+          alt: "cerpadlo",
+          className: "max-h-[240px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: cerpadloKotelImage,
           alt: "cerpadlo",
           className: "max-h-[240px]",
         }}
