@@ -34,7 +34,7 @@ const iconClass = "max-w-[40px] max-h-[40px]";
     slot="header"
     color="blue"
     heading="Kvalita, spolehlivost a odbornost v každé službě, kterou nabízíme. Od vašeho domova po vozový park."
-    image={{ image: uvodImage, alt: "placeholder" }}
+    image={{ image: uvodImage, alt: "placeholder", width: "902", height: "676" }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
   <div
@@ -80,7 +80,7 @@ const iconClass = "max-w-[40px] max-h-[40px]";
     </Card>
     <Card
       header="Zabezpečovací systémy"
-      description="S Jablotronem získáváte nejen klid v duši díky pokročilým alarmovým systémům, ale také luxus moderní chytré domácnosti s plnou automatizací. Integrace s dalšími prvky vašeho domova vám umožní snadno ovládat a optimalizovat všechny prvky vašeho domova. Nechte svůj domov chytře pracovat pro vás a vyzkoušejte naše revoluční řešení v oblasti Smart Home."
+      description="S alarmem získáváte nejen klid v duši díky pokročilým systémům, ale také luxus moderní chytré domácnosti s plnou automatizací. Kamerový systém Vám umožní na Váš objekt dohlížet ať jste kdekoliv a to i zpětně. Nechte svůj domov chytře pracovat pro vás a vyzkoušejte naše revoluční řešení."
       color={text}
       iconColor="red-600"
       links={[
@@ -99,7 +99,7 @@ const iconClass = "max-w-[40px] max-h-[40px]";
     >
       <FontAwesomeIcon icon={faCar} slot="icon" className={iconClass} />
     </Card>
-    <Card
+    <!-- <Card
       header="Doprava"
       description="Lorem ipsum dolor sit amet consequat convallis a a diam. Donec scelerisque pulvinar erat a mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit pretium ante, vel fringilla arcu bibendum eget. Integer rhoncus massa sit amet velit cursus ultricies."
       color={text}
@@ -107,7 +107,7 @@ const iconClass = "max-w-[40px] max-h-[40px]";
       iconColor="red-600"
     >
       <FontAwesomeIcon icon={faTruckFast} slot="icon" className={iconClass} />
-    </Card>
+    </Card> -->
   </div>
 
   <SectionStripe
@@ -115,7 +115,7 @@ const iconClass = "max-w-[40px] max-h-[40px]";
     color="pink"
     heading="Babybox"
     spacing="lg"
-    image={{ image: babyboxImage, alt: "", className: "max-h-[200px]" }}
+    image={{ image: babyboxImage, alt: "", width: "902", className: "max-w-[300px] max-h-[200px]" }}
     className="mt-10 shadow-lg rounded-xl"
     innerClassName="lg:w-3/5 mx-auto"
   >
@@ -197,22 +197,26 @@ const iconClass = "max-w-[40px] max-h-[40px]";
   <CenterSection heading="O nás" color="white">
     <div class="lg:w-3/5 w-full mx-auto">
       <p>
-        Jsme společností s bohatým a rozmanitým portfoliem služeb, které pokrývají širokou škálu oblastí. Naše firma je známá pro svou odbornost a kvalitu v několika různých odvětvích. Zabýváme se výrobou a servisem Babyboxů, kde klademe důraz na kvalitní a bezpečné provedení. Vedle toho jsme špičkovými odborníky na instalaci fotovoltaických systémů a tepelných čerpadel, které pomáhají našim klientům snižovat energetické náklady. Naše zabezpečovací systémy, alarmy a kamerové systémy zajistí bezpečí vašich objektů a dodají jim prvky automatizace. Poskytujeme širokou škálu služeb v oblasti autoservisu, pneuservisu, oprav zdvihacích plošin, alternátorů a starterů. Spolehlivě a efektivně provozujeme nakladní dopravu. Naše společnost je synonymem pro profesionální přístup, kvalitu a spokojenost našich zákazníků ve všech našich oblastech činnosti.
+        Jsme společností s bohatými, více než 30 letými zkušenostmi a rozmanitým profilem služeb, které pokrývají širokou škálu oblastí. Zabýváme se výrobou a servisem Babyboxů, kde klademe důraz na kvalitní a bezpečné provedení. Vedle toho vyrábíme a servisujeme tepelná čerpadla, která doplňujeme instalací fotovoltaických systémů a nabíjecích stanic pro elektromobily, abychom co nejvíce pomohli našim klientům snižovat energetické náklady. Naše zabezpečovací systémy, alarmy a kamerové systémy zajistí bezpečí vašich objektů a dodají jim prvky automatizace. Poskytujeme také širokou škálu služeb v oblasti autoservisu, pneuservisu, oprav zdvihacích plošin, alternátorů a starterů. Spolehlivě a efektivně provozujeme více jak 30 roků nakladní dopravu. Naše společnost usiluje být synonymem pro profesionální přístup, kvalitu a spokojenost našich zákazníků ve všech našich oblastech činnosti.
       </p>
       <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
         <MyImage
           image={{
             image: areal1Image,
             alt: "cerpadlo",
-            className: "max-h-[300px]",
+            width: "902",
+            height: "auto",
           }}
+          className="max-w-[400px] max-h-[300px]"
         />
         <MyImage
           image={{
             image: tymImage,
             alt: "cerpadlo",
-            className: "max-h-[300px]",
+            width: "902",
+            height: "auto",
           }}
+          className="max-w-[400px] max-h-[300px]"
         />
       </div>
     </div>

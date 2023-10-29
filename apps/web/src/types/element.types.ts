@@ -10,6 +10,8 @@ export type ImageElInfo = {
   alt: string;
   wrap?: boolean;
   noShadow?: boolean;
+  width?: string;
+  height?: string;
 } & ElementInfo;
 
 export type LinkElInfo = {
