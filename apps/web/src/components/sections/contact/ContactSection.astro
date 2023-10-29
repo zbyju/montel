@@ -52,7 +52,7 @@ const { color, color2, noAddresses = false, className } = Astro.props;
             <FontAwesomeIcon
               slot="icon"
               icon={faLocationDot}
-              className={color}
+              className={`${color} w-10`}
             />
           </ContactCard>
           <ContactCard
@@ -69,7 +69,7 @@ const { color, color2, noAddresses = false, className } = Astro.props;
             <a href="https://maps.app.goo.gl/cwTzRCJEbv7c4VYu8" target="_blank" class="flex flex-row flex-start gap-x-1"><FontAwesomeIcon icon={faLocationDot} className="w-3" /><span class="underline hover:brightness-200">Google Maps</span></a>
             <a href="https://mapy.cz/s/nohocepumo" target="_blank" class="flex flex-row flex-start gap-x-1"><FontAwesomeIcon icon={faMapLocationDot} className="w-4" /><span class="underline hover:brightness-200">Mapy.cz</span></a>
 
-            <FontAwesomeIcon slot="icon" icon={faBuilding} className={color} />
+            <FontAwesomeIcon slot="icon" icon={faBuilding} className={`${color} w-10`} />
           </ContactCard>
         </div>
       </div>
@@ -102,7 +102,7 @@ const { color, color2, noAddresses = false, className } = Astro.props;
           email="recepce@jurica-montel.cz"
           className="flex-1 mx-auto"
         >
-          <FontAwesomeIcon slot="icon" icon={faBoxesStacked} className={color} />
+          <FontAwesomeIcon slot="icon" icon={faBoxesStacked} className={`${color} w-10`} />
         </ContactCard>
         <ContactCard
           department="Fakturace"
@@ -115,7 +115,7 @@ const { color, color2, noAddresses = false, className } = Astro.props;
           <FontAwesomeIcon
             slot="icon"
             icon={faFileInvoiceDollar}
-            className={color}
+            className={`${color} w-10`}
           />
         </ContactCard>
         <ContactCard
@@ -126,7 +126,7 @@ const { color, color2, noAddresses = false, className } = Astro.props;
           email="babybox@jurica-montel.cz"
           className="flex-1"
         >
-          <FontAwesomeIcon slot="icon" icon={faBaby} className={color} />
+          <FontAwesomeIcon slot="icon" icon={faBaby} className={`${color} w-10`} />
         </ContactCard>
       </div>
     </div>
