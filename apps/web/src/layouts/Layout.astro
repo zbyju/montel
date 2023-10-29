@@ -2,17 +2,19 @@
 import TheFooter from "../components/sections/TheFooter.astro";
 import TheNav from "../components/sections/nav/TheNav.astro";
 import type { ColorName } from "../types/colors.types";
-import { tailwindToHex } from "../utils/colors"
+import { tailwindToHex } from "../utils/colors";
 
 export interface Props {
   title: string;
   bg: ColorName;
   text: ColorName;
+  description: string;
+  keywords: string;
 }
 
 const { title, bg, text, description, keywords } = Astro.props;
 
-const colorHex = tailwindToHex(bg)
+const colorHex = tailwindToHex(bg);
 ---
 
 <!DOCTYPE html>
@@ -23,10 +25,10 @@ const colorHex = tailwindToHex(bg)
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="theme-color" content={colorHex}>
+    <meta name="theme-color" content={colorHex} />
 
-    <meta name="description" content={description}>
-    <meta name="keywords" content={keywords}>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
     <title>{title}</title>
   </head>
   <body>

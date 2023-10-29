@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import BigSection from "../components/sections/BigSection.astro";
 import CenterSection from "../components/sections/CenterSection.astro";
 import PillsSection from "../components/sections/PillsSection.astro";
-import kameryImage from "../images/cerpadlo2.jpg";
 import List from "../components/elements/List.astro";
 import MiniCard from "../components/elements/MiniCard.astro";
 import { colorWeighted } from "../utils/colors";
@@ -16,15 +15,23 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Email from "../components/elements/Email.astro";
 import jablotronImage from "../images/jablotron.png";
-import alarmTurni1Image from "../images/alarm_turni1.jpg";
-import alarmTurni2Image from "../images/alarm_turni2.jpg";
+import ezs1Image from "../images/ezs1.jpg";
+import ezs2Image from "../images/ezs2.jpg";
+import ezs3Image from "../images/ezs3.jpg";
+import ezs4Image from "../images/ezs4.jpg";
 import MyImage from "../components/elements/MyImage.astro";
 
 const bg = "yellow";
 const text = "stone";
 ---
 
-<Layout title="Kamerové systémy a zabezpečení - Zdeněk Juřica - MONTEL" bg={bg} text={text} description="Zabezpečení či automatizace pro Váši firmu, obchod či domov? Nabízíme vše v jednom." keywords="Zdeněk Juřica, MONTEL, zabezpečovací systémy, zabezpečení, smart home, chytrá domácnost, chytrý dům, automazizace, integrace, instalace alarm, Jablotron, montáž zabezpečení, zabezpečovačka">
+<Layout
+  title="Kamerové systémy a zabezpečení - Zdeněk Juřica - MONTEL"
+  bg={bg}
+  text={text}
+  description="Zabezpečení či automatizace pro Váši firmu, obchod či domov? Nabízíme vše v jednom."
+  keywords="Zdeněk Juřica, MONTEL, zabezpečovací systémy, zabezpečení, smart home, chytrá domácnost, chytrý dům, automazizace, integrace, instalace alarm, Jablotron, montáž zabezpečení, zabezpečovačka"
+>
   <BigSection
     slot="header"
     color={bg}
@@ -48,6 +55,7 @@ const text = "stone";
         size="lg"
         type="filled"
         color="amber-300"
+        className="h-fit"
       >
         <List
           list={[
@@ -69,7 +77,7 @@ const text = "stone";
         color="amber-500"
       >
         <List
-          className="text-black lg:max-w-[300px]"
+          className="lg:max-w-[300px]"
           list={[
             "Automatické ovládání",
             "Ovládaní mobilem/PC",
@@ -79,9 +87,9 @@ const text = "stone";
             "Ovládání dveřních zámků",
             "Zónová regulaci teploty",
             "Zvonek u vchodu",
-            "Signalizace zapomenutých otevřených dveří a vrat"
+            "Signalizace zapomenutých otevřených dveří a vrat",
           ]}
-          color={colorWeighted(bg, 900)}
+          color={colorWeighted("stone", 900)}
         />
       </MiniCard>
       <MiniCard
@@ -91,7 +99,6 @@ const text = "stone";
         color="amber-500"
       >
         <List
-          className="text-black"
           list={[
             "Měření odběru elektřiny",
             "Měření odběru vody",
@@ -100,7 +107,7 @@ const text = "stone";
             "Snímání teploty",
             "Zobrazení dat na mobilu/PC",
           ]}
-          color={colorWeighted(bg, 900)}
+          color={colorWeighted("stone", 900)}
         />
       </MiniCard>
       <MiniCard
@@ -110,13 +117,12 @@ const text = "stone";
         color="amber-500"
       >
         <List
-          className="text-black"
           list={[
             "Kombinovaná detekce požáru",
             "Hlídaní vniknutí vody",
             "Detekce plynu",
           ]}
-          color={colorWeighted(bg, 900)}
+          color={colorWeighted("stone", 900)}
         />
       </MiniCard>
     </div>
@@ -171,25 +177,6 @@ const text = "stone";
       kamerovými systémy. Toto vše dělá z Jablotronu univerzální a flexibilní
       řešení pro každou potřebu zabezpečení.
     </p>
-
-    <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
-      <MyImage
-        image={{
-          image: alarmTurni1Image,
-          alt: "Instalace a automatizace turniketů",
-          width: "500",
-          className: "max-h-[240px]",
-        }}
-      />
-      <MyImage
-        image={{
-          image: alarmTurni2Image,
-          alt: "Automatizace turniketů",
-          width: "500",
-          className: "max-h-[240px]",
-        }}
-      />
-    </div>
   </CenterSection>
 
   <CenterSection color={bg} heading="Co Vám Jablotron přinese">
@@ -216,9 +203,9 @@ const text = "stone";
       >
         <p>
           S Jablotronem můžete jednoduše ovládat různé funkce domácnosti přes
-          svůj mobilní telefon. Automatizace osvětlení, topení nebo rolet je
-          nyní na dosah ruky, což vám umožňuje nastavit svůj domov přesně podle
-          svých potřeb.
+          svůj mobilní telefon. Automatizace vrat, dveří, osvětlení, topení nebo
+          rolet je nyní na dosah ruky, což vám umožňuje nastavit svůj domov
+          přesně podle svých potřeb.
         </p>
         <FontAwesomeIcon
           icon={faCouch}
@@ -272,6 +259,43 @@ const text = "stone";
       <p>
         <Email email="recepce@jurica-montel.cz" color={bg} />
       </p>
+    </div>
+  </CenterSection>
+
+  <CenterSection heading="Galerie" color={bg} text="slate">
+    <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
+      <MyImage
+        image={{
+          image: ezs1Image,
+          alt: "Instalace a automatizace turniketů",
+          width: "400",
+          className: "max-h-[240px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: ezs2Image,
+          alt: "Automatizace turniketů",
+          width: "500",
+          className: "max-h-[240px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: ezs3Image,
+          alt: "Automatizace turniketů",
+          width: "400",
+          className: "max-h-[240px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: ezs4Image,
+          alt: "Automatizace turniketů",
+          width: "400",
+          className: "max-h-[240px]",
+        }}
+      />
     </div>
   </CenterSection>
 </Layout>

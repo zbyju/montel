@@ -1,12 +1,12 @@
 ---
 import type { ElementInfo, ImageElInfo } from "../../types/element.types";
-import { Image } from "astro:assets"
+import { Image } from "astro:assets";
 
 interface Props extends ElementInfo {
   image: ImageElInfo;
 }
 
-const { image, className, style } = Astro.props;
+const { image, className } = Astro.props;
 
 const shadowStyle =
   image.noShadow === true
@@ -15,13 +15,15 @@ const shadowStyle =
 ---
 
 {
-  <div class={`${className}`}>
-    <Image
-      src={image.image}
-      width={image.width || "auto"}
-      height={image.height || "auto"}
-      alt={image.alt}
-      class={`rounded-xl ${shadowStyle} transition-all duration-500 ${image.className} w-auto h-auto aspect-auto`}
-    />
-  </div>
+  (
+    <div class={`${className}`}>
+      <Image
+        src={image.image}
+        width={image.width || "auto"}
+        height={image.height || "auto"}
+        alt={image.alt}
+        class={`rounded-xl ${shadowStyle} transition-all duration-500 ${image.className} w-auto h-auto aspect-auto`}
+      />
+    </div>
+  )
 }

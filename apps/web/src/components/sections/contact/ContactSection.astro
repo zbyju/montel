@@ -7,13 +7,11 @@ import {
   faBuilding,
   faFileInvoiceDollar,
   faLocationDot,
-  faLocationPin,
-  faMapLocationDot
+  faMapLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import type { ColorName } from "../../../types/colors.types";
 import type { ElementInfo } from "../../../types/element.types";
-import MyImage from "../../elements/MyImage.astro"
-import babyboxImage from "../../../images/1280x720.svg";
+import MyImage from "../../elements/MyImage.astro";
 import uvodImage from "../../../images/uvod.jpg";
 import umisteniImage from "../../../images/umisteni.jpg";
 
@@ -29,71 +27,99 @@ const { color, color2, noAddresses = false, className } = Astro.props;
 <div class={`${className}`}>
   {
     noAddresses !== true && (
-    <div class="flex flex-row flex-wrap justify-center lg:justify-between gap-y-10 lg:mb-52 mb-20 items-center">
-      <div>
-        <h2
-          class={`lg:text-7xl md:text-6xl text-5xl lg:text-left text-center lg:w-full md:w-full w-full mx-auto font-black tracking-wider word-wide mb-10`}
-        >
-          Kde nás najdete?
-        </h2>
-
-        <div class="flex flex-row flex-wrap lg:justify-start justify-center gap-x-24 gap-y-10 lg:w-full md:w-full w-3/5 mx-auto">
-          <ContactCard
-            department="Fakturační adresa"
-            color={color}
-            color2={color2}
-            className="flex-1"
+      <div class="flex flex-row flex-wrap justify-center lg:justify-between gap-y-10 lg:mb-52 mb-20">
+        <div>
+          <h2
+            class={`lg:text-7xl md:text-6xl text-5xl lg:text-left text-center lg:w-full md:w-full w-full mx-auto font-black tracking-wider word-wide mb-10`}
           >
-            <p>Zdeněk Juřica - MONTEL</p>
-            <p>Třebíčská 272</p>
-            <p>675 71 Náměšť nad Oslavou</p>
-            <p>IČO: 13070819</p>
+            Kde nás najdete?
+          </h2>
 
-            <FontAwesomeIcon
-              slot="icon"
-              icon={faLocationDot}
-              className={`${color} w-10`}
-            />
-          </ContactCard>
-          <ContactCard
-            department="Adresa provozovny"
-            color={color}
-            color2={color2}
-            phone="+420 568 620 066"
-            email="info@jurica-montel.cz"
-            className="flex-1"
-          >
-            <p>Zdeněk Juřica - MONTEL</p>
-            <p>Vícenice u Náměště nad Oslavou 109</p>
-            <p>675 71 Náměšť nad Oslavou</p>
-            <a href="https://maps.app.goo.gl/cwTzRCJEbv7c4VYu8" target="_blank" class="flex flex-row flex-start gap-x-1"><FontAwesomeIcon icon={faLocationDot} className="w-3" /><span class="underline hover:brightness-200">Google Maps</span></a>
-            <a href="https://mapy.cz/s/nohocepumo" target="_blank" class="flex flex-row flex-start gap-x-1"><FontAwesomeIcon icon={faMapLocationDot} className="w-4" /><span class="underline hover:brightness-200">Mapy.cz</span></a>
+          <div class="flex flex-row flex-wrap lg:justify-start justify-center gap-x-24 gap-y-10 lg:w-full md:w-full w-3/5 mx-auto">
+            <ContactCard
+              department="Fakturační adresa"
+              color={color}
+              color2={color2}
+              className="flex-1"
+            >
+              <p>Zdeněk Juřica - MONTEL</p>
+              <p>Třebíčská 272</p>
+              <p>675 71 Náměšť nad Oslavou</p>
+              <p>IČO: 13070819</p>
 
-            <FontAwesomeIcon slot="icon" icon={faBuilding} className={`${color} w-10`} />
-          </ContactCard>
+              <FontAwesomeIcon
+                slot="icon"
+                icon={faLocationDot}
+                className={`${color} w-10`}
+              />
+            </ContactCard>
+            <ContactCard
+              department="Adresa provozovny"
+              color={color}
+              color2={color2}
+              phone="+420 568 620 066"
+              email="info@jurica-montel.cz"
+              className="flex-1"
+            >
+              <p>Zdeněk Juřica - MONTEL</p>
+              <p>Vícenice u Náměště nad Oslavou 109</p>
+              <p>675 71 Náměšť nad Oslavou</p>
+              <a
+                href="https://maps.app.goo.gl/cwTzRCJEbv7c4VYu8"
+                target="_blank"
+                class="flex flex-row flex-start gap-x-1"
+              >
+                <>
+                  <FontAwesomeIcon icon={faLocationDot} className="w-3" />
+                  <span class="underline hover:brightness-200">
+                    Google Maps
+                  </span>
+                </>
+              </a>
+              <a
+                href="https://mapy.cz/s/nohocepumo"
+                target="_blank"
+                class="flex flex-row flex-start gap-x-1"
+              >
+                <>
+                  <FontAwesomeIcon icon={faMapLocationDot} className="w-4" />
+                  <span class="underline hover:brightness-200">Mapy.cz</span>
+                </>
+              </a>
+
+              <FontAwesomeIcon
+                slot="icon"
+                icon={faBuilding}
+                className={`${color} w-10`}
+              />
+            </ContactCard>
+          </div>
         </div>
+        <MyImage
+          image={{
+            image: umisteniImage,
+            alt: "Naši firmu najdete na cestě k lomu nedaleko Náměště nad Oslavou. Odbočka k lomu je hned před (pokud jedete od Náměště) / za (pokud jedete od Třebíče) odbočkou do Vícenic.",
+            width: "900",
+            className: "max-h-[240px] my-auto",
+            wrap: false,
+          }}
+        />
       </div>
-      <MyImage
-        image={{
-          image: umisteniImage,
-          alt: "Naši firmu najdete na cestě k lomu nedaleko Náměště nad Oslavou. Odbočka k lomu je hned před (pokud jedete od Náměště) / za (pokud jedete od Třebíče) odbočkou do Vícenic.",
-          width: "900",
-          className: "max-h-[240px] my-auto",
-          wrap: false
-        }}
-      />
-    </div>
     )
   }
 
-  <div class="flex flex-row flex-wrap justify-center lg:justify-between gap-y-10 items-center">
+  <div
+    class="flex flex-row flex-wrap justify-center lg:justify-between gap-y-10 items-center"
+  >
     <div>
       <h2
         class={`lg:text-7xl md:text-6xl text-5xl lg:text-left text-center lg:w-full md:w-full mx-auto w-full mb-10 font-black tracking-wider word-wide`}
       >
         Kontaktujte nás
       </h2>
-      <div class="flex flex-row flex-wrap lg:justify-start justify-center gap-x-10 gap-y-10 lg:w-full md:w-full w-3/5 mx-auto">
+      <div
+        class="flex flex-row flex-wrap lg:justify-start justify-center gap-x-10 gap-y-10 lg:w-full md:w-full w-3/5 mx-auto"
+      >
         <ContactCard
           department="Příjem zakázek"
           color={color}
@@ -102,7 +128,11 @@ const { color, color2, noAddresses = false, className } = Astro.props;
           email="recepce@jurica-montel.cz"
           className="flex-1 mx-auto"
         >
-          <FontAwesomeIcon slot="icon" icon={faBoxesStacked} className={`${color} w-10`} />
+          <FontAwesomeIcon
+            slot="icon"
+            icon={faBoxesStacked}
+            className={`${color} w-10`}
+          />
         </ContactCard>
         <ContactCard
           department="Fakturace"
@@ -126,7 +156,11 @@ const { color, color2, noAddresses = false, className } = Astro.props;
           email="babybox@jurica-montel.cz"
           className="flex-1"
         >
-          <FontAwesomeIcon slot="icon" icon={faBaby} className={`${color} w-10`} />
+          <FontAwesomeIcon
+            slot="icon"
+            icon={faBaby}
+            className={`${color} w-10`}
+          />
         </ContactCard>
       </div>
     </div>
@@ -136,7 +170,7 @@ const { color, color2, noAddresses = false, className } = Astro.props;
         alt: "Model naší firemní budovy",
         width: "600",
         className: "max-h-[240px] my-auto",
-        wrap: false
+        wrap: false,
       }}
     />
   </div>

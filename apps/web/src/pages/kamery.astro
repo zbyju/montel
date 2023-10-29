@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import BigSection from "../components/sections/BigSection.astro";
-import babyboxImage from "../images/1280x720.svg";
 import MyImage from "../components/elements/MyImage.astro";
 import CenterSection from "../components/sections/CenterSection.astro";
 import Email from "../components/elements/Email.astro";
@@ -17,7 +16,13 @@ const bg = "yellow";
 const text = "stone";
 ---
 
-<Layout title="Kamerové systémy a zabezpečení - Zdeněk Juřica - MONTEL" bg={bg} text={text} description="Pohlídejte svůj domov či firmu z jakéhokoli místa s našimi kamerovými řešeními." keywords="Zdeněk Juřica, MONTEL, kamerové systémy, kamery, instalace kamer, instalace kamerového systému, záznam z kamer, prohlížení kamer, vzdálený přístup ke kamerám, kamerové řešení, chytré kamery, umělá inteligence, strojové viděni">
+<Layout
+  title="Kamerové systémy a zabezpečení - Zdeněk Juřica - MONTEL"
+  bg={bg}
+  text={text}
+  description="Pohlídejte svůj domov či firmu z jakéhokoli místa s našimi kamerovými řešeními."
+  keywords="Zdeněk Juřica, MONTEL, kamerové systémy, kamery, instalace kamer, instalace kamerového systému, záznam z kamer, prohlížení kamer, vzdálený přístup ke kamerám, kamerové řešení, chytré kamery, umělá inteligence, strojové viděni"
+>
   <BigSection
     slot="header"
     color={bg}
@@ -91,6 +96,7 @@ const text = "stone";
         size="lg"
         type="filled"
         color="amber-300"
+        className="h-fit"
       >
         <List
           list={[
@@ -110,7 +116,6 @@ const text = "stone";
         color="amber-500"
       >
         <List
-          className="text-black"
           list={[
             "Rozpoznání obličeje",
             "Rozpoznání SPZ",
@@ -118,7 +123,7 @@ const text = "stone";
             "Opuštění předmětu",
             "Další chytré funkce",
           ]}
-          color={colorWeighted(bg, 900)}
+          color={colorWeighted("black", 900)}
         />
       </MiniCard>
       <MiniCard
@@ -128,14 +133,13 @@ const text = "stone";
         color="amber-500"
       >
         <List
-          className="text-black"
           list={[
             "Mobilní aplikace",
             "Připojení přes PC",
             "Prohlížení kamer na televizi",
             "Netřeba pevné veřejné IP adresy/DDNS",
           ]}
-          color={colorWeighted(bg, 900)}
+          color={colorWeighted("black", 900)}
         />
       </MiniCard>
       <MiniCard
@@ -145,13 +149,12 @@ const text = "stone";
         color="amber-500"
       >
         <List
-          className="text-black"
           list={[
             "Spuštění na pohyb",
             "Spuštění na chytrou událost",
             "Spuštění v časových úsecích",
           ]}
-          color={colorWeighted(bg, 900)}
+          color={colorWeighted("black", 900)}
         />
       </MiniCard>
     </div>

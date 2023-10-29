@@ -1,12 +1,9 @@
 ---
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBaby,
-  faMicrochip,
   faShield,
   faCar,
   faFan,
-  faTruckFast,
   faSun,
 } from "@fortawesome/free-solid-svg-icons";
 import Card from "../components/elements/Card.astro";
@@ -16,9 +13,8 @@ import BigSection from "../components/sections/BigSection.astro";
 import CenterSection from "../components/sections/CenterSection.astro";
 import uvodImage from "../images/areal1.jpg";
 import babyboxImage from "../images/bb.jpg";
-import areal1Image from "../images/areal4.jpg"
-import arealpanoImage from "../images/arealpano.jpg"
-import tymImage from "../images/tym.jpg"
+import areal1Image from "../images/areal4.jpg";
+import tymImage from "../images/tym.jpg";
 import Link from "../components/elements/Link.astro";
 import ContactSection from "../components/sections/contact/ContactSection.astro";
 import MyImage from "../components/elements/MyImage.astro";
@@ -29,12 +25,22 @@ const text = "blue";
 const iconClass = "max-w-[40px] max-h-[40px]";
 ---
 
-<Layout title="Zdeněk Juřica - MONTEL" bg={bg} text={text} description="Kvalita, spolehlivost a odbornost v každé službě, kterou nabízíme. Od vašeho domova po vozový park." keywords="Zdeněk Juřica, MONTEL, Babybox, Alarm, Jablotron, Kamery, Kamerové systémy, Fotovoltaika, Solární panely, Tepelná čerpadla, Autoservis, Pneuservis, Opravy, Servis, Instalace, Výroba, Elektro, Auto">
+<Layout
+  title="Zdeněk Juřica - MONTEL"
+  bg={bg}
+  text={text}
+  description="Kvalita, spolehlivost a odbornost v každé službě, kterou nabízíme. Od vašeho domova po vozový park."
+  keywords="Zdeněk Juřica, MONTEL, Babybox, Alarm, Jablotron, Kamery, Kamerové systémy, Fotovoltaika, Solární panely, Tepelná čerpadla, Autoservis, Pneuservis, Opravy, Servis, Instalace, Výroba, Elektro, Auto"
+>
   <BigSection
     slot="header"
     color="blue"
     heading="Kvalita, spolehlivost a odbornost v každé službě, kterou nabízíme. Od vašeho domova po vozový park."
-    image={{ image: uvodImage, alt: "Budova firmy Zdeněk Juřica - MONTEL", width: "700" }}
+    image={{
+      image: uvodImage,
+      alt: "Budova firmy Zdeněk Juřica - MONTEL",
+      width: "700",
+    }}
     links={[{ href: "#offering", text: "Co nabízíme?" }]}
   />
   <div
@@ -115,13 +121,21 @@ const iconClass = "max-w-[40px] max-h-[40px]";
     color="pink"
     heading="Babybox"
     spacing="lg"
-    image={{ image: babyboxImage, alt: "Detailní pohled na přední stranu Babyboxu", width: "600", className: "max-w-[300px] max-h-[200px]" }}
+    image={{
+      image: babyboxImage,
+      alt: "Detailní pohled na přední stranu Babyboxu",
+      width: "600",
+      className: "max-w-[300px] max-h-[200px]",
+    }}
     className="mt-10 shadow-lg rounded-xl"
     innerClassName="lg:w-3/5 mx-auto"
   >
     <p>
-      Babyboxy jsou klíčové v ochraně novorozenců v ČR. Využívají nejmodernější technologie pro zajištění komfortu pro dítě, matku i obsluhu. Zvláštní důraz je kladen na signalizaci, která je mnohonásobně jištěná a zajišťujě tak maximální bezpečnost. Po celé
-      České Republice tak jako jediní vyrábíme a servisujeme tento Babybox nové generace. 
+      Babyboxy jsou klíčové v ochraně novorozenců v ČR. Využívají nejmodernější
+      technologie pro zajištění komfortu pro dítě, matku i obsluhu. Zvláštní
+      důraz je kladen na signalizaci, která je mnohonásobně jištěná a zajišťujě
+      tak maximální bezpečnost. Po celé České Republice tak jako jediní vyrábíme
+      a servisujeme tento Babybox nové generace.
     </p>
     <Link
       link={{ href: "/babybox", text: "Více", className: "mt-3" }}
@@ -197,7 +211,19 @@ const iconClass = "max-w-[40px] max-h-[40px]";
   <CenterSection heading="O nás" color="white">
     <div class="lg:w-3/5 w-full mx-auto">
       <p>
-        Jsme společností s bohatými, více než 30 letými zkušenostmi a rozmanitým profilem služeb, které pokrývají širokou škálu oblastí. Zabýváme se výrobou a servisem Babyboxů, kde klademe důraz na kvalitní a bezpečné provedení. Vedle toho vyrábíme a servisujeme tepelná čerpadla, která doplňujeme instalací fotovoltaických systémů a nabíjecích stanic pro elektromobily, abychom co nejvíce pomohli našim klientům snižovat energetické náklady. Naše zabezpečovací systémy, alarmy a kamerové systémy zajistí bezpečí vašich objektů a dodají jim prvky automatizace. Poskytujeme také širokou škálu služeb v oblasti autoservisu, pneuservisu, oprav zdvihacích plošin, alternátorů a starterů. Spolehlivě a efektivně provozujeme více jak 30 roků nakladní dopravu. Naše společnost usiluje být synonymem pro profesionální přístup, kvalitu a spokojenost našich zákazníků ve všech našich oblastech činnosti.
+        Jsme společností s bohatými, více než 30 letými zkušenostmi a rozmanitým
+        profilem služeb, které pokrývají širokou škálu oblastí. Zabýváme se
+        výrobou a servisem Babyboxů, kde klademe důraz na kvalitní a bezpečné
+        provedení. Vedle toho vyrábíme a servisujeme tepelná čerpadla, která
+        doplňujeme instalací fotovoltaických systémů a nabíjecích stanic pro
+        elektromobily, abychom co nejvíce pomohli našim klientům snižovat
+        energetické náklady. Naše zabezpečovací systémy, alarmy a kamerové
+        systémy zajistí bezpečí vašich objektů a dodají jim prvky automatizace.
+        Poskytujeme také širokou škálu služeb v oblasti autoservisu,
+        pneuservisu, oprav zdvihacích plošin, alternátorů a starterů. Spolehlivě
+        a efektivně provozujeme více jak 30 roků nakladní dopravu. Naše
+        společnost usiluje být synonymem pro profesionální přístup, kvalitu a
+        spokojenost našich zákazníků ve všech našich oblastech činnosti.
       </p>
     </div>
     <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">

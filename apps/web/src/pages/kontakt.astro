@@ -1,5 +1,4 @@
 ---
-import SmallCard from "../components/elements/SmallCard.astro";
 import ContactSection from "../components/sections/contact/ContactSection.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -7,7 +6,13 @@ const bg = "blue";
 const text = "blue";
 ---
 
-<Layout title="Zdeněk Juřica - MONTEL" bg={bg} text={text} description="Kvalita, spolehlivost a odbornost v každé službě, kterou nabízíme. Od vašeho domova po vozový park." keywords="Zdeněk Juřica, MONTEL, Babybox, Alarm, Jablotron, Kamery, Kamerové systémy, Fotovoltaika, Solární panely, Tepelná čerpadla, Autoservis, Pneuservis, Opravy, Servis, Instalace, Výroba, Elektro, Auto">
+<Layout
+  title="Zdeněk Juřica - MONTEL"
+  bg={bg}
+  text={text}
+  description="Kvalita, spolehlivost a odbornost v každé službě, kterou nabízíme. Od vašeho domova po vozový park."
+  keywords="Zdeněk Juřica, MONTEL, Babybox, Alarm, Jablotron, Kamery, Kamerové systémy, Fotovoltaika, Solární panely, Tepelná čerpadla, Autoservis, Pneuservis, Opravy, Servis, Instalace, Výroba, Elektro, Auto"
+>
   <ContactSection
     slot="header"
     color={text}

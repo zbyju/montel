@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import BigSection from "../components/sections/BigSection.astro";
 import autoUvodImage from "../images/autouvod.jpg";
+import autoMainImage from "../images/automain.jpg";
+import mirkaImage from "../images/mirka.jpg";
 import autod1Image from "../images/autod1.jpg";
 import autod2Image from "../images/autod2.jpg";
 import autod3Image from "../images/autod3.jpg";
@@ -30,7 +32,13 @@ const bg = "indigo";
 const text = "indigo";
 ---
 
-<Layout title="Autoservis a Pneuservis - Zdeněk Juřica - MONTEL" bg={bg} text={text} description="Odborný servis a pneuservis pro všechna vozidla, od malých automobilů po velké nákladní vozy." keywords="Zdeněk Juřica, MONTEL, autoservis, pneuservis, diagnostika, diagnostika aut, oprava auta, oprava nákladních aut, oprava nákladního auta, oprava náklaďáku, oprava agrokulturních vozidel, montáž auta, servis auta, výměna náhradních dílů, výměna pneumatik">
+<Layout
+  title="Autoservis a Pneuservis - Zdeněk Juřica - MONTEL"
+  bg={bg}
+  text={text}
+  description="Odborný servis a pneuservis pro všechna vozidla, od malých automobilů po velké nákladní vozy."
+  keywords="Zdeněk Juřica, MONTEL, autoservis, pneuservis, diagnostika, diagnostika aut, oprava auta, oprava nákladních aut, oprava nákladního auta, oprava náklaďáku, oprava agrokulturních vozidel, montáž auta, servis auta, výměna náhradních dílů, výměna pneumatik"
+>
   <BigSection
     slot="header"
     color={bg}
@@ -66,7 +74,7 @@ const text = "indigo";
     <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
       <MyImage
         image={{
-          image: autod1Image,
+          image: autoMainImage,
           alt: "Rozdělané vozidlo pro opravu",
           width: "500px",
           className: "max-h-[220px]",
@@ -196,9 +204,33 @@ const text = "indigo";
     <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
       <MyImage
         image={{
+          image: mirkaImage,
+          alt: "Motor",
+          width: "450px",
+          className: "max-h-[220px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: auto11Image,
+          alt: "Motor",
+          width: "500px",
+          className: "max-h-[220px]",
+        }}
+      />
+      <MyImage
+        image={{
           image: auto1Image,
           alt: "Rozdělané vozidlo",
           width: "500px",
+          className: "max-h-[220px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: autod1Image,
+          alt: "Narovnání bočnice po",
+          width: "400px",
           className: "max-h-[220px]",
         }}
       />
@@ -222,14 +254,6 @@ const text = "indigo";
         image={{
           image: auto4Image,
           alt: "Oprava",
-          width: "400px",
-          className: "max-h-[220px]",
-        }}
-      />
-      <MyImage
-        image={{
-          image: auto5Image,
-          alt: "Servis elektroniky auta",
           width: "400px",
           className: "max-h-[220px]",
         }}
@@ -276,14 +300,6 @@ const text = "indigo";
       />
       <MyImage
         image={{
-          image: auto11Image,
-          alt: "Motor",
-          width: "500px",
-          className: "max-h-[220px]",
-        }}
-      />
-      <MyImage
-        image={{
           image: auto12Image,
           alt: "Oprava nákladního vozidla",
           width: "500px",
@@ -302,6 +318,14 @@ const text = "indigo";
         image={{
           image: auto14Image,
           alt: "Narovnání bočnice po",
+          width: "400px",
+          className: "max-h-[220px]",
+        }}
+      />
+      <MyImage
+        image={{
+          image: auto5Image,
+          alt: "Servis elektroniky auta",
           width: "400px",
           className: "max-h-[220px]",
         }}

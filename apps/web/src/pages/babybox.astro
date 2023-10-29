@@ -25,7 +25,13 @@ const text = "pink";
 const records = getRecords();
 ---
 
-<Layout title="Babybox - Zdeněk Juřica - MONTEL" bg={bg} text={text} description="Pro ty nejmenší v nouzi ostrůvek bezpečí vždy čeká, nesouc naději v těžkých chvílích." keywords="Zdeněk Juřica, MONTEL, Babybox, Česká Republika, novorozenci Česká Republika, záchrana dětí, monitorovací panel Babyboxu, Babybox nové generace, Babybox 2. generace, baby box, baby-box">
+<Layout
+  title="Babybox - Zdeněk Juřica - MONTEL"
+  bg={bg}
+  text={text}
+  description="Pro ty nejmenší v nouzi ostrůvek bezpečí vždy čeká, nesouc naději v těžkých chvílích."
+  keywords="Zdeněk Juřica, MONTEL, Babybox, Česká Republika, novorozenci Česká Republika, záchrana dětí, monitorovací panel Babyboxu, Babybox nové generace, Babybox 2. generace, baby box, baby-box"
+>
   <BigSection
     slot="header"
     color={bg}
@@ -34,7 +40,11 @@ const records = getRecords();
       { href: "#features", text: "O Babyboxu" },
       { href: "#servis", text: "Servis" },
     ]}
-    image={{ image: babyboxImage, alt: "Otevírání Babyboxu v přítomnosti veřejnosti a novinářů", width: "600" }}
+    image={{
+      image: babyboxImage,
+      alt: "Otevírání Babyboxu v přítomnosti veřejnosti a novinářů",
+      width: "600",
+    }}
   />
 
   <div id="features">
@@ -42,7 +52,6 @@ const records = getRecords();
       <div class="flex flex-wrap flex-row justify-center gap-10 lg:gap-10">
         <MiniCard title="Vybavení" size="lg" type="ghost" color="indigo-900">
           <List
-            className="text-black"
             list={[
               "Automatická dvířka",
               "Detekce zábrany dvířek",
@@ -53,7 +62,7 @@ const records = getRecords();
               "Nucený přívod vzduchu",
               "Nerezový materiál",
             ]}
-            color={colorWeighted(bg, 900)}
+            color={colorWeighted("black", 900)}
           />
         </MiniCard>
         <MiniCard
@@ -63,7 +72,6 @@ const records = getRecords();
           color="rose-900"
         >
           <List
-            className="text-black"
             list={[
               "Monitorovací počítač s hlasovým a obrazovým výstupem",
               "Kamera snímající vnitřní prostor Babyboxu",
@@ -72,7 +80,7 @@ const records = getRecords();
               "24/7 Monitoring",
               "Emailové notifikace při jakékoliv události",
             ]}
-            color={colorWeighted(bg, 900)}
+            color={colorWeighted("black", 900)}
           />
         </MiniCard>
         <MiniCard
@@ -82,15 +90,14 @@ const records = getRecords();
           color="indigo-900"
         >
           <List
-            className="text-black"
             list={[
               "Periodické odesílání dat na vzdálený server",
               "Analýza a vizualizace dat",
               "Vzdálený management Babyboxu",
               "Vzdálená správa monitorovacího počítače",
-              "Vzdálená správa notifikací pro nemocnice"
+              "Vzdálená správa notifikací pro nemocnice",
             ]}
-            color={colorWeighted(bg, 900)}
+            color={colorWeighted("black", 900)}
           />
         </MiniCard>
       </div>
@@ -104,16 +111,21 @@ const records = getRecords();
         image: babyboxFrontImage,
         alt: "Detailní pohled na Babybox ze přední strany",
         width: "500",
-        className: "max-h-[360px]"
+        className: "max-h-[360px]",
       }}
     >
       <p>
-        Babyboxy, umístěné v nemocnicích daného regionu, představují <strong>záchranný
-        bod</strong> pro ty, kteří se ocitnou v hluboké životní nouzi. Toto diskrétní
+        Babyboxy, umístěné v nemocnicích daného regionu, představují <strong
+          >záchranný bod</strong
+        > pro ty, kteří se ocitnou v hluboké životní nouzi. Toto diskrétní
         řešení nabízí rodičům ve špatné životní situaci možnost zanechat své
-        novorozence v <strong>bezpečném a regulovaném prostředí</strong>, když cítí, že nemohou
-        poskytnout dítěti odpovídající péči. Pomocí moderních technologií babyboxy
-        zajišťují <strong>nepřetržitý dohled a teplotní regulaci</strong> pro miminka. Několika úrovňové notifikační provedení okamžitě informuje obsluhu o vloženém dítěti, které díky tomu v současné době ztráví v Babyboxu průměrně pouze asi 6 minut.
+        novorozence v <strong>bezpečném a regulovaném prostředí</strong>, když
+        cítí, že nemohou poskytnout dítěti odpovídající péči. Pomocí moderních
+        technologií babyboxy zajišťují <strong
+          >nepřetržitý dohled a teplotní regulaci</strong
+        > pro miminka. Několika úrovňové notifikační provedení okamžitě
+        informuje obsluhu o vloženém dítěti, které díky tomu v současné době
+        ztráví v Babyboxu průměrně pouze asi 6 minut.
       </p><p class="mt-2">
         Více o Babyboxech se můžete dozvědět na oficiálních stránkách - <a
           class="underline"
@@ -131,24 +143,24 @@ const records = getRecords();
         image: monitorInImage,
         alt: "Nainstalovaný monitorovací panel v prostorách nemocnice",
         width: "400",
-        className: "max-h-[360px]"
+        className: "max-h-[360px]",
       }}
     >
       <p>
-        V nemocnici je umístěn monitorovací panel v místnosti stálé služby (zpravidla na novorozenecké JIP), primárně
-        navržený pro sledování obsahu babyboxu. Panel zobrazuje důležité informace: <strong
-          >teplota</strong
-          >, <strong>napětí</strong>, <strong>stav dvířek</strong>, <strong>stav datové sítě</strong>, nastavené parametry, které umožňuje vzdáleně měnit, a další
-        důležité ukazatele. Jakékoli odchylky nebo neobvyklé události generují
+        V nemocnici je umístěn monitorovací panel v místnosti stálé služby
+        (zpravidla na novorozenecké JIP), primárně navržený pro sledování obsahu
+        babyboxu. Panel zobrazuje důležité informace: <strong>teplota</strong>, <strong
+          >napětí</strong
+        >, <strong>stav dvířek</strong>, <strong>stav datové sítě</strong>,
+        nastavené parametry, které umožňuje vzdáleně měnit, a další důležité
+        ukazatele. Jakékoli odchylky nebo neobvyklé události generují
 
-        <strong>obrazové upozornění</strong> a na naléhavé události upozorňuje navíc <strong>hlasem a tónem</strong>, což zajišťuje vysokou dostupnost a
-        spolehlivost Babyboxů. Díky <strong
-          >integrované kameře</strong
-        > vidí obsluha v reálném čase dění v Babyboxu, na které může okamžitě reagovat.
+        <strong>obrazové upozornění</strong> a na naléhavé události upozorňuje
+        navíc <strong>hlasem a tónem</strong>, což zajišťuje vysokou dostupnost
+        a spolehlivost Babyboxů. Díky <strong>integrované kameře</strong> vidí
+        obsluha v reálném čase dění v Babyboxu, na které může okamžitě reagovat.
       </p>
-      <p class="mt-3">
-        
-      </p>
+      <p class="mt-3"></p>
     </SectionStripe>
 
     <div id="servis"></div>

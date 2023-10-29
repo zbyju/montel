@@ -1,6 +1,7 @@
 // src/components/Modal.jsx
 
-import { useEffect, useState, MouseEvent } from "react";
+import { useEffect } from "react";
+import type { MouseEvent } from "react";
 import type { ElementInfo } from "../../types/element.types";
 import Button from "./Button";
 
