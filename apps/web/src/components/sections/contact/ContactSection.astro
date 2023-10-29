@@ -29,7 +29,7 @@ const { color, color2, noAddresses = false, className } = Astro.props;
 <div class={`${className}`}>
   {
     noAddresses !== true && (
-    <div class="flex flex-row flex-wrap justify-center lg:justify-between gap-y-10 lg:mb-52 mb-20">
+    <div class="flex flex-row flex-wrap justify-center lg:justify-between gap-y-10 lg:mb-52 mb-20 items-center">
       <div>
         <h2
           class={`lg:text-7xl md:text-6xl text-5xl lg:text-left text-center lg:w-full md:w-full w-full mx-auto font-black tracking-wider word-wide mb-10`}
@@ -76,7 +76,8 @@ const { color, color2, noAddresses = false, className } = Astro.props;
       <MyImage
         image={{
           image: umisteniImage,
-          alt: "cerpadlo",
+          alt: "Naši firmu najdete na cestě k lomu nedaleko Náměště nad Oslavou. Odbočka k lomu je hned před (pokud jedete od Náměště) / za (pokud jedete od Třebíče) odbočkou do Vícenic.",
+          width: "900",
           className: "max-h-[240px] my-auto",
           wrap: false
         }}
@@ -85,14 +86,14 @@ const { color, color2, noAddresses = false, className } = Astro.props;
     )
   }
 
-  <div class="flex flex-row flex-wrap justify-center lg:justify-between gap-y-10">
+  <div class="flex flex-row flex-wrap justify-center lg:justify-between gap-y-10 items-center">
     <div>
       <h2
         class={`lg:text-7xl md:text-6xl text-5xl lg:text-left text-center lg:w-full md:w-full mx-auto w-full mb-10 font-black tracking-wider word-wide`}
       >
         Kontaktujte nás
       </h2>
-      <div class="flex flex-row flex-wrap lg:justify-start justify-center gap-x-24 gap-y-10 lg:w-full md:w-full w-3/5 mx-auto">
+      <div class="flex flex-row flex-wrap lg:justify-start justify-center gap-x-10 gap-y-10 lg:w-full md:w-full w-3/5 mx-auto">
         <ContactCard
           department="Příjem zakázek"
           color={color}
@@ -132,7 +133,8 @@ const { color, color2, noAddresses = false, className } = Astro.props;
     <MyImage
       image={{
         image: uvodImage,
-        alt: "cerpadlo",
+        alt: "Model naší firemní budovy",
+        width: "600",
         className: "max-h-[240px] my-auto",
         wrap: false
       }}
