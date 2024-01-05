@@ -14,10 +14,15 @@ import Email from "../components/elements/Email.astro";
 
 const bg = "emerald";
 const text = "emerald";
-
 ---
 
-<Layout title="Fotovoltaika - Zdeněk Juřica - MONTEL" bg={bg} text={text} description="Investujte do fotovoltaiky a užívejte si dlouhodobé úspory a čistou energii pro váš domov." keywords="Zdeněk Juřica, MONTEL, fotovoltaika, solární panely, střídač, baterie, montáž fotovoltaiky, dotace fotovoltaiky, udržitelná energie, konstrukce fotovoltaika, instalace fotovoltaika, sustainability">
+<Layout
+  title="Fotovoltaika - Zdeněk Juřica - MONTEL"
+  bg={bg}
+  text={text}
+  description="Investujte do fotovoltaiky a užívejte si dlouhodobé úspory a čistou energii pro váš domov."
+  keywords="Zdeněk Juřica, MONTEL, fotovoltaika, solární panely, střídač, baterie, montáž fotovoltaiky, dotace fotovoltaiky, udržitelná energie, konstrukce fotovoltaika, instalace fotovoltaika, sustainability"
+>
   <BigSection
     slot="header"
     color={bg}
@@ -43,20 +48,21 @@ const text = "emerald";
           >FVE o výkonu 6 - 50kW s bateriemi 10 - 50kW</strong
         >.
       </p><p>
-        Hlavní součásti, střídače a baterie používáme od výrobců Solax
-        a SofarSolar. Panely používáme, aby byly nejvýhodnější pro <strong>požadovaný
-        výkon, sklon, orientaci a rozměr střechy</strong>.
+        Hlavní součásti, střídače a baterie používáme od výrobců Solax a
+        SofarSolar. Panely používáme, aby byly nejvýhodnější pro <strong
+          >požadovaný výkon, sklon, orientaci a rozměr střechy</strong
+        >.
       </p><p>
         Konstrukce pro uchycení ke střeše si vyrábíme sami, přesně na míru, z
         kvalitních nerezových materiálů. Instalaci provádíme včetně předělání
         domovního a elektroměrového rozvaděče.
       </p>
       <p>
-        Taktéž pomůžeme zajistit vyřízení dotace, připojení k síti a následný výkup
-        přebytečné energie.
+        Taktéž pomůžeme zajistit vyřízení dotace, připojení k síti a následný
+        výkup přebytečné energie.
       </p>
     </div>
-    
+
     <div class="flex flex-row flex-wrap justify-center gap-10 mt-10">
       <MyImage
         image={{
@@ -108,47 +114,59 @@ const text = "emerald";
       />
     </div>
   </CenterSection>
-  
+
   <CenterSection heading="Postup instalace" color="emerald">
     <div class="flex flex-row flex-wrap gap-6 justify-between mt-10">
       <div class="flex flex-col text-center flex-1 min-w-[140px] mx-auto">
-        <span class="font-bold text-3xl">1.</span>Odborná konzultace, analýza střechy a návrh řešení
+        <span class="font-bold text-3xl">1.</span>Odborná konzultace, analýza
+        střechy a návrh řešení
       </div>
       <div class="flex flex-col text-center flex-1 min-w-[140px] mx-auto">
         <span class="font-bold text-3xl">2.</span>
-        Vypracování dokumentace a plán instalace solárního systému
+         Vypracování dokumentace a plán instalace solárního systému
       </div>
       <div class="flex flex-col text-center flex-1 min-w-[140px] mx-auto">
         <span class="font-bold text-3xl">3.</span>
-        Montáž pevné konstrukce pro solární panely a instalace solárních panelů
+         Montáž pevné konstrukce pro solární panely a instalace solárních panelů
       </div>
       <div class="flex flex-col text-center flex-1 min-w-[140px] mx-auto">
         <span class="font-bold text-3xl">4.</span>
-        Instalace uzemnění, kabeláže, střídače, baterií, rozvaděčů, přepěťových ochran
+         Instalace uzemnění, kabeláže, střídače, baterií, rozvaděčů, přepěťových
+        ochran
       </div>
       <div class="flex flex-col text-center flex-1 min-w-[140px] mx-auto">
         <span class="font-bold text-3xl">5.</span>
-        Úprava elektroměrového rozvaděče, připojení k elektrické síti, nastavení síťových ochran a testování
+         Úprava elektroměrového rozvaděče, připojení k elektrické síti,
+        nastavení síťových ochran a testování
       </div>
       <div class="flex flex-col text-center flex-1 min-w-[140px] mx-auto">
         <span class="font-bold text-3xl">6.</span>
-        Zprovoznění online monitoringu a mobilní aplikace
+         Zprovoznění online monitoringu a mobilní aplikace
       </div>
       <div class="flex flex-col text-center flex-1 min-w-[140px] mx-auto">
         <span class="font-bold text-3xl">7.</span>
-        Předání dokumentace a podání žádosti u energetické společnosti k prvnímu paralelnímu připojení
+         Předání dokumentace a podání žádosti u energetické společnosti k
+        prvnímu paralelnímu připojení
       </div>
       <div class="flex flex-col text-center flex-1 min-w-[140px] mx-auto">
         <span class="font-bold text-3xl">8.</span>
-        Závěrečné zprávy a pomoc při vyřízení dotace
+         Závěrečné zprávy a pomoc při vyřízení dotace
       </div>
     </div>
   </CenterSection>
 
-  <CenterSection heading="Konstrukce pro uchycení solárních panelů" color="white">
+  <CenterSection
+    heading="Konstrukce pro uchycení solárních panelů"
+    color="white"
+  >
     <div class="md:w-3/5 w-11/12 mx-auto">
       <p>
-        Umístění solárních panelů na střeše je klíčovým faktorem pro efektivitu celého solárního systému. Naše firma pečlivě vybírá orientaci a sklon panelů, aby byla zajištěna maximální absorpce sluneční energie. Vyrábíme konstrukce pro uchycení solárních panelů přesně na míru z kvalitních nerezových hliníkových materiálů, což zaručuje jejich trvanlivost a odolnost vůči povětrnostním vlivům. 
+        Umístění solárních panelů na střeše je klíčovým faktorem pro efektivitu
+        celého solárního systému. Naše firma pečlivě vybírá orientaci a sklon
+        panelů, aby byla zajištěna maximální absorpce sluneční energie. Vyrábíme
+        konstrukce pro uchycení solárních panelů přesně na míru z kvalitních
+        nerezových hliníkových materiálů, což zaručuje jejich trvanlivost a
+        odolnost vůči povětrnostním vlivům.
       </p>
     </div>
   </CenterSection>
@@ -156,11 +174,21 @@ const text = "emerald";
   <CenterSection heading="Dotace" color="emerald">
     <div class="md:w-3/5 w-11/12 mx-auto">
       <p>
-          Při žádosti o dotaci pro váš fotovoltaický systém je nezbytné připravit kompletní dokumentaci. To zahrnuje projektovou dokumentaci, která detailně popisuje vaše plány pro instalaci fotovoltaického systému, včetně technických specifikací a plánu instalace. Dále je třeba doložit odborný posudek, který potvrdí validitu vašeho projektu. Vyplňěný online formulář s veškerými relevantními informacemi, je samozřejmě klíčovým dokumentem pro podání žádosti. Navíc budete potřebovat souhlas s instalací od všech vlastníku nemovitosti, na které má být systém instalován, a další dokumenty, které mohou být vyžadovány v souladu s programem dotací. S naší asistencí můžete mít jistotu, že všechny tyto kroky budou provedeny k vaší spokojenosti a v souladu s platnými předpisy, abyste mohli úspěšně získat dotaci pro váš projekt.
+        Při žádosti o dotaci pro váš fotovoltaický systém je nezbytné připravit
+        kompletní dokumentaci. To zahrnuje projektovou dokumentaci, která
+        detailně popisuje vaše plány pro instalaci fotovoltaického systému,
+        včetně technických specifikací a plánu instalace. Dále je třeba doložit
+        odborný posudek, který potvrdí validitu vašeho projektu. Vyplňěný online
+        formulář s veškerými relevantními informacemi, je samozřejmě klíčovým
+        dokumentem pro podání žádosti. Navíc budete potřebovat souhlas s
+        instalací od všech vlastníku nemovitosti, na které má být systém
+        instalován, a další dokumenty, které mohou být vyžadovány v souladu s
+        programem dotací. S naší asistencí můžete mít jistotu, že všechny tyto
+        kroky budou provedeny k vaší spokojenosti a v souladu s platnými
+        předpisy, abyste mohli úspěšně získat dotaci pro váš projekt.
       </p>
     </div>
   </CenterSection>
-
 
   <CenterSection heading="Ozvěte se nám!" color="white">
     <div class="text-center">

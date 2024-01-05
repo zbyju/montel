@@ -23,9 +23,13 @@ const alsoLookAtClass = "ml-4 underline hover:brightness-200";
 ---
 
 <footer class={`${bgColor} ${textColor} shadow-md`}>
-  <div class="lg:pl-20 lg:pr-24 w-11/12 mx-auto py-10 flex flex-wrap justify-start gap-y-16 gap-x-24">
+  <div
+    class="lg:pl-20 lg:pr-24 w-11/12 mx-auto py-10 flex flex-wrap justify-start gap-y-16 gap-x-24"
+  >
     <MONTEL color={textColor} className="self-center mt-12 mx-auto" />
-    <div class="flex flex-wrap flex-grow justify-between gap-10 my-auto mx-auto">
+    <div
+      class="flex flex-wrap flex-grow justify-between gap-10 my-auto mx-auto"
+    >
       <ContactCard
         department="Fakturační adresa"
         color={text}
@@ -37,7 +41,11 @@ const alsoLookAtClass = "ml-4 underline hover:brightness-200";
         <p>675 71 Náměšť nad Oslavou</p>
         <p>IČO: 13070819</p>
 
-        <FontAwesomeIcon slot="icon" icon={faLocationDot} className={`${text} w-10`} />
+        <FontAwesomeIcon
+          slot="icon"
+          icon={faLocationDot}
+          className={`${text} w-10`}
+        />
       </ContactCard>
       <ContactCard
         department="Adresa provozovny"
@@ -52,7 +60,11 @@ const alsoLookAtClass = "ml-4 underline hover:brightness-200";
         <p>Vícenice u Náměště nad Oslavou 109</p>
         <p>675 71 Náměšť nad Oslavou</p>
 
-        <FontAwesomeIcon slot="icon" icon={faBuilding} className={`${text} w-10`} />
+        <FontAwesomeIcon
+          slot="icon"
+          icon={faBuilding}
+          className={`${text} w-10`}
+        />
       </ContactCard>
 
       <div class="mx-auto min-w-[260px]">
@@ -63,24 +75,22 @@ const alsoLookAtClass = "ml-4 underline hover:brightness-200";
         />
         <div class={`w-12 h-1 ${colorBg(text, 300)} mb-7`}></div>
         <h5 class="text-xl font-semibold">Podívejte se také:</h5>
-        <ul class="list-disc"
-          <li></li>
-          <li class={alsoLookAtClass}>
-            <a href="/babybox" rel="prefetch-intent">Babybox</a>
-          </li>
-          <li class={alsoLookAtClass}>
-            <a href="/kamery" rel="prefetch-intent">Kamery</a>
-          </li>
-          <li class={alsoLookAtClass}>
-            <a href="/cerpadla" rel="prefetch-intent">Tepelná čerpadla</a>
-          </li>
-          <li class={alsoLookAtClass}>
-            <a href="/zabezpeceni" rel="prefetch-intent">Zabezpečení</a>
-          </li>
-          <li class={alsoLookAtClass}>
-            <a href="/kontakt" rel="prefetch-intent">Kontakt</a>
-          </li>
-        </ul>
+        <ul class="list-disc" <li></ul>
+        <li class={alsoLookAtClass}>
+          <a href="/babybox" rel="prefetch-intent">Babybox</a>
+        </li>
+        <li class={alsoLookAtClass}>
+          <a href="/kamery" rel="prefetch-intent">Kamery</a>
+        </li>
+        <li class={alsoLookAtClass}>
+          <a href="/cerpadla" rel="prefetch-intent">Tepelná čerpadla</a>
+        </li>
+        <li class={alsoLookAtClass}>
+          <a href="/zabezpeceni" rel="prefetch-intent">Zabezpečení</a>
+        </li>
+        <li class={alsoLookAtClass}>
+          <a href="/kontakt" rel="prefetch-intent">Kontakt</a>
+        </li>
       </div>
     </div>
   </div>

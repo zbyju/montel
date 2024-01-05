@@ -42,8 +42,8 @@ export function calculateTotal(records: Record[]): StatsTotal {
       return r.sex === "M"
         ? [{ id: acc[0].id, value: acc[0].value + 1 }, acc[1]]
         : r.sex === "F"
-        ? [acc[0], { id: acc[1].id, value: acc[1].value + 1 }]
-        : acc;
+          ? [acc[0], { id: acc[1].id, value: acc[1].value + 1 }]
+          : acc;
     },
     [
       { id: "Kluci", value: 0 },
@@ -67,8 +67,8 @@ export function calculateChildrenByDay(records: Record[]): StatsBy {
         return r.sex === "M"
           ? { ...d, Kluci: d.Kluci + 1 }
           : r.sex === "F"
-          ? { ...d, Holky: d.Holky + 1 }
-          : d;
+            ? { ...d, Holky: d.Holky + 1 }
+            : d;
       });
     },
     [
@@ -92,8 +92,8 @@ export function calculateChildrenByMonth(records: Record[]): StatsBy {
         return r.sex === "M"
           ? { ...d, Kluci: d.Kluci + 1 }
           : r.sex === "F"
-          ? { ...d, Holky: d.Holky + 1 }
-          : d;
+            ? { ...d, Holky: d.Holky + 1 }
+            : d;
       });
     },
     [
@@ -167,8 +167,8 @@ export function calculateChildrenByHour(records: Record[]): StatsBy {
           return r.sex === "M"
             ? { ...d, Kluci: d.Kluci + 1 }
             : r.sex === "F"
-            ? { ...d, Holky: d.Holky + 1 }
-            : d;
+              ? { ...d, Holky: d.Holky + 1 }
+              : d;
         });
       },
       Array.from(Array(24).keys()).map((h) => ({ x: h, Kluci: 0, Holky: 0 })),
