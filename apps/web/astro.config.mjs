@@ -13,7 +13,7 @@ export default defineConfig({
   },
   site: "https://jurica-montel.cz",
   integrations: [react(), tailwind(), sitemap(), prefetch()],
-  output: "server",
+  output: "static",
   adapter: node({
     mode: "standalone",
   }),

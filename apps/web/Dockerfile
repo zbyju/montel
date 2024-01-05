@@ -1,12 +1,9 @@
-FROM node:lts AS runtime
+FROM node:lts AS build
 WORKDIR /app
-
 COPY . .
-
-RUN npm install --legacy-peer-deps
+RUN npm i --legacy-peer-deps
 RUN npm run build
 
-ENV HOST=0.0.0.0
-ENV PORT=8080
-EXPOSE 8080
-CMD node ./dist/server/entry.mjs
+FROM httpd:2.4 AS runtime
+COPY --from=build /app/dist /usr/local/apache2/htdocs/
+EXPOSE 80
